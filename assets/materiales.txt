@@ -1,0 +1,4 @@
+madera 1000
+piedra 1000
+metal 1000
+oro 1000
