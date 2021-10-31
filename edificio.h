@@ -17,6 +17,7 @@ class Edificio {
     // Coordenada coordenadas_edificio 
 
     public:
+    Edificio();
     Edificio(string nombre, int piedra, int madera, int metal, int cantidad_permitidos);
     string nombre();
     int cantidad();

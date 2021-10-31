@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "material.h"
+#include "utilidad.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ class Materiales {
     public:
     int cantidad_materiales();
     MaterialInventario obtener(int posicion);
+    MaterialInventario buscar(string nombre);
     void cambiar(int posicion, MaterialInventario material_nuevo);
     void copiar(MaterialInventario * copia);
     void apuntar(MaterialInventario * copia);

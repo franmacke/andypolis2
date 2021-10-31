@@ -4,6 +4,29 @@ MaterialInventario Materiales::obtener(int posicion) {
     return lista_materiales[posicion];
 }
 
+MaterialInventario Materiales::buscar(string nombre) {
+    int contador = 0;
+    bool resultado = false;
+    MaterialInventario material;
+
+    while (contador < cantidad_materiales() && !resultado) {
+        Utilidad utilidad;
+        if (lista_materiales[contador].nombre() == utilidad.minuscula(nombre)) {
+            resultado = true;
+        } else {
+            contador++;
+        }
+    }
+
+    if (resultado) {
+        material = lista_materiales[contador];
+    } 
+
+    //Devuelve un material si existe y si no devuelve un objeto vacio
+    return material;
+}
+
+
 void Materiales::cambiar(int posicion, MaterialInventario nuevo_material) {
     lista_materiales[posicion] = nuevo_material;
 }
