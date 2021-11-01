@@ -1,5 +1,10 @@
 #include "inventario.h"
 
+Inventario::Inventario() {
+    this->cantidad = 0;
+}
+
+
 int Inventario::cantidad_materiales() {
     return cantidad;
 }
