@@ -2,16 +2,16 @@
 #define MAPA_H
 
 #include <iostream>
-#include <dimension.h>
-#include <coordenada.h>
-#include <casillero.h>
+#include "dimension.h"
+#include "coordenada.h"
+#include "casillero.h"
 
 using namespace std;
 
 class Mapa {
     private:
     Dimension dimension_mapa;
-    Casillero casilleros[8][10];
+    Casillero casilleros[8][10]; //FALTA HACER DINAMICO
 
     public:
     Mapa(Dimension dimension_mapa);

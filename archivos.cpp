@@ -1,5 +1,4 @@
 #include "archivos.h"
-#include "interfaz.h"
 
 const string PATH_MATERIALES = "assets/materiales.txt";
 const string PATH_UBICACIONES = "assets/ubicaciones.txt";

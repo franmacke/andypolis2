@@ -3,11 +3,12 @@
 
 #include <iostream>
 #include <fstream>
-#include <edificio.h>
-#include <material.h>
-#include <materiales.h>
-#include <mapa.h>
-#include <casillero.h>
+#include "edificio.h"
+#include "material.h"
+#include "materiales.h"
+#include "mapa.h"
+#include "interfaz.h"
+
 
 using namespace std;
 
