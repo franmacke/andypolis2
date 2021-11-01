@@ -10,6 +10,8 @@ class Utilidad {
     string minuscula(string palabra);
     string mayuscula(string palabra);
     string capitalizar(string palabra);
+    bool es_numero(string numero);
+    bool confirmar_operacion();
 };
 
 

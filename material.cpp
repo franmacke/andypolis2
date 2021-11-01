@@ -16,7 +16,9 @@ int Material::cantidad() {
     return cantidad_material;
 }
 
-MaterialInventario::MaterialInventario() { }
+MaterialInventario::MaterialInventario() { 
+    this->nombre_material = "";
+}
 
 MaterialInventario::MaterialInventario(string nombre, int cantidad) {
     this->nombre_material = nombre;

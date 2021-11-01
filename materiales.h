@@ -14,6 +14,7 @@ class Materiales {
 
     public:
     int cantidad_materiales();
+    MaterialInventario * lista();
     MaterialInventario obtener(int posicion);
     MaterialInventario buscar(string nombre);
     void cambiar(int posicion, MaterialInventario material_nuevo);

@@ -1,5 +1,9 @@
 #include "materiales.h"
 
+MaterialInventario * Materiales::lista() {
+    return lista_materiales;
+}
+
 MaterialInventario Materiales::obtener(int posicion) {
     return lista_materiales[posicion];
 }
