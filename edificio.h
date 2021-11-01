@@ -27,6 +27,7 @@ class Edificio {
     int metal();
     void construir();
     void destruir();
+    void mostrar();
     // void ubicar(Coordenada ubicacion);
     // Coordenada coordenadas();
 };

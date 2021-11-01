@@ -14,6 +14,7 @@ class Ciudad {
     Inventario inventario;
 
     public:
+    Ciudad();
     Ciudad(Inventario inventario);
     int cantidad_edificios();
     Edificio obtener(int posicion);

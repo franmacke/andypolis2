@@ -11,6 +11,7 @@ Edificio::Edificio(string nombre, int piedra, int madera, int metal, int cantida
     this->piedra_minima = piedra;
     this->metal_minimo = metal;
     this->cantidad_permitidos = cantidad_permitidos;
+    this->cantidad_edificios = 0;
 }
 
 string Edificio::nombre() {
@@ -43,6 +44,16 @@ void Edificio::construir() {
 
 void Edificio::destruir() {
     cantidad_edificios--;
+}
+
+void Edificio::mostrar() {
+    cout << "--------------" << endl;
+    cout << "nombre: " << nombre() << endl;
+    cout << "cantidad: " << cantidad() << endl;
+    cout << "madera: " << madera() << endl;
+    cout << "metal: " << metal() << endl;
+    cout << "piedra: " << piedra() << endl;
+    cout << "permitidos: " << maxima_cantidad() << endl;
 }
 
 // void Edificio::ubicar(Coordenada ubicacion) {

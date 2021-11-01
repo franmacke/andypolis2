@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include "edificio.h"
+#include "ciudad.h"
 #include "material.h"
 #include "materiales.h"
 #include "mapa.h"
@@ -16,7 +17,7 @@ class Archivo {
     public:
     void abrir(fstream &archivo, string path);
     void cerrar(fstream &archivo);
-    Edificio * leer_edificios();
+    Ciudad * leer_edificios();
     Materiales * leer_materiales();
     Coordenada * leer_ubicaciones();
     Mapa leer_mapa();

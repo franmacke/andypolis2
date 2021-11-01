@@ -22,10 +22,27 @@ void Archivo::cerrar(fstream &archivo) {
     archivo.close();
 }
 
-// Edificio * Archivo::leer_edificios() {
-//     fstream archivo;
-//     abrir(archivo);
-// }
+Ciudad * Archivo::leer_edificios() {
+    fstream archivo;
+    abrir(archivo, PATH_EDIFICIOS);
+
+    Ciudad * edificios = new Ciudad;
+
+    string nombre, piedra, madera, metal, cantidad_permitidos;
+
+    while (getline(archivo, nombre, ESPACIO)) {
+        getline(archivo, piedra, ESPACIO);
+        getline(archivo, madera, ESPACIO);
+        getline(archivo, metal, ESPACIO);
+        getline(archivo, cantidad_permitidos);
+
+        Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
+
+        edificios->agregar(edificio);
+    }
+
+    return edificios;   
+}
 
 
 Materiales * Archivo::leer_materiales() {
