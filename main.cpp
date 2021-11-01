@@ -5,9 +5,7 @@
 using namespace std;
 
 int main() {
-
     Archivo datos;
-
     Materiales * lista_materiales = datos.leer_materiales();
     Mapa mapa = datos.leer_mapa();
 
