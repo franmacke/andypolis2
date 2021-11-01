@@ -10,10 +10,13 @@ const char RETORNO = 13;
 const char NULO = 00;
 
 void Archivo::abrir(fstream &archivo, string path) {
-    archivo.open(path);
+    cout << "Abriendo " << path << endl;
+    archivo.open(path, ios::in);
 
     if (!archivo.is_open()) {
         cout << "Falta archivo en " << path << endl;
+    } else {
+        cout << "ENCONTRE " << path << endl;
     }
 
 }
@@ -48,7 +51,6 @@ Ciudad * Archivo::leer_edificios() {
 Materiales * Archivo::leer_materiales() {
     fstream archivo;
     abrir(archivo, PATH_MATERIALES);
-
     Materiales * lista_materiales = new Materiales;
 
     string nombre, cantidad;
