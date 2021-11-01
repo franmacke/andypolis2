@@ -13,6 +13,7 @@ class Materiales {
     MaterialInventario * lista_materiales;
 
     public:
+    Materiales();
     int cantidad_materiales();
     MaterialInventario * lista();
     MaterialInventario obtener(int posicion);

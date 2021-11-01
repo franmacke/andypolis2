@@ -1,5 +1,9 @@
 #include "materiales.h"
 
+Materiales::Materiales() {
+    cantidad = 0;
+}
+
 MaterialInventario * Materiales::lista() {
     return lista_materiales;
 }
@@ -56,8 +60,10 @@ void Materiales::liberar_memoria() {
 void Materiales::agregar(MaterialInventario material_nuevo) {
     MaterialInventario * lista_copia = new MaterialInventario [cantidad_materiales() + 1];
     copiar(lista_copia);
-    lista_copia[cantidad_materiales()] = material_nuevo;
-
+    int cantidad = cantidad_materiales();
+    
+    lista_copia[cantidad] = material_nuevo;
+    
     if (cantidad_materiales() != 0) {
         liberar_memoria();
     }
