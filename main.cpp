@@ -6,9 +6,10 @@ using namespace std;
 
 int main() {
     Archivo datos;
-    Materiales * lista_materiales = datos.leer_materiales();
-    Mapa mapa = datos.leer_mapa();
-    Ciudad * edificios = datos.leer_edificios();
+    // Materiales * lista_materiales = datos.leer_materiales();
+    // Mapa mapa = datos.leer_mapa();
+    // Ciudad * edificios = datos.leer_edificios();
+    Coordenada * coordeada = datos.leer_ubicaciones();
 
     // DESCOMENTAR PARA PROBAR
 

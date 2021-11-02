@@ -1,6 +1,8 @@
 #ifndef COORDENADA_H
 #define COORDENADA_H
 
+#include <iostream>
+
 class Coordenada
 {
     private:
