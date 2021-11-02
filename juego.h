@@ -8,6 +8,7 @@
 
 class Juego {
     private:
+    int opcion = 0;
     bool partida;
     Interfaz interfaz;
     Materiales * materiales;
@@ -16,6 +17,13 @@ class Juego {
     public:
     void cargar_archivos();
     void jugar();
+    void mostrarOpciones();
+    void pedirOpcion();
+    void interfazPrincipal(Mapa& mapa);
+
+    void consultarCoordenada(Mapa& mapa);
+
+
 
 };
 
