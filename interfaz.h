@@ -7,8 +7,14 @@ using namespace std;
 
 
 class Interfaz {
-    public:
-    void menu();
+
+private:
+    ;
+
+public:
+
+
+
     void pausa();
     void limpiar();
     void dormir(unsigned int tiempo);

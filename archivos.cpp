@@ -1,9 +1,9 @@
 #include "archivos.h"
 
-const string PATH_MATERIALES = "assets/materiales.txt";
-const string PATH_UBICACIONES = "assets/ubicaciones.txt";
-const string PATH_MAPA = "assets/mapa.txt";
-const string PATH_EDIFICIOS = "assets/edificios.txt";
+const string PATH_MATERIALES = "materiales.txt";
+const string PATH_UBICACIONES = "ubicaciones.txt";
+const string PATH_MAPA = "mapa.txt";
+const string PATH_EDIFICIOS = "edificios.txt";
 
 const char ESPACIO = 32;
 const char RETORNO = 13;
