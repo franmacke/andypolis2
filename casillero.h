@@ -2,8 +2,8 @@
 #define CASILLERO_H
 
 #include <iostream>
-//#include "material.h"
-//#include "edificio.h"
+#include "material.h"
+#include "edificio.h"
 
 using namespace std;
 
@@ -27,20 +27,20 @@ public:
 
 //separar en otros archivos
 
-// class CasilleroTransitable : public Casillero {
-//     public:
-//     CasilleroTransitable();
-//     MaterialRecogible material;
-// };
+class CasilleroTransitable : public Casillero {
+    public:
+    CasilleroTransitable(MaterialRecogible material, int cantidad);
+    MaterialRecogible material;
+};
 
 
-// class CasilleroInstransitable : public Casillero {
+class CasilleroInstransitable : public Casillero {
 
-// };
+};
 
 
-// class CasilleroInaccesible : public Casillero {
+class CasilleroInaccesible : public Casillero {
 
-// };
+};
 
 #endif
