@@ -1,17 +1,16 @@
-//
-// Created by ydsas on 3/11/2021.
-//
 
-#ifndef ANDYPOLIS2_ESCUELA_H
-#define ANDYPOLIS2_ESCUELA_H
-#include "CasilleroConstruible.h"
+#ifndef ANDYPOLIS2_FABRICA_H
+#define ANDYPOLIS2_FABRICA_H
 
-class Escuela : public CasilleroConstruible{
+#include "edificio.h"
+
+
+class Fabrica : public Edificio {
 protected:
     static int cantidadTotal;
 
 public:
-    Escuela(){cantidadTotal++;}
+    Fabrica(){cantidadTotal++;}
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
@@ -21,9 +20,9 @@ public:
     // POS: resta uno a la cantidad total
     void restarTotal(){cantidadTotal--; }
 
-    void mostrarEnMapa(){cout << "E "}
+    void mostrarEnMapa(){cout << "F ";}
 
 };
 
 
-#endif //ANDYPOLIS2_ESCUELA_H
+#endif //ANDYPOLIS2_FABRICA_H

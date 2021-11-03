@@ -2,17 +2,18 @@
 // Created by ydsas on 3/11/2021.
 //
 
-#ifndef ANDYPOLIS2_OBELISCO_H
-#define ANDYPOLIS2_OBELISCO_H
-#include "CasilleroConstruible.h"
+#ifndef ANDYPOLIS2_ESCUELA_H
+#define ANDYPOLIS2_ESCUELA_H
+#include "edificio.h"
 
-
-class Obelisco : CasilleroConstruible{
+class Escuela : public Edificio {
 protected:
     static int cantidadTotal;
 
 public:
-    Obelisco(){cantidadTotal++;}
+    Escuela() {
+        cantidadTotal++;
+        }
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
@@ -22,9 +23,9 @@ public:
     // POS: resta uno a la cantidad total
     void restarTotal(){cantidadTotal--; }
 
-    void mostrarEnMapa(){cout << "O ";}
+    void mostrarEnMapa(){cout << "E ";}
 
 };
 
 
-#endif //ANDYPOLIS2_OBELISCO_H
+#endif //ANDYPOLIS2_ESCUELA_H

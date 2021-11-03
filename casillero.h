@@ -20,27 +20,26 @@ public:
     void nombre();
     string obtenerId();
 
-    virtual void mostrarEnMapa() = 0;
-
+    void mostrarEnMapa();
 };
 
 
 //separar en otros archivos
 
-class CasilleroTransitable : public Casillero {
-    public:
-    CasilleroTransitable(MaterialRecogible material, int cantidad);
-    MaterialRecogible material;
-};
+// class CasilleroTransitable : public Casillero {
+//     public:
+//     CasilleroTransitable(MaterialRecogible material, int cantidad);
+//     MaterialRecogible material;
+// };
 
 
-class CasilleroInstransitable : public Casillero {
+// class CasilleroInstransitable : public Casillero {
 
-};
+// };
 
 
-class CasilleroInaccesible : public Casillero {
+// class CasilleroInaccesible : public Casillero {
 
-};
+// };
 
 #endif

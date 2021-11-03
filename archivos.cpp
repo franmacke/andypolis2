@@ -158,17 +158,17 @@ Mapa Archivo::leer_mapa() {
             }
             // cout << casillero << " ";
             Coordenada coordenadas(i,j);
-            Casillero dato (casillero);
-            mapa.cargar_casillero(dato, coordenadas);
+            Parser parser = Parser(casillero);
+            mapa.cargar_casillero(*parser.procesar_entrada(), coordenadas);
         }
     }
 
     return mapa;
 }
 
-Dato Archivo::crearEdificio(string &nombre, string cant, string fila, string columna) {
-    Dato nuevo;
-    if (nombre == "Mina"){
-        nuevo = new Mina();
-    }
-}
+// Dato Archivo::crearEdificio(string &nombre, string cant, string fila, string columna) {
+//     Dato nuevo;
+//     if (nombre == "Mina"){
+//         nuevo = new Mina();
+//     }
+// }

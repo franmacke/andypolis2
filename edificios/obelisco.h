@@ -1,16 +1,18 @@
+//
+// Created by ydsas on 3/11/2021.
+//
 
-#ifndef ANDYPOLIS2_FABRICA_H
-#define ANDYPOLIS2_FABRICA_H
+#ifndef ANDYPOLIS2_OBELISCO_H
+#define ANDYPOLIS2_OBELISCO_H
+#include "edificio.h"
 
-#include "CasilleroConstruible.h"
 
-
-class Fabrica : CasilleroConstruible{
+class Obelisco : public Edificio {
 protected:
     static int cantidadTotal;
 
 public:
-    Fabrica(){cantidadTotal++;}
+    Obelisco(){cantidadTotal++;}
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
@@ -20,9 +22,9 @@ public:
     // POS: resta uno a la cantidad total
     void restarTotal(){cantidadTotal--; }
 
-    void mostrarEnMapa(){cout << "F "}
+    void mostrarEnMapa(){cout << "O ";}
 
 };
 
 
-#endif //ANDYPOLIS2_FABRICA_H
+#endif //ANDYPOLIS2_OBELISCO_H

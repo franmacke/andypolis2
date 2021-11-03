@@ -17,7 +17,7 @@ void Mapa::mostrar() {
     for (int i = 0; i < this->fila; i++ ) {
         for (int j = 0; j < this->columna; j++) {
 
-            cout << casilleros[i][j].id() << " ";
+            cout << casilleros[i][j].obtenerId() << " ";
         }
         cout << endl;
     }

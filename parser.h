@@ -3,7 +3,15 @@
 
 #include <iostream>
 #include "casillero.h"
-
+#include "casilleroConstruible.h"
+#include "casilleroNoConstruible.h"
+#include "casilleroInaccesible.h"
+#include "mina.h"
+#include "aserradero.h"
+#include "escuela.h"
+#include "fabrica.h"
+#include "obelisco.h"
+#include "planeta.h"
 
 using namespace std;
 
@@ -18,6 +26,8 @@ class Parser {
     bool es_inaccesible();
     bool es_transitable();
     bool es_construible();
+    Edificio * crear_edificio();
+    Material * crear_material();
 };
 
 

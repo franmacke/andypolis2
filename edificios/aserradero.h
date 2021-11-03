@@ -7,7 +7,7 @@
 #include "edificio.h"
 
 
-class Aserradero : public Edificio{
+class Aserradero : public Edificio {
 protected:
     static int cantidadTotal;
 

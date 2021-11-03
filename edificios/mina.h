@@ -4,10 +4,10 @@
 
 #ifndef ANDYPOLIS2_MINA_H
 #define ANDYPOLIS2_MINA_H
-#include "CasilleroConstruible.h"
 
+#include "edificio.h"
 
-class Mina : CasilleroConstruible{
+class Mina : public Edificio {
 protected:
     static int cantidadTotal;
 
