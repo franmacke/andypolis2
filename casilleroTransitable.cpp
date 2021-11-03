@@ -4,3 +4,6 @@
 
 #include "casilleroTransitable.h"
 
+CasilleroTransitable::CasilleroTransitable() {
+    
+}
