@@ -10,7 +10,7 @@ int main() {
     Juego juego;
     Materiales * lista_materiales = datos.leer_materiales();
     Mapa mapa = datos.leer_mapa();
-    Ciudad * edificios = datos.leer_edificios();
+    // Ciudad * edificios = datos.leer_edificios();
 
     // DESCOMENTAR PARA PROBAR
 
@@ -27,7 +27,7 @@ int main() {
 
     // PARA PROBAR SI LEE BIEN EL MAPA
     // mapa.mostrar();
-    juego.interfazPrincipal(mapa)
+    juego.interfazPrincipal(mapa);
 
     return 0;
 }

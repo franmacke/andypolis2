@@ -92,23 +92,23 @@ Materiales * Archivo::leer_materiales() {
 }
 
 
-Coordenada * Archivo::leer_ubicaciones() {
-    fstream archivo;
-    abrir(archivo, PATH_UBICACIONES);
+// Coordenada * Archivo::leer_ubicaciones() {
+//     fstream archivo;
+//     abrir(archivo, PATH_UBICACIONES);
 
-    string nombre, coordenada_x, coordenada_y, basura;
+//     string nombre, coordenada_x, coordenada_y, basura;
 
-    while(getline(archivo, nombre, ESPACIO)) {
-        getline(archivo, basura, '(');      //SACA PARENTESIS
-        getline(archivo, coordenada_x, ',');    
-        getline(archivo, basura, ESPACIO);      //SACA ESPACIO VACIO
-        getline(archivo, coordenada_y, ')');
+//     while(getline(archivo, nombre, ESPACIO)) {
+//         getline(archivo, basura, '(');      //SACA PARENTESIS
+//         getline(archivo, coordenada_x, ',');    
+//         getline(archivo, basura, ESPACIO);      //SACA ESPACIO VACIO
+//         getline(archivo, coordenada_y, ')');
 
-        Coordenada coordenada (stoi(coordenada_x), stoi(coordenada_y));
+//         Coordenada coordenada (stoi(coordenada_x), stoi(coordenada_y));
 
-    }
+//     }
  
-}
+// }
 
 void Archivo::procesarArchivoMapa() {
 
