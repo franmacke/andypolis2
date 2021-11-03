@@ -5,6 +5,7 @@ Casillero::Casillero() {
     
 }
 
+
 Casillero::Casillero(string idenficador) {
     this->identificador = idenficador;
 }
@@ -12,3 +13,5 @@ Casillero::Casillero(string idenficador) {
 string Casillero::obtenerId() {
     return identificador;
 }
+
+
