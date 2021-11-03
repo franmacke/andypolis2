@@ -24,7 +24,7 @@ void Archivo::abrir(fstream &archivo, string path) {
 void Archivo::cerrar(fstream &archivo) {
     archivo.close();
 }
-
+/*
 Ciudad * Archivo::leer_edificios() {
     fstream archivo;
     abrir(archivo, PATH_EDIFICIOS);
@@ -46,7 +46,7 @@ Ciudad * Archivo::leer_edificios() {
 
     return edificios;   
 }
-
+*/
 
 void Archivo::procesarArchivoEdificios(Mapa &mapa) {
 
@@ -169,6 +169,6 @@ Mapa Archivo::leer_mapa() {
 Dato Archivo::crearEdificio(string &nombre, string cant, string fila, string columna) {
     Dato nuevo;
     if (nombre == "Mina"){
-        nuevo = new ;
+        nuevo = new Mina();
     }
 }
