@@ -18,11 +18,14 @@ using namespace std;
 class Parser {
     private:
     string entrada;
+    int cantidad;
 
     public:
     Parser(string entrada);
+    Parser(string entrada, int cantidad);
     Casillero * procesar_entrada();
     string tipo_casillero();
+    int cantidad_entrada();
     bool es_inaccesible();
     bool es_transitable();
     bool es_construible();

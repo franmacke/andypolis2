@@ -1,8 +1,18 @@
 #include "parser.h"
 
+Parser::Parser(string entrada, int cantidad) {
+    // Para materiales
+    this->entrada = entrada;
+    this->cantidad = cantidad;
+}
+
 
 Parser::Parser(string entrada) {
     this->entrada = entrada;
+}
+
+int Parser::cantidad_entrada() {
+    return cantidad;
 }
 
 string Parser::tipo_casillero() {
@@ -14,9 +24,9 @@ Casillero * Parser::procesar_entrada() {
     Casillero * casillero;
 
     if (es_construible()) {
-        casillero = new CasilleroConstruible();
+        casillero = new CasilleroIntransitable();
     } else if (es_transitable()) {
-        casillero = new CasilleroNoConstruible();
+        casillero = new CasilleroTransitable();
     } else if (es_inaccesible()) {
         casillero = new CasilleroInaccesible();
     }
@@ -73,7 +83,12 @@ Material * Parser::crear_material() {
     Material * material;
    
     if (tipo_casillero() == "W") {
-        material = new MaterialRecogible();
-    } //FALTAN CASOS
-   
+        material = new MaterialRecogible("madera", cantidad_entrada());
+    } else if (tipo_casillero() == "M") {
+        material = new MaterialRecogible("metal", cantidad_entrada());
+    } else if (tipo_casillero() == "S") {
+        material = new MaterialRecogible("piedra", cantidad_entrada());
+    }
+    
+    return material;
 }
