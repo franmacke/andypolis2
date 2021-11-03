@@ -21,7 +21,16 @@ class Juego {
     void pedirOpcion();
     void interfazPrincipal(Mapa& mapa);
 
+    int pedirFila(Mapa& mapa);
+
+    int pedirColumna(Mapa& mapa);
+
     void consultarCoordenada(Mapa& mapa);
+
+    void demolerEdificio(Mapa& mapa);
+
+
+
 
 
 

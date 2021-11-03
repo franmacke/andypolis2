@@ -2,22 +2,26 @@
 #define CASILLERO_H
 
 #include <iostream>
-#include "material.h"
-#include "edificio.h"
+//#include "material.h"
+//#include "edificio.h"
 
 using namespace std;
 
 class Casillero {
-    protected:
+
+protected:
     string identificador;
+    string elementos;
     string nombre_casillero;
 
-    public:
+public:
     Casillero();
     Casillero(string identificador);
     void nombre();
-    string id();
-    void dibujar();
+    string obtenerId();
+
+    virtual void mostrarEnMapa() = 0;
+
 };
 
 
