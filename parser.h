@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include "casillero.h"
-#include "casilleroConstruible.h"
-#include "casilleroNoConstruible.h"
+#include "casilleroTransitable.h"
+#include "casilleroIntransitable.h"
 #include "casilleroInaccesible.h"
 #include "mina.h"
 #include "aserradero.h"

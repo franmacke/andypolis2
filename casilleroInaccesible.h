@@ -2,8 +2,8 @@
 // Created by ydsas on 3/11/2021.
 //
 
-#ifndef ANDYPOLIS2_CASILLEROINACCESIBLE_H
-#define ANDYPOLIS2_CASILLEROINACCESIBLE_H
+#ifndef CASILLERO_INACCESIBLE_H
+#define CASILLERO_INACCESIBLE_H
 #include "casillero.h"
 
 

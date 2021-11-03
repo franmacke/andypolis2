@@ -1,0 +1,1 @@
+#include "casilleroIntransitable.h"
