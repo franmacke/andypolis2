@@ -9,6 +9,6 @@ Casillero::Casillero(string idenficador) {
     this->identificador = idenficador;
 }
 
-string Casillero::id() {
+string Casillero::obtenerId() {
     return identificador;
 }

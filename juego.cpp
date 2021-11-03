@@ -30,7 +30,6 @@ void Juego::pedirOpcion() {
     cin >> opcion ;
 }
 
-
 void Juego::interfazPrincipal(Mapa &mapa) {
 
     while (opcion != GUARDAR_Y_SALIR){
@@ -61,12 +60,12 @@ void Juego::interfazPrincipal(Mapa &mapa) {
 
             case CONSULTAR_COORDENADA:
                 cout << "\n\n\t\t CONSULTAR COORDENADA \n\n\n";
-                //consultarCoordenada(mapa);
+                consultarCoordenada(mapa);
                 break;
 
             case MOSTRAR_INVENTARIO:
                 cout << "\n\n\t\t MOSTRAR INVENTARIO \n\n\n";
-                //consultarCoordenada(mapa);
+
                 break;
 
             case RECOLECTAR_RECURSOS_PRODUCIDOS:

@@ -48,6 +48,31 @@ Ciudad * Archivo::leer_edificios() {
 }
 
 
+void Archivo::procesarArchivoEdificios(Mapa &mapa) {
+
+    Dato nuevoEdificio;
+    string nombre, fila, columna, cant, basura;
+
+    fstream archivo;
+    abrir(archivo, PATH_EDIFICIOS);
+
+    while (getline(archivo, nombre, ' ')) {
+
+        getline(archivo, cant, '(');
+        getline(archivo, fila, ',');
+        getline(archivo, columna, ')');
+        getline(archivo, basura);
+
+        nuevoEdificio = crearEdificio(nombre, cant, fila, columna);
+        mapa.alta(nuevoEdificio, stoi(fila), stoi(columna));
+
+    }
+    nuevoEdificio = nullptr;
+    delete nuevoEdificio;
+}
+
+
+
 Materiales * Archivo::leer_materiales() {
     fstream archivo;
     abrir(archivo, PATH_MATERIALES);
@@ -85,12 +110,18 @@ Coordenada * Archivo::leer_ubicaciones() {
  
 }
 
+void Archivo::procesarArchivoMapa() {
+
+}
+
 Mapa Archivo::leer_mapa() {
     fstream archivo;
     abrir(archivo, PATH_MAPA);
 
     string filas;
+    int fila;
     string columnas;
+    int columna;
     string casillero;
 
     getline(archivo, filas, ESPACIO);
@@ -99,12 +130,15 @@ Mapa Archivo::leer_mapa() {
     cout << "FILAS: " << filas << endl;
     cout << "COLUMNAS: " << columnas << endl;
 
-    Dimension dimensiones (stoi(filas), stoi(columnas));
-    Mapa mapa (dimensiones);
+    fila = stoi(filas);
+    columna = stoi(columnas);
+    //Dimension dimensiones (stoi(filas), stoi(columnas));
+    Mapa mapa (stoi(filas), stoi(columnas));
 
     // int i = 0;
     // int j = 0;
     // int contador = 0;
+
 
     // while (getline(archivo, casillero, ESPACIO)) {
     //     cout << casillero;
@@ -114,9 +148,10 @@ Mapa Archivo::leer_mapa() {
     //  cout << i << " " << j << endl;
     //  cout << contador;
 
-    for (int i = 0; i < dimensiones.obtener_alto(); i++) {
-        for (int j = 0; j < dimensiones.obtener_ancho(); j++) {
-            if (j != dimensiones.obtener_ancho() - 1) {
+
+    for (int i = 0; i < fila; i++) {
+        for (int j = 0; j < columna; j++) {
+            if (j != columna - 1) {
                 getline(archivo, casillero, ESPACIO);
             } else {
                 getline(archivo, casillero);
@@ -126,7 +161,14 @@ Mapa Archivo::leer_mapa() {
             Casillero dato (casillero);
             mapa.cargar_casillero(dato, coordenadas);
         }
-    } 
+    }
+
     return mapa;
 }
 
+Dato Archivo::crearEdificio(string &nombre, string cant, string fila, string columna) {
+    Dato nuevo;
+    if (nombre == "Mina"){
+        nuevo = new ;
+    }
+}

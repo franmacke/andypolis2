@@ -30,6 +30,8 @@ class Edificio {
     void mostrar();
     // void ubicar(Coordenada ubicacion);
     // Coordenada coordenadas();
+
+    virtual void mostrarEnMapas() = 0;
 };
 
 
