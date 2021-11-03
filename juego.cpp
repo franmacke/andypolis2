@@ -3,6 +3,7 @@
 void Juego::cargar_archivos() {
     Archivo archivo;
     materiales = archivo.leer_materiales();
+    
 }
 
 void Juego::jugar() {
@@ -78,11 +79,12 @@ void Juego::interfazPrincipal(Mapa &mapa) {
 
             case MOSTRAR_MAPA:
                 cout << "\n\n\t\t MOSTRAR MAPA \n\n\n";
+                mapa.mostrar();
                 break;
 
             case CONSULTAR_COORDENADA:
                 cout << "\n\n\t\t CONSULTAR COORDENADA \n\n\n";
-                consultarCoordenada(mapa);
+                //consultarCoordenada(mapa);
                 break;
 
             case MOSTRAR_INVENTARIO:

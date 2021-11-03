@@ -6,6 +6,7 @@
 #define ANDYPOLIS2_ASERRADERO_H
 #include "edificio.h"
 
+
 class Aserradero : public Edificio{
 protected:
     static int cantidadTotal;

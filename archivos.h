@@ -4,18 +4,18 @@
 #include <iostream>
 #include <fstream>
 #include "edificio.h"
-#include "Aserradero.h"
-#include "Mina.h"
-#include "Fabrica.h"
-#include "Escuela.h"
-#include "Obelisco.h"
-#include "Planeta.h"
+// #include "aserradero.h"
+// #include "mina.h"
+// #include "fabrica.h"
+// #include "escuela.h"
+// #include "obelisco.h"
+// #include "planeta.h"
 #include "ciudad.h"
 #include "material.h"
 #include "materiales.h"
 #include "mapa.h"
 #include "interfaz.h"
-
+#include "parser.h"
 
 using namespace std;
 

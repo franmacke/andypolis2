@@ -4,25 +4,26 @@
 
 #ifndef ANDYPOLIS2_PLANETA_H
 #define ANDYPOLIS2_PLANETA_H
-#include "CasilleroConstruible.h"
+#include "edificio.h"
 
 
-class Planeta : CasilleroConstruible{
+class Planeta : public Edificio {
 protected:
     static int cantidadTotal;
 
 public:
-    Planeta(){cantidadTotal++;}
+    Planeta();
 
     // PRE: -
     // POS: resta uno a la cantidad total
-    void restarTotal(){cantidadTotal--; }
+    void restarTotal();
+    int obtenerTotal();
 
     // PRE: -
     // POS: imprime por pantalla la letra "E"
     void mostrarSimbolo();
 
-    void mostrarEnMapa(){cout << "P "}
+    void mostrarEnMapa(){cout << "P ";}
 
 };
 

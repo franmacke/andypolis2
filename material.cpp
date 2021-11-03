@@ -29,3 +29,10 @@ void MaterialInventario::mostrar() {
     cout << nombre() << ": " << cantidad() << endl;
 }
 
+MaterialRecogible::MaterialRecogible() {}
+
+MaterialRecogible::MaterialRecogible(string nombre, int cantidad) {
+    this->nombre_material = nombre;
+    this->cantidad_material = cantidad;
+}
+

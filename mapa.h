@@ -14,19 +14,17 @@ class Mapa {
     private:
     //Dimension dimension_mapa;
     int fila, columna;
-    string identificadors; // L C o T
-    string elementos;
-    bool ocupado;
-
-    //Casillero casilleros[8][10]; //FALTA HACER DINAMICO
-    Dato **mapa;
+    Casillero casilleros[8][10]; //FALTA HACER DINAMICO
+    // Dato **mapa;
 
 
     public:
-    Mapa(int fila, int columna, string identificador);
-    Dimension dimensiones();
+    Mapa(int fila, int columna);
     void cargar_casillero(Casillero dato, Coordenada coordenada);
+    void cambiar_edificio(Edificio, int x, int y);
     void mostrar();
+
+    Casillero obtener(int x, int y);
 
     bool estaVacio(int fila, int columna);
 

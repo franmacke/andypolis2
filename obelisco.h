@@ -4,19 +4,19 @@
 
 #ifndef ANDYPOLIS2_OBELISCO_H
 #define ANDYPOLIS2_OBELISCO_H
-#include "CasilleroConstruible.h"
+#include "edificio.h"
 
 
-class Obelisco : CasilleroConstruible{
+class Obelisco : public Edificio {
 protected:
     static int cantidadTotal;
 
 public:
-    Obelisco(){cantidadTotal++;}
+    Obelisco();
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
-    static int obtenerTotal(){return cantidadTotal;}
+    static int obtenerTotal();
 
     // PRE: -
     // POS: resta uno a la cantidad total

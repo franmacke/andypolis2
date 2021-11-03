@@ -15,7 +15,7 @@ class Material {
     Material(string nombre, int cantidad);
     string nombre();
     int cantidad();
-    virtual void mostrar() = 0;
+    void mostrar();
 };
 
 class MaterialRecogible : public Material {

@@ -4,19 +4,19 @@
 
 #ifndef ANDYPOLIS2_MINA_H
 #define ANDYPOLIS2_MINA_H
-#include "CasilleroConstruible.h"
 
+#include "edificio.h"
 
-class Mina : CasilleroConstruible{
+class Mina : public Edificio {
 protected:
     static int cantidadTotal;
 
 public:
-    Mina(){cantidadTotal++;}
+    Mina();
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
-    static int obtenerTotal(){return cantidadTotal;}
+    static int obtenerTotal();
 
     // PRE: -
     // POS: resta uno a la cantidad total

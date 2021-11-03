@@ -3,11 +3,10 @@
 
 #include <iostream>
 #include "coordenada.h"
-#include "CasilleroConstruible.h"
 
 using namespace std;
 
-class Edificio : public CasilleroConstruible{
+class Edificio {
     protected:
     string nombre_edificio;
     int cantidad_edificios = 0;
@@ -32,7 +31,7 @@ class Edificio : public CasilleroConstruible{
     // void ubicar(Coordenada ubicacion);
     // Coordenada coordenadas();
 
-    virtual void mostrarEnMapas() = 0;
+    // virtual void mostrarEnMapas() = 0;
 };
 
 
