@@ -12,11 +12,12 @@ protected:
     static int cantidadTotal;
 
 public:
-    Planeta(){cantidadTotal++;}
+    Planeta();
 
     // PRE: -
     // POS: resta uno a la cantidad total
-    void restarTotal(){cantidadTotal--; }
+    void restarTotal();
+    int obtenerTotal();
 
     // PRE: -
     // POS: imprime por pantalla la letra "E"

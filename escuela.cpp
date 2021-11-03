@@ -3,3 +3,5 @@
 //
 
 #include "escuela.h"
+
+int Escuela::cantidadTotal = 0;

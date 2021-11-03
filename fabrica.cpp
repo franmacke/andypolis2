@@ -3,3 +3,5 @@
 //
 
 #include "fabrica.h"
+
+int Fabrica::cantidadTotal = 0;

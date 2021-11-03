@@ -12,11 +12,11 @@ protected:
     static int cantidadTotal;
 
 public:
-    Mina(){cantidadTotal++;}
+    Mina();
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
-    static int obtenerTotal(){return cantidadTotal;}
+    static int obtenerTotal();
 
     // PRE: -
     // POS: resta uno a la cantidad total
