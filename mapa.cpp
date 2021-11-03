@@ -1,6 +1,6 @@
 #include "mapa.h"
 
-Mapa::Mapa(int fila, int columna) {
+Mapa::Mapa(int fila, int columna, string identificador) {
     this->fila = fila;
     this->columna = columna;
 }

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "material.h"
-#include "edificio.h"
+//#include "edificio.h"
 
 using namespace std;
 
