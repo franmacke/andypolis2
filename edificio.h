@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include "coordenada.h"
+#include "CasilleroConstruible.h"
 
 using namespace std;
 
-class Edificio {
+class Edificio : public CasilleroConstruible{
     protected:
     string nombre_edificio;
     int cantidad_edificios = 0;

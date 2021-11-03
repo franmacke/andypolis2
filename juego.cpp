@@ -30,6 +30,28 @@ void Juego::pedirOpcion() {
     cin >> opcion ;
 }
 
+int Juego::pedirFila(Mapa& mapa) {
+    int fila;
+    cout << "\t\tIngrese el numero de fila: ";
+    cin >> fila;
+    while (fila > mapa.filaMapa()){
+        cout << "\t\tFila ingresada esta mal, intentalo de nuevo: ";
+        cin >> fila;
+    }
+    return fila;
+}
+
+int Juego::pedirColumna(Mapa& mapa) {
+    int columna;
+    cout << "\t\tIngrese el numero de columna: ";
+    cin >> columna;
+    while (columna > mapa.columnaMapa()){
+        cout << "\t\tColumna ingresada esta mal, intentalo de nuevo: ";
+        cin >> columna;
+    }
+    return columna;
+}
+
 void Juego::interfazPrincipal(Mapa &mapa) {
 
     while (opcion != GUARDAR_Y_SALIR){

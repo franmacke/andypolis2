@@ -4,9 +4,24 @@
 
 #ifndef ANDYPOLIS2_ESCUELA_H
 #define ANDYPOLIS2_ESCUELA_H
+#include "CasilleroConstruible.h"
 
+class Escuela : public CasilleroConstruible{
+protected:
+    static int cantidadTotal;
 
-class Escuela {
+public:
+    Escuela(){cantidadTotal++;}
+
+    // PRE: -
+    // POS: devuelve la cantidad total del los escopetas
+    static int obtenerTotal(){return cantidadTotal;}
+
+    // PRE: -
+    // POS: resta uno a la cantidad total
+    void restarTotal(){cantidadTotal--; }
+
+    void mostrarEnMapa(){cout << "E "}
 
 };
 
