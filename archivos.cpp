@@ -157,9 +157,10 @@ Mapa Archivo::leer_mapa() {
                 getline(archivo, casillero);
             }
             // cout << casillero << " ";
-            Coordenada coordenadas(i,j);
+            /*Coordenada coordenadas(i,j);
             Casillero dato (casillero);
-            mapa.cargar_casillero(dato, coordenadas);
+            mapa.cargar_casillero(dato, coordenadas);*/
+
         }
     }
 

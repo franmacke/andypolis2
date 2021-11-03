@@ -14,6 +14,7 @@ class Mapa {
     private:
     //Dimension dimension_mapa;
     int fila, columna;
+
     //Casillero casilleros[8][10]; //FALTA HACER DINAMICO
     Dato **mapa;
 
