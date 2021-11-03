@@ -13,7 +13,7 @@ class CasilleroTransitable : public Casillero {
 
     public:
     CasilleroTransitable();
-
+    void cambiar_dato(string dato);
     // virtual void mostrarEnMapa(){cout << "C ";}// estaria bueno en colores en vez de una letra
 };
 

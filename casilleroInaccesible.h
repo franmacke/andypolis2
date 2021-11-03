@@ -12,7 +12,7 @@ class CasilleroInaccesible : public Casillero {
 
     public:
     CasilleroInaccesible();
-
+    void cambiar_dato(string dato);
     // virtual void mostrarEnMapa(){cout << "C ";}// estaria bueno en colores en vez de una letra
 };
 

@@ -8,3 +8,8 @@ CasilleroTransitable::CasilleroTransitable() {
     material = 0;
     this->identificador = "C";
 }
+
+void CasilleroTransitable::cambiar_dato(string dato) {
+    Parser parser = Parser(dato);
+    this->material = parser.crear_material();
+}

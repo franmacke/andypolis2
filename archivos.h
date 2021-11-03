@@ -4,12 +4,6 @@
 #include <iostream>
 #include <fstream>
 #include "edificio.h"
-// #include "aserradero.h"
-// #include "mina.h"
-// #include "fabrica.h"
-// #include "escuela.h"
-// #include "obelisco.h"
-// #include "planeta.h"
 #include "ciudad.h"
 #include "material.h"
 #include "materiales.h"

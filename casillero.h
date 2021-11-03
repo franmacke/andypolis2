@@ -4,6 +4,7 @@
 #include <iostream>
 #include "material.h"
 #include "edificio.h"
+#include "parser.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ public:
     string obtenerId();
     bool vacio();
     void mostrarEnMapa();
+    void cambiar_dato(string dato);
 };
 
 

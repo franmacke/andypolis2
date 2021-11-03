@@ -12,7 +12,8 @@ class CasilleroIntransitable : public Casillero {
 
     public:
     CasilleroIntransitable();
-    void cambiar_edificio(Edificio * edificio);
+    void cambiar_dato(string dato);
+
 };
 
 

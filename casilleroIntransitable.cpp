@@ -4,6 +4,7 @@ CasilleroIntransitable::CasilleroIntransitable() {
     this->identificador = "T";
 }
 
-void CasilleroIntransitable::cambiar_edificio(Edificio * edificio) {
-    this->edificio = edificio;
+void CasilleroIntransitable::cambiar_dato(string dato) {
+    Parser parser = Parser(dato);
+    this->edificio = parser.crear_edificio();
 }
