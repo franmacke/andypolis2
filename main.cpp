@@ -26,8 +26,8 @@ int main() {
     // } 
 
     // PARA PROBAR SI LEE BIEN EL MAPA
-    // mapa.mostrar();
-    juego.interfazPrincipal(mapa);
+    mapa.mostrar();
+    // juego.interfazPrincipal(mapa);
 
     return 0;
 }

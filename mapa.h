@@ -12,7 +12,6 @@ typedef Casillero* Dato;
 
 class Mapa {
     private:
-    //Dimension dimension_mapa;
     int fila, columna;
     Casillero casilleros[8][10]; //FALTA HACER DINAMICO
     // Dato **mapa;
@@ -20,9 +19,11 @@ class Mapa {
 
     public:
     Mapa(int fila, int columna);
-    Dimension dimensiones();
     void cargar_casillero(Casillero dato, Coordenada coordenada);
+    void cambiar_edificio(Edificio, int x, int y);
     void mostrar();
+
+    Casillero obtener(int x, int y);
 
     bool estaVacio(int fila, int columna);
 

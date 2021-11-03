@@ -8,11 +8,11 @@ using namespace std;
 
 class CasilleroIntransitable : public Casillero {
     private:
-    
+    Edificio * edificio;
 
     public:
     CasilleroIntransitable();
-
+    void cambiar_edificio(Edificio * edificio);
 };
 
 

@@ -19,27 +19,9 @@ public:
     Casillero(string identificador);
     void nombre();
     string obtenerId();
-
+    bool vacio();
     void mostrarEnMapa();
 };
 
-
-//separar en otros archivos
-
-// class CasilleroTransitable : public Casillero {
-//     public:
-//     CasilleroTransitable(MaterialRecogible material, int cantidad);
-//     MaterialRecogible material;
-// };
-
-
-// class CasilleroInstransitable : public Casillero {
-
-// };
-
-
-// class CasilleroInaccesible : public Casillero {
-
-// };
 
 #endif

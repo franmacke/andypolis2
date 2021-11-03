@@ -50,7 +50,7 @@ Ciudad * Archivo::leer_edificios() {
 
 void Archivo::procesarArchivoEdificios(Mapa &mapa) {
 
-    Dato nuevoEdificio;
+    // Dato nuevoEdificio;
     string nombre, fila, columna, cant, basura;
 
     fstream archivo;
@@ -63,12 +63,15 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
         getline(archivo, columna, ')');
         getline(archivo, basura);
 
-        nuevoEdificio = crearEdificio(nombre, cant, fila, columna);
-        mapa.alta(nuevoEdificio, stoi(fila), stoi(columna));
+        // nuevoEdificio = crearEdificio(nombre, cant, fila, columna);
+        // mapa.alta(nuevoEdificio, stoi(fila), stoi(columna));
+        Parser parser = Parser(nombre);
+
 
     }
-    nuevoEdificio = nullptr;
-    delete nuevoEdificio;
+    // nuevoEdificio = nullptr;
+    // delete nuevoEdificio;
+    cerrar(archivo);
 }
 
 
@@ -87,7 +90,7 @@ Materiales * Archivo::leer_materiales() {
 
         lista_materiales->agregar(nuevo_material);
     }
-
+    cerrar(archivo);
     return lista_materiales;
 }
 
@@ -118,11 +121,8 @@ Mapa Archivo::leer_mapa() {
     fstream archivo;
     abrir(archivo, PATH_MAPA);
 
-    string filas;
-    int fila;
-    string columnas;
-    int columna;
-    string casillero;
+    string filas, columnas, casillero;
+    int fila, columna;
 
     getline(archivo, filas, ESPACIO);
     getline(archivo, columnas);
@@ -132,7 +132,6 @@ Mapa Archivo::leer_mapa() {
 
     fila = stoi(filas);
     columna = stoi(columnas);
-    //Dimension dimensiones (stoi(filas), stoi(columnas));
     Mapa mapa (stoi(filas), stoi(columnas));
 
     // int i = 0;
@@ -162,7 +161,8 @@ Mapa Archivo::leer_mapa() {
             mapa.cargar_casillero(*parser.procesar_entrada(), coordenadas);
         }
     }
-
+    
+    cerrar(archivo);
     return mapa;
 }
 

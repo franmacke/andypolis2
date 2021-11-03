@@ -20,7 +20,7 @@ MaterialInventario::MaterialInventario() {
     this->nombre_material = "";
 }
 
-MaterialInventario::MaterialInventario(string nombre, int cantidad) : Material(nombre, cantidad) {
+MaterialInventario::MaterialInventario(string nombre, int cantidad) {
     this->nombre_material = nombre;
     this->cantidad_material = cantidad;
 }
@@ -29,7 +29,9 @@ void MaterialInventario::mostrar() {
     cout << nombre() << ": " << cantidad() << endl;
 }
 
-MaterialRecogible::MaterialRecogible(string nombre, int cantidad) : Material(nombre, cantidad) {
+MaterialRecogible::MaterialRecogible() {}
+
+MaterialRecogible::MaterialRecogible(string nombre, int cantidad) {
     this->nombre_material = nombre;
     this->cantidad_material = cantidad;
 }

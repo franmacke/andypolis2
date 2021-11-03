@@ -2,7 +2,11 @@
 
 
 Casillero::Casillero() {
-    
+    this->identificador = "";
+}
+
+bool Casillero::vacio() {
+    return (obtenerId() == "");
 }
 
 

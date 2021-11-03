@@ -5,5 +5,6 @@
 #include "casilleroTransitable.h"
 
 CasilleroTransitable::CasilleroTransitable() {
-    
+    material = 0;
+    this->identificador = "C";
 }

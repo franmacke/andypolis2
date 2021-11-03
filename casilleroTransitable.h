@@ -9,6 +9,7 @@
 
 class CasilleroTransitable : public Casillero {
     protected:
+    MaterialRecogible * material; 
 
     public:
     CasilleroTransitable();

@@ -8,8 +8,7 @@
 
 
 class CasilleroInaccesible : public Casillero {
-
-    protected:
+    private:
 
     public:
     CasilleroInaccesible();
