@@ -3,7 +3,7 @@
 #define ANDYPOLIS2_ESCUELA_H
 #include "edificio.h"
 
-class Escuela {
+class Escuela : public Edificio{
 protected:
     static int cantidadTotal;
 
@@ -18,7 +18,7 @@ public:
     // POS: resta uno a la cantidad total
     void restarTotal(){cantidadTotal--; }
 
-    void mostrarEnMapa(){cout << "E "}
+    void mostrarEnMapa(){cout << "E ";}
 
 };
 
