@@ -20,7 +20,6 @@ class Material {
 
 class MaterialRecogible : public Material {
     public: 
-    MaterialRecogible();
     MaterialRecogible(string nombre, int cantidad);
     void mostrar();
 };
