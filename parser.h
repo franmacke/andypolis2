@@ -30,7 +30,7 @@ class Parser {
     bool es_transitable();
     bool es_construible();
     Edificio * crear_edificio();
-    Material * crear_material();
+    MaterialRecogible * crear_material();
 };
 
 

@@ -9,8 +9,9 @@ Casillero Mapa::obtener(int fila, int columna) {
     return casilleros[fila][columna];
 }
 
-void Mapa::cargar_casillero(Casillero dato, Coordenada coordenada) {
-    casilleros[coordenada.x()][coordenada.y()] = dato;
+void Mapa::cargar_casillero(string casillero, Coordenada coordenada) {
+    Parser parser = Parser(casillero);
+    casilleros[coordenada.x()][coordenada.y()] = *parser.procesar_entrada();
 }
 
 void Mapa::mostrar() {
@@ -23,6 +24,10 @@ void Mapa::mostrar() {
 }
 
 void Mapa::baja(int fila, int columna) {}
+
+void Mapa::alta(string dato, int fila, int columna) {
+    casilleros[fila][columna].cambiar_dato(dato);
+}
 
 bool Mapa::estaVacio(int fila, int columna) {
     return obtener(fila, columna).vacio(); 

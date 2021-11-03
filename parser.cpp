@@ -79,8 +79,8 @@ Edificio * Parser::crear_edificio() {
     return edificio;
 }
 
-Material * Parser::crear_material() {
-    Material * material;
+MaterialRecogible * Parser::crear_material() {
+    MaterialRecogible * material;
    
     if (tipo_casillero() == "W") {
         material = new MaterialRecogible("madera", cantidad_entrada());

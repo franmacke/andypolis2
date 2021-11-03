@@ -2,9 +2,9 @@
 #define MAPA_H
 
 #include <iostream>
-#include "dimension.h"
 #include "coordenada.h"
 #include "casillero.h"
+
 
 using namespace std;
 
@@ -20,8 +20,7 @@ class Mapa {
 
     public:
     Mapa(int fila, int columna);
-    void cargar_casillero(Casillero dato, Coordenada coordenada);
-    void cambiar_edificio(Edificio, int x, int y);
+    void cargar_casillero(string dato, Coordenada coordenada);
     void mostrar();
 
     Casillero obtener(int x, int y);
@@ -30,7 +29,7 @@ class Mapa {
 
     void baja(int fila, int columna);
 
-    void alta(Dato dato, int fila, int columna);
+    void alta(string dato, int fila, int columna);
 
     int filaMapa(){return fila;}
 

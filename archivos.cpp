@@ -66,7 +66,7 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
         // nuevoEdificio = crearEdificio(nombre, cant, fila, columna);
         // mapa.alta(nuevoEdificio, stoi(fila), stoi(columna));
         Parser parser = Parser(nombre);
-
+        
 
     }
     // nuevoEdificio = nullptr;
@@ -157,8 +157,7 @@ Mapa Archivo::leer_mapa() {
             }
             // cout << casillero << " ";
             Coordenada coordenadas(i,j);
-            Parser parser = Parser(casillero);
-            mapa.cargar_casillero(*parser.procesar_entrada(), coordenadas);
+            mapa.cargar_casillero(casillero, coordenadas);
         }
     }
     
