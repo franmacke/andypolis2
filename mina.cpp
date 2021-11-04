@@ -4,7 +4,7 @@
 
 #include "mina.h"
 
-Mina::Mina() {
+Mina::Mina() : Edificio(MINA) {
     this->cantidadTotal++;
 }
 

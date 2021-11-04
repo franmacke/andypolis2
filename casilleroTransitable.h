@@ -5,15 +5,15 @@
 #ifndef CASILLERO_TRANSITABLE_H
 #define CASILLERO_TRANSITABLE_H
 #include "casillero.h"
-
+#include "material.h"
 
 class CasilleroTransitable : public Casillero {
     protected:
-    MaterialRecogible * material; 
+    Objeto * material; 
 
     public:
     CasilleroTransitable();
-    void cambiar_dato(string dato);
+    void cambiar_dato(Objeto * dato);
     // virtual void mostrarEnMapa(){cout << "C ";}// estaria bueno en colores en vez de una letra
 };
 

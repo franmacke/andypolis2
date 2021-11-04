@@ -60,36 +60,45 @@ bool Parser::es_inaccesible() {
     return respuesta;
 }
 
-Edificio * Parser::crear_edificio() {
-    Edificio * edificio;
-    if (tipo_casillero() == "M") {
-        edificio = new Mina();
-    } else if (tipo_casillero() == "A") {
-        edificio = new Aserradero();
-    } else if (tipo_casillero() == "E") {
-        edificio = new Escuela();
-    } else if (tipo_casillero() == "F") {
-        edificio = new Fabrica();
-    } else if (tipo_casillero() == "O") {
-        edificio = new Obelisco();
-    } else if (tipo_casillero() == "P") {
-        edificio = new Planeta();
+Objeto * Parser::crear_dato() {
+    Objeto * objeto;
+
+    cout << tipo_casillero() << endl;
+    if (tipo_casillero() == "mina") {
+        objeto = new Mina();
+    } else if (tipo_casillero() == "aserradero") {
+        objeto = new Aserradero();
+    } else if (tipo_casillero() == "escuela") {
+        objeto = new Escuela();
+    } else if (tipo_casillero() == "fabrica") {
+        objeto = new Fabrica();
+    } else if (tipo_casillero() == "obelisco") {
+        objeto = new Obelisco();
+    } else if (tipo_casillero() == "planta electrica") {
+        objeto = new Planeta();
+    } else if (tipo_casillero() == "madera") {
+        objeto = new MaterialRecogible("madera", cantidad_entrada());
+    } else if (tipo_casillero() == "metal") {
+        objeto = new MaterialRecogible("metal", cantidad_entrada());
+    } else if (tipo_casillero() == "piedra") {
+        objeto = new MaterialRecogible("piedra", cantidad_entrada());
     }
 
-    return edificio;
+    objeto->setear_id(tipo_casillero());
+    return objeto;
 }
 
-MaterialRecogible * Parser::crear_material() {
-    MaterialRecogible * material;
+// MaterialRecogible * Parser::crear_material() {
+//     MaterialRecogible * material;
    
-    if (tipo_casillero() == "W") {
-        material = new MaterialRecogible("madera", cantidad_entrada());
-    } else if (tipo_casillero() == "M") {
-        material = new MaterialRecogible("metal", cantidad_entrada());
-    } else if (tipo_casillero() == "S") {
-        material = new MaterialRecogible("piedra", cantidad_entrada());
-    }
+//     if (tipo_casillero() == "W") {
+//         material = new MaterialRecogible("madera", cantidad_entrada());
+//     } else if (tipo_casillero() == "M") {
+//         material = new MaterialRecogible("metal", cantidad_entrada());
+//     } else if (tipo_casillero() == "S") {
+//         material = new MaterialRecogible("piedra", cantidad_entrada());
+//     }
     
-    return material;
-}
+//     return material;
+// }
 

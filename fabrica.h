@@ -7,6 +7,8 @@
 
 class Fabrica : public Edificio {
 protected:
+    string identificador = "A";
+
     static int cantidadTotal;
 
 public:

@@ -4,7 +4,7 @@
 
 #include "planeta.h"
 
-Planeta::Planeta() {
+Planeta::Planeta() : Edificio(PLANTA) {
     this->cantidadTotal++;
 }
 

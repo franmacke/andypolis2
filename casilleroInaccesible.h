@@ -6,13 +6,13 @@
 #define CASILLERO_INACCESIBLE_H
 #include "casillero.h"
 
-
 class CasilleroInaccesible : public Casillero {
     private:
-
+    Objeto * dato;
+    
     public:
     CasilleroInaccesible();
-    void cambiar_dato(string dato);
+    void cambiar_dato(Objeto * dato);
     // virtual void mostrarEnMapa(){cout << "C ";}// estaria bueno en colores en vez de una letra
 };
 

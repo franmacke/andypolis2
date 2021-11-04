@@ -8,12 +8,11 @@
 
 class Escuela : public Edificio {
 protected:
+    string identificador = "E";
     static int cantidadTotal;
 
 public:
-    Escuela() {
-        cantidadTotal++;
-        }
+    Escuela() {cantidadTotal++;}
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas

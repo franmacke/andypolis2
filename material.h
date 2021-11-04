@@ -2,10 +2,11 @@
 #define MATERIAL_H
 
 #include <iostream>
+#include "objeto.h"
 
 using namespace std;
 
-class Material {
+class Material : public Objeto {
     protected:
     string nombre_material;
     int cantidad_material;
@@ -22,6 +23,7 @@ class MaterialRecogible : public Material {
     public: 
     MaterialRecogible();
     MaterialRecogible(string nombre, int cantidad);
+    string identificador() {return "ZS";};
     void mostrar();
 };
 
@@ -30,6 +32,8 @@ class MaterialInventario : public Material {
     MaterialInventario();
     MaterialInventario(string nombre, int cantidad);
     void mostrar();
+    string identificador() {return "X";};
+
 };
 
 

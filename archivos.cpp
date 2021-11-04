@@ -54,23 +54,22 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
     string nombre, fila, columna, cant, basura;
 
     fstream archivo;
-    abrir(archivo, PATH_EDIFICIOS);
+    abrir(archivo, PATH_UBICACIONES);
 
     while (getline(archivo, nombre, ' ')) {
 
         getline(archivo, cant, '(');
         getline(archivo, fila, ',');
+        getline(archivo, basura, ESPACIO);
         getline(archivo, columna, ')');
         getline(archivo, basura);
 
-        // nuevoEdificio = crearEdificio(nombre, cant, fila, columna);
-        // mapa.alta(nuevoEdificio, stoi(fila), stoi(columna));
-        Parser parser = Parser(nombre);
-        
+        int filas = stoi(fila);
+        int columnas = stoi(fila);
+
+        mapa.alta(nombre, filas, columnas);        
 
     }
-    // nuevoEdificio = nullptr;
-    // delete nuevoEdificio;
     cerrar(archivo);
 }
 
@@ -134,20 +133,6 @@ Mapa Archivo::leer_mapa() {
     columna = stoi(columnas);
     Mapa mapa (stoi(filas), stoi(columnas));
 
-    // int i = 0;
-    // int j = 0;
-    // int contador = 0;
-
-
-    // while (getline(archivo, casillero, ESPACIO)) {
-    //     cout << casillero;
-    //     contador ++;
-    // }
-
-    //  cout << i << " " << j << endl;
-    //  cout << contador;
-
-
     for (int i = 0; i < fila; i++) {
         for (int j = 0; j < columna; j++) {
             if (j != columna - 1) {
@@ -164,10 +149,3 @@ Mapa Archivo::leer_mapa() {
     cerrar(archivo);
     return mapa;
 }
-
-// Dato Archivo::crearEdificio(string &nombre, string cant, string fila, string columna) {
-//     Dato nuevo;
-//     if (nombre == "Mina"){
-//         nuevo = new Mina();
-//     }
-// }

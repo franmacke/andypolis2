@@ -4,7 +4,7 @@
 
 #include "obelisco.h"
 
-Obelisco::Obelisco() {
+Obelisco::Obelisco() : Edificio(OBELISCO) {
     this->cantidadTotal++;
 }
 

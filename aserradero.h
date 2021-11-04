@@ -4,11 +4,13 @@
 
 #ifndef ANDYPOLIS2_ASERRADERO_H
 #define ANDYPOLIS2_ASERRADERO_H
+
 #include "edificio.h"
 
 
 class Aserradero : public Edificio {
 protected:
+    string identificador = "A";
     static int cantidadTotal;
 
 public:

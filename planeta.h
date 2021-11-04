@@ -9,6 +9,8 @@
 
 class Planeta : public Edificio {
 protected:
+    string identificador = "P";
+
     static int cantidadTotal;
 
 public:

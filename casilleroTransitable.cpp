@@ -5,11 +5,10 @@
 #include "casilleroTransitable.h"
 
 CasilleroTransitable::CasilleroTransitable() {
-    material = 0;
     this->identificador = "C";
+    this->dato = 0;
 }
 
-void CasilleroTransitable::cambiar_dato(string dato) {
-    Parser parser = Parser(dato);
-    this->material = parser.crear_material();
+void CasilleroTransitable::cambiar_dato(Objeto * material) {
+    this->dato = material;
 }

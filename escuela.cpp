@@ -4,4 +4,8 @@
 
 #include "escuela.h"
 
+Escuela::Escuela() : Edificio(ESCUELA) {
+    this->cantidadTotal++;
+}
+
 int Escuela::cantidadTotal = 0;

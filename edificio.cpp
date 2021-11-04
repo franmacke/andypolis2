@@ -5,6 +5,12 @@ Edificio::Edificio() {
     this->nombre_edificio = "";
 }
 
+Edificio::Edificio(string identificador) : Objeto (identificador) { 
+    this->nombre_edificio = "";
+    cout << "Constructor: " << identificador << endl;
+}
+
+
 Edificio::Edificio(string nombre, int piedra, int madera, int metal, int cantidad_permitidos) {
     this->nombre_edificio = nombre;
     this->madera_minima = madera;

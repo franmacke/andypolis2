@@ -4,4 +4,8 @@
 
 #include "fabrica.h"
 
+Fabrica::Fabrica() : Edificio(FABRICA) {
+    this->cantidadTotal++;
+}
+
 int Fabrica::cantidadTotal = 0;

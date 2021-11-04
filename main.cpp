@@ -10,6 +10,8 @@ int main() {
     Juego juego;
     Materiales * lista_materiales = datos.leer_materiales();
     Mapa mapa = datos.leer_mapa();
+
+    datos.procesarArchivoEdificios(mapa);
     // Ciudad * edificios = datos.leer_edificios();
 
     // DESCOMENTAR PARA PROBAR

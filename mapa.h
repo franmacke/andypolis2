@@ -3,8 +3,7 @@
 
 #include <iostream>
 #include "coordenada.h"
-#include "casillero.h"
-
+#include "parser.h"
 
 using namespace std;
 
@@ -13,7 +12,7 @@ typedef Casillero* Dato;
 class Mapa {
     private:
     int fila, columna;
-    Casillero casilleros[8][10]; //FALTA HACER DINAMICO
+    Dato casilleros[8][10]; //FALTA HACER DINAMICO
     // Dato **mapa;
 
 
@@ -22,7 +21,7 @@ class Mapa {
     void cargar_casillero(string dato, Coordenada coordenada);
     void mostrar();
 
-    Casillero obtener(int x, int y);
+    Dato obtener(int x, int y);
 
     bool estaVacio(int fila, int columna);
 

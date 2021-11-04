@@ -2,7 +2,6 @@
 #define PARSER_H
 
 #include <iostream>
-#include "casillero.h"
 #include "casilleroTransitable.h"
 #include "casilleroIntransitable.h"
 #include "casilleroInaccesible.h"
@@ -12,6 +11,8 @@
 #include "fabrica.h"
 #include "obelisco.h"
 #include "planeta.h"
+#include "material.h"
+#include "objeto.h"
 
 using namespace std;
 
@@ -29,8 +30,9 @@ class Parser {
     bool es_inaccesible();
     bool es_transitable();
     bool es_construible();
-    Edificio * crear_edificio();
-    MaterialRecogible * crear_material();
+    // Objeto * crear_edificio();
+    // MaterialRecogible * crear_material();
+    Objeto * crear_dato();
 };
 
 

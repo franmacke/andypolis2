@@ -1,8 +1,7 @@
 #include "casillero.h"
 
-
 Casillero::Casillero() {
-    this->identificador = "";
+    this->identificador = " ";
 }
 
 bool Casillero::vacio() {
@@ -15,7 +14,12 @@ Casillero::Casillero(string idenficador) {
 }
 
 string Casillero::obtenerId() {
-    return identificador;
+    if (dato != 0) {
+        string datost = dato->id();
+        return datost;
+    } else {
+        return identificador;
+    }
 }
 
 
