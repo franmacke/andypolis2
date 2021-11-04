@@ -7,7 +7,6 @@ Edificio::Edificio() {
 
 Edificio::Edificio(string identificador) : Objeto (identificador) { 
     this->nombre_edificio = "";
-    cout << "Constructor: " << identificador << endl;
 }
 
 

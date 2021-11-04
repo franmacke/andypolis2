@@ -9,8 +9,6 @@
 
 class Mina : public Edificio {
 protected:
-    string identificador = "M";
-
     static int cantidadTotal;
 
 public:

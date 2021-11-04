@@ -1,4 +1,4 @@
-#include "casilleroIntransitable.h"
+#include "casilleroConstruible.h"
 
 CasilleroIntransitable::CasilleroIntransitable() {
     this->identificador = "T";

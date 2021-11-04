@@ -63,7 +63,6 @@ bool Parser::es_inaccesible() {
 Objeto * Parser::crear_dato() {
     Objeto * objeto;
 
-    cout << tipo_casillero() << endl;
     if (tipo_casillero() == "mina") {
         objeto = new Mina();
     } else if (tipo_casillero() == "aserradero") {
@@ -74,7 +73,7 @@ Objeto * Parser::crear_dato() {
         objeto = new Fabrica();
     } else if (tipo_casillero() == "obelisco") {
         objeto = new Obelisco();
-    } else if (tipo_casillero() == "planta electrica") {
+    } else if (tipo_casillero() == "planta") {
         objeto = new Planeta();
     } else if (tipo_casillero() == "madera") {
         objeto = new MaterialRecogible("madera", cantidad_entrada());
@@ -84,7 +83,6 @@ Objeto * Parser::crear_dato() {
         objeto = new MaterialRecogible("piedra", cantidad_entrada());
     }
 
-    objeto->setear_id(tipo_casillero());
     return objeto;
 }
 

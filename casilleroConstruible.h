@@ -1,5 +1,5 @@
-#ifndef CASILLERO_INTRANSITABLE_H
-#define CASILLERO_INTRANSITABLE_H
+#ifndef CASILLERO_CONSTRUIBLE_H
+#define CASILLERO_CONSTRUIBLE_H
 
 #include <iostream>
 #include "casillero.h"

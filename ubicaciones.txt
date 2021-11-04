@@ -1,3 +1,5 @@
-O (2, 3)
-M (4, 6)
-W (4, 7)
+obelisco (2, 3)
+mina (4, 7)
+aserradero (4, 7)
+escuela (5, 5)
+planta (3, 3)

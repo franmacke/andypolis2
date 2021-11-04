@@ -12,7 +12,7 @@ protected:
     static int cantidadTotal;
 
 public:
-    Escuela() {cantidadTotal++;}
+    Escuela();
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas

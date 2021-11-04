@@ -14,7 +14,7 @@ protected:
     static int cantidadTotal;
 
 public:
-    Aserradero(){ cantidadTotal++;}//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
+    Aserradero();//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
 
     static int obtenerTotal(){return cantidadTotal;} //aca obtengo la cantidad total de aserradero
 
