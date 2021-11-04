@@ -86,6 +86,8 @@ Objeto * Parser::crear_dato() {
     return objeto;
 }
 
+
+
 // MaterialRecogible * Parser::crear_material() {
 //     MaterialRecogible * material;
    

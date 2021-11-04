@@ -50,7 +50,7 @@ Ciudad * Archivo::leer_edificios() {
 
 void Archivo::procesarArchivoEdificios(Mapa &mapa) {
 
-    // Dato nuevoEdificio;
+    Dato nuevoEdificio;
     string nombre, fila, columna, cant, basura;
 
     fstream archivo;
@@ -67,9 +67,12 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
         int filas = stoi(fila);
         int columnas = stoi(fila);
 
-        mapa.alta(nombre, filas, columnas);        
+        nuevoEdificio = crearEdificio(nombre);
+        mapa.alta(nuevoEdificio, filas, columnas);
 
     }
+    nuevoEdificio = nullptr;
+    delete nuevoEdificio;
     cerrar(archivo);
 }
 
@@ -112,9 +115,7 @@ Materiales * Archivo::leer_materiales() {
  
 // }
 
-void Archivo::procesarArchivoMapa() {
 
-}
 
 Mapa Archivo::leer_mapa() {
     fstream archivo;
@@ -148,4 +149,86 @@ Mapa Archivo::leer_mapa() {
     
     cerrar(archivo);
     return mapa;
+}
+
+void Archivo::procesarArchivoMapa(Mapa& mapa) {
+    fstream archivo;
+    abrir(archivo, PATH_MAPA);
+
+    Dato nuevoObjeto;
+    string filas, columnas, tipoCasillero;
+    int fila, columna;
+
+    getline(archivo, filas, ESPACIO);
+    getline(archivo, columnas);
+
+    cout << "FILAS: " << filas << endl;
+    cout << "COLUMNAS: " << columnas << endl;
+
+    //fila = stoi(filas);
+    //columna = stoi(columnas);
+
+    fila = mapa.filaMapa();
+    columna = mapa.columnaMapa();
+
+    for (int i = 0; i < fila; i++) {
+        for (int j = 0; j < columna; j++) {
+            if (j != columna - 1) {
+                getline(archivo, tipoCasillero, ESPACIO);
+            } else {
+                getline(archivo, tipoCasillero);
+            }
+            // cout << casillero << " ";
+            //Coordenada coordenadas(i,j);
+            //mapa.alta(casillero, i, j);
+            mapa.setearMapa(tipoCasillero, i, j);
+
+
+        }
+    }
+}
+
+int Archivo::leerFilas()  {
+    fstream archivo;
+    abrir(archivo, PATH_MAPA);
+    string fila;
+    int x = 0;
+    getline(archivo, fila, ' ');
+    x = stoi(fila, nullptr);
+    return x;
+
+}
+
+int Archivo::leerColumnas() {
+    fstream archivo;
+    abrir(archivo, PATH_MAPA);
+    string columna, basura;
+    int y = 0;
+    archivo >> basura;
+    archivo >> columna;
+    //getline(archivo, columna);
+    y = stoi(columna, nullptr);
+    return y;
+}
+
+Dato Archivo::crearEdificio(string &nombre) {
+
+        Dato nuevo;
+
+        if (nombre == "mina") {
+            nuevo = new Mina();
+        } else if (nombre == "aserradero") {
+            nuevo = new Aserradero();
+        } else if (nombre == "escuela") {
+            nuevo = new Escuela();
+        } else if (nombre == "fabrica") {
+            nuevo = new Fabrica();
+        } else if (nombre == "obelisco") {
+            nuevo = new Obelisco();
+        } else if (nombre == "planta") {
+            nuevo = new Planeta();
+        }
+
+        return nuevo;
+
 }

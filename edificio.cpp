@@ -1,15 +1,15 @@
 #include "edificio.h"
 
-
+/*
 Edificio::Edificio() { 
     this->nombre_edificio = "";
 }
 
-Edificio::Edificio(string identificador) : Objeto (identificador) { 
+Edificio::Edificio(string identificador) : Objeto (identificador) {
     this->nombre_edificio = "";
-}
+}*/
 
-
+/*
 Edificio::Edificio(string nombre, int piedra, int madera, int metal, int cantidad_permitidos) {
     this->nombre_edificio = nombre;
     this->madera_minima = madera;
@@ -50,7 +50,9 @@ void Edificio::construir() {
 void Edificio::destruir() {
     cantidad_edificios--;
 }
+*/
 
+/*
 void Edificio::mostrar() {
     cout << "--------------" << endl;
     cout << "nombre: " << nombre() << endl;
@@ -60,7 +62,7 @@ void Edificio::mostrar() {
     cout << "piedra: " << piedra() << endl;
     cout << "permitidos: " << maxima_cantidad() << endl;
 }
-
+*/
 // void Edificio::ubicar(Coordenada ubicacion) {
 //     coordenadas_edificio.x() = ubicacion.x();
 //     coordenadas_edificio.y() = ubicacion.y();

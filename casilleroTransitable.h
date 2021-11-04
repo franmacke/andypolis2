@@ -5,7 +5,7 @@
 #ifndef CASILLERO_TRANSITABLE_H
 #define CASILLERO_TRANSITABLE_H
 #include "casillero.h"
-#include "material.h"
+//#include "material.h"
 
 class CasilleroTransitable : public Casillero {
     protected:

@@ -33,6 +33,7 @@ class Parser {
     // Objeto * crear_edificio();
     // MaterialRecogible * crear_material();
     Objeto * crear_dato();
+
 };
 
 

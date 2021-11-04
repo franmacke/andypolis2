@@ -8,8 +8,18 @@ using namespace std;
 int main() {
     Archivo datos;
     Juego juego;
-    Materiales * lista_materiales = datos.leer_materiales();
-    Mapa mapa = datos.leer_mapa();
+    int filas, columnas;
+    //Materiales * lista_materiales = datos.leer_materiales();
+    //Mapa mapa = datos.leer_mapa();
+
+    filas = datos.leerFilas();
+    columnas = datos.leerColumnas();
+
+    Mapa mapa(filas, columnas);//aca creo una mapa con todos los casilleros como null
+
+    datos.procesarArchivoMapa(mapa);
+
+
 
     datos.procesarArchivoEdificios(mapa);
     // Ciudad * edificios = datos.leer_edificios();

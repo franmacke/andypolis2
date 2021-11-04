@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "casillero.h"
-#include "edificio.h"
+//#include "edificio.h"
 
 using namespace std;
 

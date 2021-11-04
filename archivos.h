@@ -19,14 +19,23 @@ class Archivo {
     void cerrar(fstream &archivo);
     Ciudad * leer_edificios();
 
+    // PRE: -
+    // POS: devuelve la cantidad de filas indicadas en el .txt
+    int leerFilas();
+
+    // PRE: -
+    // POS: devuelve la cantidad de columnas indicadas en el .txt
+    int leerColumnas();
+
     void procesarArchivoEdificios(Mapa& mapa);
     Materiales * leer_materiales();
     Coordenada * leer_ubicaciones();
     Mapa leer_mapa();
-    void procesarArchivoMapa();
+    void leerMapa(Mapa& mapa);
+    void procesarArchivoMapa(Mapa& mapa);
 
 private:
-    Dato crearEdificio(string& nombre, string cant, string fila, string columna);
+    Dato crearEdificio(string& nombre);
 
 
 };

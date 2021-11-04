@@ -1,5 +1,5 @@
 obelisco (2, 3)
-mina (4, 7)
+mina (4, 6)
 aserradero (4, 7)
 escuela (5, 5)
 planta (3, 3)
