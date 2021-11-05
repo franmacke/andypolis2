@@ -14,6 +14,9 @@ class CasilleroInaccesible : public Casillero {
     //CasilleroInaccesible();
     //void cambiar_dato(Objeto * dato);
     void mostrarEnMapa(){cout << "L";}// estaria bueno en colores en vez de una letra
+
+    void agregarEdificio(Edificio* edificio){}
+
 };
 
 

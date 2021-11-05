@@ -13,3 +13,11 @@ void CasilleroConstruible::cambiar_dato(Objeto * dato) {
     // this->identificador = dato->id();
 }
 */
+
+void CasilleroConstruible::mostrarEnMapa() {
+    if (this->edificio == nullptr){
+        cout << "T";
+    } else{
+        this->edificio->mostrarEnMapa();
+    }
+}

@@ -21,7 +21,7 @@ int main() {
 
 
 
-    //datos.procesarArchivoEdificios(mapa);
+    datos.procesarArchivoEdificios(mapa);
     // Ciudad * edificios = datos.leer_edificios();
 
     // DESCOMENTAR PARA PROBAR

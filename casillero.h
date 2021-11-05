@@ -23,6 +23,9 @@ public:
         //string obtenerId();
         string obtenerTC(); //TC: tipoCasillero
         bool vacio();
+
+        virtual void agregarEdificio(Edificio* edificio) = 0;//virtual void es una funcion q si o si todas las hijas tienen q tener la funcion?
+
         virtual void mostrarEnMapa() = 0;
         //virtual void cambiar_dato(Objeto * dato) = 0;
 

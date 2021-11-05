@@ -11,11 +11,11 @@ Mapa::Mapa(int fila, int columna) {
         }
     }
 }
-
+/*
 Dato Mapa::obtener(int fila, int columna) {
     return casilleros[fila][columna];
 }
-
+*/
 Dato Mapa::obtenerDato(int fila, int columna) {
     return (mapa[fila][columna]);
 }
@@ -30,10 +30,12 @@ void Mapa::alta(Dato dato, int fila, int columna) {
     mapa[fila][columna] = dato;
 
 }
-
+/*
 void Mapa::altaEdificio(Edificio *edificio, int fila, int columna) {
 
-}
+    mapa[fila][columna].
+
+}*/
 
 /*
 void Mapa::setearMapa(string dato, int fila, int columna) {
@@ -54,7 +56,7 @@ void Mapa::mostrar() {
             //cout << casilleros[i][j]->obtenerId() << " ";
             //cout << obtenerDato(i,j)->obtenerId() << " ";
             obtenerDato(i,j)->mostrarEnMapa();
-            cout << " |";
+            cout << " | ";
         }
         cout << endl;
     }

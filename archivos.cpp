@@ -51,24 +51,25 @@ Ciudad * Archivo::leer_edificios() {
 void Archivo::procesarArchivoEdificios(Mapa &mapa) {
 
     Edificio* nuevoEdificio;
-    string nombre, fila, columna, cant, basura;
+    string nombre, fila, columna, basura;
 
     fstream archivo;
     abrir(archivo, PATH_UBICACIONES);
 
     while (getline(archivo, nombre, ' ')) {
 
-        getline(archivo, cant, '(');
+        getline(archivo, basura, '(');
         getline(archivo, fila, ',');
         getline(archivo, basura, ESPACIO);
         getline(archivo, columna, ')');
         getline(archivo, basura);
 
-        int filas = stoi(fila);
-        int columnas = stoi(fila);
+        int filas = stoi(fila) - 1;
+        int columnas = stoi(columna) - 1;
 
         nuevoEdificio = crearEdificio(nombre);
         //mapa.alta(*nuevoEdificio, filas, columnas);
+        mapa.obtenerDato(filas, columnas)->agregarEdificio(nuevoEdificio);
 
     }
     nuevoEdificio = nullptr;
@@ -239,9 +240,9 @@ Dato Archivo::crearCasillero(string &nombre) {
 
     Dato nuevo;
     if (nombre == "C") {
-        nuevo = new CasilleroConstruible();
-    } else if (nombre == "T") {
         nuevo = new CasilleroTransitable();
+    } else if (nombre == "T") {
+        nuevo = new CasilleroConstruible();
     } else if (nombre == "L") {
         nuevo = new CasilleroInaccesible();
     }

@@ -16,7 +16,7 @@ typedef Casillero* Dato;
 class Mapa {
     private:
     int fila, columna;
-    Dato casilleros[8][10]; //FALTA HACER DINAMICO
+    //Dato casilleros[8][10]; //FALTA HACER DINAMICO
     Dato **mapa;
 
 
@@ -26,7 +26,7 @@ class Mapa {
 
     void alta(Dato dato, int fila, int columna);
 
-    void altaEdificio(Edificio* edificio, int fila, int columna);
+    //void altaEdificio(Edificio* edificio, int fila, int columna);
 
     void mostrar();
 

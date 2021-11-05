@@ -14,7 +14,9 @@ class CasilleroTransitable : public Casillero {
     public:
     //CasilleroTransitable();
     //void cambiar_dato(Objeto * dato);
-    void mostrarEnMapa(){cout << "T";}// estaria bueno en colores en vez de una letra
+
+    void agregarEdificio(Edificio* edificio){}
+    void mostrarEnMapa(){cout << "C";}// estaria bueno en colores en vez de una letra
 };
 
 
