@@ -7,12 +7,12 @@
 #include "edificio.h"
 
 class Escuela : public Edificio {
-protected:
-    string identificador = "E";
+private:
+    //string identificador;
     static int cantidadTotal;
 
 public:
-    Escuela();
+    Escuela(){ this->nombre = "escuela"; }
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
@@ -22,7 +22,7 @@ public:
     // POS: resta uno a la cantidad total
     void restarTotal(){cantidadTotal--; }
 
-    void mostrarEnMapa(){cout << "E ";}
+    void mostrarEnMapa(){cout << "E";}
 
 };
 

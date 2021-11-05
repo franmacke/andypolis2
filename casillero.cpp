@@ -1,5 +1,5 @@
 #include "casillero.h"
-
+/*
 Casillero::Casillero() {
     this->identificador = " ";
     this->tipoCasillero = " ";
@@ -24,7 +24,7 @@ string Casillero::obtenerId() {
         return identificador;
     }
 }
-
+*/
 string Casillero::obtenerTC() {
     return this->tipoCasillero;
 }

@@ -19,12 +19,12 @@ string Parser::tipo_casillero() {
     return entrada;
 }
 
-
+/*
 Casillero * Parser::procesar_entrada() {
     Casillero * casillero;
 
     if (es_construible()) {
-        casillero = new CasilleroIntransitable();
+        casillero = new CasilleroConstruible();
     } else if (es_transitable()) {
         casillero = new CasilleroTransitable();
     } else if (es_inaccesible()) {
@@ -33,7 +33,7 @@ Casillero * Parser::procesar_entrada() {
 
     return casillero;
 }
-
+*/
 bool Parser::es_construible() {
     bool respuesta = false;
     
@@ -59,7 +59,7 @@ bool Parser::es_inaccesible() {
     } 
     return respuesta;
 }
-
+/*
 Objeto * Parser::crear_dato() {
     Objeto * objeto;
 
@@ -86,7 +86,7 @@ Objeto * Parser::crear_dato() {
     return objeto;
 }
 
-
+*/
 
 // MaterialRecogible * Parser::crear_material() {
 //     MaterialRecogible * material;

@@ -3,12 +3,16 @@
 
 #include <iostream>
 #include <fstream>
-// #include "edificio.h"
+#include "edificio.h"
 #include "ciudad.h"
 #include "material.h"
-// #include "materiales.h"
+#include "materiales.h"
 #include "mapa.h"
-#include "interfaz.h"
+#include "casillero.h"
+#include "casilleroConstruible.h"
+#include "casilleroInaccesible.h"
+#include "casilleroTransitable.h"
+//#include "interfaz.h"
 #include "parser.h"
 
 using namespace std;
@@ -17,7 +21,7 @@ class Archivo {
     public:
     void abrir(fstream &archivo, string path);
     void cerrar(fstream &archivo);
-    Ciudad * leer_edificios();
+    //Ciudad * leer_edificios();
 
     // PRE: -
     // POS: devuelve la cantidad de filas indicadas en el .txt
@@ -35,7 +39,8 @@ class Archivo {
     void procesarArchivoMapa(Mapa& mapa);
 
 private:
-    Dato crearEdificio(string& nombre);
+    Edificio* crearEdificio(string& nombre);
+    Dato crearCasillero(string& nombre);
 
 
 };

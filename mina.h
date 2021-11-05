@@ -12,17 +12,17 @@ protected:
     static int cantidadTotal;
 
 public:
-    Mina();
+    Mina(){ this->nombre = "mina";}
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
-    static int obtenerTotal();
+    static int obtenerTotal(){return cantidadTotal;};
 
     // PRE: -
     // POS: resta uno a la cantidad total
     void restarTotal(){cantidadTotal--; }
 
-    void mostrarEnMapa(){cout << "M ";}
+    void mostrarEnMapa(){cout << "M";}
 
 };
 

@@ -4,6 +4,7 @@
 
 #include "casilleroTransitable.h"
 
+/*
 CasilleroTransitable::CasilleroTransitable() {
     this->identificador = "C";
     this->dato = 0;
@@ -11,4 +12,4 @@ CasilleroTransitable::CasilleroTransitable() {
 
 void CasilleroTransitable::cambiar_dato(Objeto * material) {
     this->dato = material;
-}
+}*/

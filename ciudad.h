@@ -6,7 +6,7 @@
 #include "utilidad.h"
 #include "materiales.h"
 #include "inventario.h"
-
+/*
 class Ciudad {
     private:
     Edificio * edificios;
@@ -30,5 +30,5 @@ class Ciudad {
     string ingresar_nombre();
     void liberar_memoria();
 };
-
+*/
 #endif

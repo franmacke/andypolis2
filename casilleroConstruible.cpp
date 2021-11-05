@@ -1,11 +1,15 @@
 #include "casilleroConstruible.h"
 
-CasilleroIntransitable::CasilleroIntransitable() {
+/*
+CasilleroConstruible::CasilleroConstruible() {
     this->identificador = "T";
     this->dato = 0;
+    //this->edificio =
 }
-
-void CasilleroIntransitable::cambiar_dato(Objeto * dato) {
+*/
+/*
+void CasilleroConstruible::cambiar_dato(Objeto * dato) {
     this->dato = dato;
     // this->identificador = dato->id();
 }
+*/

@@ -4,9 +4,10 @@
 
 #include "obelisco.h"
 
+/*
 Obelisco::Obelisco() : Edificio(OBELISCO) {
     this->cantidadTotal++;
-}
+}*/
 
 int Obelisco::cantidadTotal = 0;
 

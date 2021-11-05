@@ -4,6 +4,10 @@
 #include <iostream>
 #include "coordenada.h"
 #include "parser.h"
+#include "casillero.h"
+#include "casilleroConstruible.h"
+#include "casilleroInaccesible.h"
+#include "casilleroTransitable.h"
 
 using namespace std;
 
@@ -18,9 +22,11 @@ class Mapa {
 
     public:
     Mapa(int fila, int columna);
-    void cargar_casillero(string dato, Coordenada coordenada);
+    //void cargar_casillero(string dato, Coordenada coordenada);
 
     void alta(Dato dato, int fila, int columna);
+
+    void altaEdificio(Edificio* edificio, int fila, int columna);
 
     void mostrar();
 
@@ -28,13 +34,13 @@ class Mapa {
 
     Dato obtenerDato(int fila, int columna);
 
-    bool estaVacio(int fila, int columna);
+    //bool estaVacio(int fila, int columna);
 
     void baja(int fila, int columna);
 
-    void alta(string dato, int fila, int columna);
+    //void alta(string dato, int fila, int columna);
 
-    void setearMapa(string dato, int fila, int columna);
+    //void setearMapa(string dato, int fila, int columna);
 
     int filaMapa(){return fila;}
 

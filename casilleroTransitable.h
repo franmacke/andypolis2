@@ -12,9 +12,9 @@ class CasilleroTransitable : public Casillero {
     Objeto * material; 
 
     public:
-    CasilleroTransitable();
-    void cambiar_dato(Objeto * dato);
-    // virtual void mostrarEnMapa(){cout << "C ";}// estaria bueno en colores en vez de una letra
+    //CasilleroTransitable();
+    //void cambiar_dato(Objeto * dato);
+    void mostrarEnMapa(){cout << "T";}// estaria bueno en colores en vez de una letra
 };
 
 

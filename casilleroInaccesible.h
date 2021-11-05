@@ -11,9 +11,9 @@ class CasilleroInaccesible : public Casillero {
     Objeto * dato;
     
     public:
-    CasilleroInaccesible();
-    void cambiar_dato(Objeto * dato);
-    // virtual void mostrarEnMapa(){cout << "C ";}// estaria bueno en colores en vez de una letra
+    //CasilleroInaccesible();
+    //void cambiar_dato(Objeto * dato);
+    void mostrarEnMapa(){cout << "L";}// estaria bueno en colores en vez de una letra
 };
 
 

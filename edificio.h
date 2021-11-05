@@ -2,9 +2,10 @@
 #define EDIFICIO_H
 
 #include <iostream>
-#include "coordenada.h"
-#include "objeto.h"
-#include "casilleroConstruible.h"
+//#include "coordenada.h"
+//#include "objeto.h"
+//#include "casilleroConstruible.h"
+#include "utilidad.h"
 
 const string OBELISCO = "O";
 const string FABRICA = "F";
@@ -15,25 +16,27 @@ const string ESCUELA = "E";
 
 using namespace std;
 
-class Edificio : public CasilleroIntransitable/*public Objeto*/ {
-    protected:
-    //string nombre_edificio;
+class Edificio /* : public Objeto*/ {
+protected:
+    string nombre;
     //int cantidad_edificios = 0;
     //int cantidad_permitidos;
     //int madera_minima;
     //int piedra_minima;
     //int metal_minimo;
     //string identificador;
-    static int cantidadTotal;
-    
-    // Coordenada coordenadas_edificio 
+    //static int cantidadTotal;
 
-    public:
+public:
     //Edificio();
     //Edificio(string identificador);
     //Edificio(string nombre, int piedra, int madera, int metal, int cantidad_permitidos);
     //string nombre();
+    string obtenerNombre(){ return this->nombre;}
     //int cantidad();
+    virtual void mostrarEnMapa() = 0;
+
+
     //int maxima_cantidad();
     //int madera();
     //int piedra();
@@ -45,7 +48,9 @@ class Edificio : public CasilleroIntransitable/*public Objeto*/ {
     // void ubicar(Coordenada ubicacion);
     // Coordenada coordenadas();
 
-    // virtual void mostrarEnMapas() = 0;
+
+    // Coordenada coordenadas_edificio
+
 };
 
 

@@ -3,13 +3,14 @@
 //
 
 #include "mina.h"
-
+/*
 Mina::Mina() : Edificio(MINA) {
     this->cantidadTotal++;
-}
+}*/
 
 int Mina::cantidadTotal = 0;
 
+/*
 int Mina::obtenerTotal() {
     return cantidadTotal;
-}
+}*/

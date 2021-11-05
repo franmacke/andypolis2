@@ -4,10 +4,11 @@
 
 #include "planeta.h"
 
+/*
 Planeta::Planeta() : Edificio(PLANTA) {
     this->cantidadTotal++;
 }
-
+*/
 int Planeta::cantidadTotal = 0;
 
 int Planeta::obtenerTotal() {

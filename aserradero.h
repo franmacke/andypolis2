@@ -10,11 +10,11 @@
 
 class Aserradero : public Edificio {
 protected:
-    string identificador = "A";
+    //string identificador = "A";
     static int cantidadTotal;
 
 public:
-    Aserradero();//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
+    Aserradero(){ this->nombre = "aserradero";}//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
 
     static int obtenerTotal(){return cantidadTotal;} //aca obtengo la cantidad total de aserradero
 
@@ -24,7 +24,7 @@ public:
 
     // PRE: -
     // POS: imprime por pantalla la letra "A"
-    void mostrarEnMapa(){cout << "A ";}
+    void mostrarEnMapa(){cout << "A";}
 };
 
 

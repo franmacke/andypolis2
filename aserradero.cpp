@@ -3,9 +3,9 @@
 //
 
 #include "aserradero.h"
-
+/*
 Aserradero::Aserradero() : Edificio(ASERRADERO) {
     this->cantidadTotal++;
-}
+}*/
 
 int Aserradero::cantidadTotal = 0;

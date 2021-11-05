@@ -50,7 +50,7 @@ Ciudad * Archivo::leer_edificios() {
 
 void Archivo::procesarArchivoEdificios(Mapa &mapa) {
 
-    Dato nuevoEdificio;
+    Edificio* nuevoEdificio;
     string nombre, fila, columna, cant, basura;
 
     fstream archivo;
@@ -68,7 +68,7 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
         int columnas = stoi(fila);
 
         nuevoEdificio = crearEdificio(nombre);
-        mapa.alta(nuevoEdificio, filas, columnas);
+        //mapa.alta(*nuevoEdificio, filas, columnas);
 
     }
     nuevoEdificio = nullptr;
@@ -116,7 +116,7 @@ Materiales * Archivo::leer_materiales() {
 // }
 
 
-
+/*
 Mapa Archivo::leer_mapa() {
     fstream archivo;
     abrir(archivo, PATH_MAPA);
@@ -150,12 +150,12 @@ Mapa Archivo::leer_mapa() {
     cerrar(archivo);
     return mapa;
 }
-
+*/
 void Archivo::procesarArchivoMapa(Mapa& mapa) {
     fstream archivo;
     abrir(archivo, PATH_MAPA);
 
-    Dato nuevoObjeto;
+    Dato nuevoCasillero;
     string filas, columnas, tipoCasillero;
     int fila, columna;
 
@@ -181,7 +181,9 @@ void Archivo::procesarArchivoMapa(Mapa& mapa) {
             // cout << casillero << " ";
             //Coordenada coordenadas(i,j);
             //mapa.alta(casillero, i, j);
-            mapa.setearMapa(tipoCasillero, i, j);
+            nuevoCasillero = crearCasillero(tipoCasillero);
+            //mapa.setearMapa(tipoCasillero, i, j);
+            mapa.alta(nuevoCasillero, i, j);
 
 
         }
@@ -211,9 +213,9 @@ int Archivo::leerColumnas() {
     return y;
 }
 
-Dato Archivo::crearEdificio(string &nombre) {
+Edificio* Archivo::crearEdificio(string &nombre) {
 
-        Dato nuevo;
+        Edificio* nuevo;
 
         if (nombre == "mina") {
             nuevo = new Mina();
@@ -230,5 +232,20 @@ Dato Archivo::crearEdificio(string &nombre) {
         }
 
         return nuevo;
+
+}
+
+Dato Archivo::crearCasillero(string &nombre) {
+
+    Dato nuevo;
+    if (nombre == "C") {
+        nuevo = new CasilleroConstruible();
+    } else if (nombre == "T") {
+        nuevo = new CasilleroTransitable();
+    } else if (nombre == "L") {
+        nuevo = new CasilleroInaccesible();
+    }
+
+    return nuevo;
 
 }

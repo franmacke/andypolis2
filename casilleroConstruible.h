@@ -3,16 +3,24 @@
 
 #include <iostream>
 #include "casillero.h"
-//#include "edificio.h"
+#include "edificio.h"
+
 
 using namespace std;
 
-class CasilleroIntransitable : public Casillero {
+class CasilleroConstruible : public Casillero {
 
-    public:
-    CasilleroIntransitable();
-    void cambiar_dato(Objeto * dato);
-    void convertir(string dato);
+private:
+    Edificio* edificio;
+
+
+public:
+    //CasilleroConstruible();
+
+    void mostrarEnMapa(){cout << "C";}
+
+    //void cambiar_dato(Objeto * dato);
+    //void convertir(string dato);
 
 };
 

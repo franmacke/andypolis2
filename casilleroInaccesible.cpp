@@ -1,5 +1,6 @@
 #include "casilleroInaccesible.h"
 
+/*
 CasilleroInaccesible::CasilleroInaccesible() {
     this->identificador = "L";
     this->dato = 0;
@@ -8,3 +9,4 @@ CasilleroInaccesible::CasilleroInaccesible() {
 void CasilleroInaccesible::cambiar_dato(Objeto * objeto) {
     
 }
+ */

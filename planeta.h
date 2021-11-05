@@ -9,12 +9,12 @@
 
 class Planeta : public Edificio {
 protected:
-    string identificador = "P";
+    //string identificador = "P";
 
     static int cantidadTotal;
 
 public:
-    Planeta();
+    Planeta(){ this->nombre = "planta";};
 
     // PRE: -
     // POS: resta uno a la cantidad total
@@ -25,7 +25,7 @@ public:
     // POS: imprime por pantalla la letra "E"
     void mostrarSimbolo();
 
-    void mostrarEnMapa(){cout << "P ";}
+    void mostrarEnMapa(){cout << "P";}
 
 };
 

@@ -1,6 +1,6 @@
 #include "ciudad.h"
 
-
+/*
 Ciudad::Ciudad() {
     this->cantidad = 0;
 }
@@ -120,3 +120,4 @@ void Ciudad::agregar(Edificio edificio_nuevo) {
 void Ciudad::liberar_memoria() {
     delete [] edificios;
 }
+ */

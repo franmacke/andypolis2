@@ -7,12 +7,12 @@
 
 class Fabrica : public Edificio {
 protected:
-    string identificador = "A";
+    //string identificador = "A";
 
     static int cantidadTotal;
 
 public:
-    Fabrica();
+    Fabrica(){this->nombre = "fabrica";};
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
@@ -22,7 +22,7 @@ public:
     // POS: resta uno a la cantidad total
     void restarTotal(){cantidadTotal--; }
 
-    void mostrarEnMapa(){cout << "F ";}
+    void mostrarEnMapa(){cout << "F";}
 
 };
 
