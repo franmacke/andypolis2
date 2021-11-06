@@ -34,9 +34,7 @@ int main() {
     // } 
 
     // PARA PROBAR SI LEE BIEN LOS EDIFICIOS
-    for (int i = 0; i < ciudad->cantidadEdificios(); i++) {
-        cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
-    } 
+    
 
     // PARA PROBAR SI LEE BIEN EL MAPA
     mapa.mostrar();

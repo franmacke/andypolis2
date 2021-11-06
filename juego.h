@@ -29,7 +29,9 @@ class Juego {
 
     void demolerEdificio(Mapa& mapa);
 
+    void mostarEdificiosTodos(Ciudad * edificios);
 
+    void mostrarEdificiosConstruidos(Ciudad * edificios);
 
 
 

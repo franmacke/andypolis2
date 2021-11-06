@@ -113,3 +113,23 @@ void Juego::interfazPrincipal(Mapa &mapa) {
         
     }
 }
+
+
+void mostrarEdificiosTodos(Ciudad * edificios) {
+    // Esta hecho feo, solo funcional
+    for (int i = 0; i < edificios->cantidadEdificios(); i++) {
+
+        cout << edificios->obtenerEdificio(i)->obtenerNombre() << ": " << edificios->obtenerEdificio(i)->obtenerTotal() << endl;
+    } 
+}
+
+void mostrarEdificiosConstruidos(Ciudad * edificios) {
+    // Esta hecho feo, solo funcional
+    for (int i = 0; i < edificios->cantidadEdificios(); i++) {
+        Edificio * edificio =  edificios->obtenerEdificio(i);
+
+        if (edificio->obtenerTotal() != 0) {
+            cout << edificio->obtenerNombre() << ": " << edificio->obtenerTotal() << endl;
+        }
+    } 
+}
