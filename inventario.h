@@ -6,7 +6,7 @@
 #include "utilidad.h"
 
 using namespace std;
-
+/*
 class Inventario {
     private:
     MaterialInventario * lista_materiales;
@@ -23,5 +23,6 @@ class Inventario {
     int metal();
 
 };
+ */
 
 #endif

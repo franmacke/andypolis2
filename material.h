@@ -3,22 +3,26 @@
 
 #include <iostream>
 #include "objeto.h"
+#include "utilidad.h"
 
 using namespace std;
 
-class Material : public Objeto {
-    protected:
+class Material /*: public Objeto*/ {
+protected:
     string nombre_material;
-    int cantidad_material;
+    //int cantidad_material;
 
-    public:
-    Material();
-    Material(string nombre, int cantidad);
-    string nombre();
-    int cantidad();
-    void mostrar();
+public:
+    //Material();
+    //Material(string nombre, int cantidad);
+    //string nombre();
+    //int cantidad();
+    string obtenerNombre(){return this->nombre_material;}
+
+    virtual void mostrarEnMapa() = 0;
 };
 
+    /*
 class MaterialRecogible : public Material {
     public: 
     MaterialRecogible();
@@ -36,5 +40,6 @@ class MaterialInventario : public Material {
 
 };
 
+     */
 
 #endif

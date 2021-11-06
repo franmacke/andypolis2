@@ -33,6 +33,7 @@ public:
     //Edificio(string nombre, int piedra, int madera, int metal, int cantidad_permitidos);
     //string nombre();
     string obtenerNombre(){ return this->nombre;}
+    int cantNecesariaMadera, cantNecesariPiedra, cantNecesariMetal;
     //int cantidad();
     virtual void mostrarEnMapa() = 0;
 

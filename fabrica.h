@@ -12,7 +12,7 @@ protected:
     static int cantidadTotal;
 
 public:
-    Fabrica(){this->nombre = "fabrica";};
+    Fabrica(){this->nombre = "fabrica"; cantidadTotal++;}
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas

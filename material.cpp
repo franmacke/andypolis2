@@ -1,6 +1,6 @@
 #include "material.h"
 
-
+/*
 Material::Material() { }
 
 Material::Material(string nombre, int cantidad) {
@@ -35,4 +35,4 @@ MaterialRecogible::MaterialRecogible(string nombre, int cantidad) {
     this->nombre_material = nombre;
     this->cantidad_material = cantidad;
 }
-
+*/

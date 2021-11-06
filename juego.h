@@ -11,11 +11,11 @@ class Juego {
     int opcion = 0;
     bool partida;
     Interfaz interfaz;
-    Materiales * materiales;
-    Inventario inventario;
+    //Materiales * materiales;
+    //Inventario inventario;
 
     public:
-    void cargar_archivos();
+    //void cargar_archivos();
     void jugar();
     void mostrarOpciones();
     void pedirOpcion();

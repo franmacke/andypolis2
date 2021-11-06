@@ -12,7 +12,7 @@ protected:
     static int cantidadTotal;
 
 public:
-    Obelisco(){ this->nombre = "obelisco";};
+    Obelisco(){ this->nombre = "obelisco"; cantidadTotal++;};
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas

@@ -10,6 +10,8 @@ int main() {
     Juego juego;
     int filas, columnas;
     //Materiales * lista_materiales = datos.leer_materiales();
+    //crear un vector aparte q contenga las clases materiales. de esa manera se puede acceder alli
+
     //Mapa mapa = datos.leer_mapa();
 
     filas = datos.leerFilas();

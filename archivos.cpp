@@ -78,7 +78,7 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
 }
 
 
-
+/*
 Materiales * Archivo::leer_materiales() {
     fstream archivo;
     abrir(archivo, PATH_MATERIALES);
@@ -97,7 +97,7 @@ Materiales * Archivo::leer_materiales() {
     return lista_materiales;
 }
 
-
+*/
 // Coordenada * Archivo::leer_ubicaciones() {
 //     fstream archivo;
 //     abrir(archivo, PATH_UBICACIONES);

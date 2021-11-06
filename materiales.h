@@ -4,7 +4,7 @@
 #include <iostream>
 #include "material.h"
 #include "utilidad.h"
-
+/*
 using namespace std;
 
 class Materiales {
@@ -24,5 +24,5 @@ class Materiales {
     void agregar(MaterialInventario material_nuevo);
     void liberar_memoria();
 };
-
+*/
 #endif

@@ -1,3 +1,4 @@
+/*
 #include "inventario.h"
 
 Inventario::Inventario() {
@@ -39,3 +40,4 @@ int Inventario::piedra() {
 int Inventario::metal() {
     return buscar("metal").cantidad();
 }
+ */

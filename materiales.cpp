@@ -1,3 +1,4 @@
+/*
 #include "materiales.h"
 
 Materiales::Materiales() {
@@ -71,3 +72,4 @@ void Materiales::agregar(MaterialInventario material_nuevo) {
     lista_materiales = lista_copia;
     cantidad++;
 }
+ */

@@ -12,7 +12,7 @@ private:
     static int cantidadTotal;
 
 public:
-    Escuela(){ this->nombre = "escuela"; }
+    Escuela(){ this->nombre = "escuela"; cantidadTotal++;}
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas

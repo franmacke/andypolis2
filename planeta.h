@@ -14,7 +14,7 @@ protected:
     static int cantidadTotal;
 
 public:
-    Planeta(){ this->nombre = "planta";};
+    Planeta(){ this->nombre = "planta"; cantidadTotal++;};
 
     // PRE: -
     // POS: resta uno a la cantidad total

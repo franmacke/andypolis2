@@ -12,7 +12,7 @@ protected:
     static int cantidadTotal;
 
 public:
-    Mina(){ this->nombre = "mina";}
+    Mina(){ this->nombre = "mina"; cantidadTotal++;}
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas

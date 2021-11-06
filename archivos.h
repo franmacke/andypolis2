@@ -32,7 +32,7 @@ class Archivo {
     int leerColumnas();
 
     void procesarArchivoEdificios(Mapa& mapa);
-    Materiales * leer_materiales();
+    //Materiales * leer_materiales();
     Coordenada * leer_ubicaciones();
     Mapa leer_mapa();
     void leerMapa(Mapa& mapa);
