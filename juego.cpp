@@ -117,8 +117,8 @@ void Juego::interfazPrincipal(Mapa &mapa) {
 
 void mostrarEdificiosTodos(Ciudad * edificios) {
     // Esta hecho feo, solo funcional
+    // PROBANDO 123
     for (int i = 0; i < edificios->cantidadEdificios(); i++) {
-
         cout << edificios->obtenerEdificio(i)->obtenerNombre() << ": " << edificios->obtenerEdificio(i)->obtenerTotal() << endl;
     } 
 }
