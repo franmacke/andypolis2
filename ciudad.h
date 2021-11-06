@@ -6,6 +6,20 @@
 #include "utilidad.h"
 #include "materiales.h"
 #include "inventario.h"
+
+class Ciudad {
+    private:
+    Edificio ** edificios;
+    int cantidad = 0;
+
+    public:
+    int cantidadEdificios();
+    void agregarEdificio(Edificio * nuevo_edificio);
+    void copiarLista(Edificio ** copia_lista);
+    Edificio * obtenerEdificio(int posicion);
+    void liberarMemoria();
+};
+
 /*
 class Ciudad {
     private:

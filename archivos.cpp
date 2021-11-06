@@ -24,12 +24,10 @@ void Archivo::abrir(fstream &archivo, string path) {
 void Archivo::cerrar(fstream &archivo) {
     archivo.close();
 }
-/*
-Ciudad * Archivo::leer_edificios() {
+
+void Archivo::leerArchivoEdificios(Ciudad * edificios) {
     fstream archivo;
     abrir(archivo, PATH_EDIFICIOS);
-
-    Ciudad * edificios = new Ciudad;
 
     string nombre, piedra, madera, metal, cantidad_permitidos;
 
@@ -39,14 +37,15 @@ Ciudad * Archivo::leer_edificios() {
         getline(archivo, metal, ESPACIO);
         getline(archivo, cantidad_permitidos);
 
-        Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
+        // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
 
-        edificios->agregar(edificio);
+        Edificio * nuevo_edificio = crearEdificio(nombre);
+        edificios->agregarEdificio(nuevo_edificio);
+        // edificios->agregar(edificio);
     }
-
-    return edificios;   
+   
 }
-*/
+
 
 void Archivo::procesarArchivoEdificios(Mapa &mapa) {
 

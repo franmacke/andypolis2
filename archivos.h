@@ -37,6 +37,7 @@ class Archivo {
     Mapa leer_mapa();
     void leerMapa(Mapa& mapa);
     void procesarArchivoMapa(Mapa& mapa);
+    void leerArchivoEdificios(Ciudad * edificios);
 
 private:
     Edificio* crearEdificio(string& nombre);

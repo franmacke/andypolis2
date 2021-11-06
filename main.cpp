@@ -9,6 +9,7 @@ int main() {
     Archivo datos;
     Juego juego;
     int filas, columnas;
+    Ciudad * ciudad = new Ciudad;
     //Materiales * lista_materiales = datos.leer_materiales();
     //crear un vector aparte q contenga las clases materiales. de esa manera se puede acceder alli
 
@@ -20,10 +21,8 @@ int main() {
     Mapa mapa(filas, columnas);//aca creo una mapa con todos los casilleros como null
 
     datos.procesarArchivoMapa(mapa);
-
-
-
     datos.procesarArchivoEdificios(mapa);
+    datos.leerArchivoEdificios(ciudad);
     // Ciudad * edificios = datos.leer_edificios();
 
     // DESCOMENTAR PARA PROBAR
@@ -35,9 +34,9 @@ int main() {
     // } 
 
     // PARA PROBAR SI LEE BIEN LOS EDIFICIOS
-    // for (int i = 0; i < edificios->cantidad_edificios(); i++) {
-    //     edificios->obtener(i).mostrar();
-    // } 
+    for (int i = 0; i < ciudad->cantidadEdificios(); i++) {
+        cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
+    } 
 
     // PARA PROBAR SI LEE BIEN EL MAPA
     mapa.mostrar();

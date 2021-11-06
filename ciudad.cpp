@@ -1,5 +1,42 @@
 #include "ciudad.h"
 
+int Ciudad::cantidadEdificios() {
+    return cantidad;
+}
+
+
+void Ciudad::copiarLista(Edificio ** copia) {
+    for (int i = 0; i < cantidadEdificios(); i++) {
+        copia[i] = obtenerEdificio(i);
+    }
+}
+
+Edificio * Ciudad::obtenerEdificio(int posicion) {
+    return edificios[posicion];
+}
+
+
+void Ciudad::agregarEdificio(Edificio * edificio_nuevo) {
+    Edificio ** lista_copia = new Edificio * [cantidadEdificios() + 1];
+    copiarLista(lista_copia);
+    lista_copia[cantidadEdificios()] = edificio_nuevo;
+
+    if (cantidadEdificios() != 0) {
+        liberarMemoria();
+    }
+
+    edificios = lista_copia;
+    cantidad++;
+}
+
+void Ciudad::liberarMemoria() {
+    // for (int i = 0; i < cantidadEdificios(); i++) {
+    //     delete edificios[i];
+    // }
+
+    delete [] edificios;
+}
+
 /*
 Ciudad::Ciudad() {
     this->cantidad = 0;
@@ -11,13 +48,8 @@ Ciudad::Ciudad(Inventario inventario) {
 }
 
 
-int Ciudad::cantidad_edificios() {
-    return cantidad;
-}
 
-Edificio Ciudad::obtener(int posicion) {
-    return edificios[posicion];
-}
+
 
 Edificio Ciudad::buscar(string nombre) {
     int contador = 0;
@@ -98,26 +130,8 @@ string Ciudad::ingresar_nombre() {
     return nombre;
 }
 
-void Ciudad::copiar(Edificio * copia) {
-    for (int i = 0; i < cantidad_edificios(); i++) {
-        copia[i] = obtener(i);
-    }
-}
 
-void Ciudad::agregar(Edificio edificio_nuevo) {
-    Edificio * lista_copia = new Edificio [cantidad_edificios() + 1];
-    copiar(lista_copia);
-    lista_copia[cantidad_edificios()] = edificio_nuevo;
 
-    if (cantidad_edificios() != 0) {
-        liberar_memoria();
-    }
 
-    edificios = lista_copia;
-    cantidad++;
-}
 
-void Ciudad::liberar_memoria() {
-    delete [] edificios;
-}
  */
