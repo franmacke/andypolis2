@@ -36,6 +36,7 @@ public:
     int cantNecesariaMadera, cantNecesariPiedra, cantNecesariMetal;
     //int cantidad();
     virtual void mostrarEnMapa() = 0;
+    virtual int obtenerTotal() = 0;   // Yo lo declararia aca
 
 
     //int maxima_cantidad();

@@ -16,7 +16,7 @@ public:
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
-    static int obtenerTotal(){return cantidadTotal;};
+    /*static*/   int obtenerTotal(){return cantidadTotal;};
 
     // PRE: -
     // POS: resta uno a la cantidad total

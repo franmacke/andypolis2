@@ -17,7 +17,7 @@ protected:
 public:
     Aserradero(){ this->nombre = "aserradero"; cantidadTotal++;}//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
 
-    static int obtenerTotal(){return cantidadTotal;} //aca obtengo la cantidad total de aserradero
+    /*static*/  int obtenerTotal(){return cantidadTotal;} //aca obtengo la cantidad total de aserradero
 
     // PRE: -
     // POS: resta uno a la cantidad total
