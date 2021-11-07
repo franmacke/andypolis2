@@ -10,7 +10,8 @@
 #include "escuela.h"
 #include "fabrica.h"
 #include "obelisco.h"
-#include "planeta.h"
+#include "planta.h"
+#include "yacimiento.h"
 #include "material.h"
 #include "objeto.h"
 

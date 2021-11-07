@@ -1,10 +1,35 @@
 #include "edificio.h"
 
 /*
-Edificio::Edificio() { 
-    this->nombre_edificio = "";
+Edificio::Edificio() {
+    this->nombre = "Edificio";
+    this->nombre = "";
+    this->cantNecesariaMadera = 0;
+    this->cantNecesariMetal = 0;
+    this->cantNecesariPiedra = 0;
+    this->cantPermitido = 0;
+}*/
+
+
+void Edificio::agregarEdificio(Edificio** edificios, Edificio *nuevoEdificio, int tope) {
+    int topeViejo = tope;
+    Edificio ** nuevoVectorEdificios = new Edificio* [topeViejo + 1];
+    for (int i = 0; i < tope; ++i) {
+        nuevoVectorEdificios[i] = edificios[i];
+    }
+    nuevoVectorEdificios[topeViejo] = nuevoEdificio;
+
+    edificios = nuevoVectorEdificios;
+
+
+    /*if (tope != 0)
+        delete[] edificios
+*/
+
 }
 
+
+/*
 Edificio::Edificio(string identificador) : Objeto (identificador) {
     this->nombre_edificio = "";
 }*/

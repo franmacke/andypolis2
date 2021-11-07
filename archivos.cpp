@@ -1,5 +1,6 @@
 #include "archivos.h"
 
+
 const string PATH_MATERIALES = "materiales.txt";
 const string PATH_UBICACIONES = "ubicaciones.txt";
 const string PATH_MAPA = "mapa.txt";
@@ -38,12 +39,51 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
         getline(archivo, cantidad_permitidos);
 
         // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
+        int piedras = stoi(piedra);
+        int maderas = stoi(madera);
+        int metales = stoi(metal);
+        int tope = stoi(cantidad_permitidos);
+        // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
 
-        Edificio * nuevo_edificio = crearEdificio(nombre);
+        Edificio* nuevo_edificio = setearEdificio(nombre, piedras, maderas, metales, tope);
+
+        //Edificio * nuevo_edificio = crearEdificio(nombre);
+
         edificios->agregarEdificio(nuevo_edificio);
         // edificios->agregar(edificio);
     }
    
+}
+
+void Archivo::procesarArchivoDatosEdificios(Edificio** edificios) {
+    fstream archivo;
+    abrir(archivo, PATH_EDIFICIOS);
+
+    string nombre, piedra, madera, metal, cantidad_permitidos;
+    //edificios = new Edificio* [CANTIDAD_TIPOS_EDIFICIOS];
+    int i = 0;
+    while (getline(archivo, nombre, ESPACIO)) {
+        getline(archivo, piedra, ESPACIO);
+        getline(archivo, madera, ESPACIO);
+        getline(archivo, metal, ESPACIO);
+        getline(archivo, cantidad_permitidos);
+
+        int piedras = stoi(piedra);
+        int maderas = stoi(madera);
+        int metales = stoi(metal);
+        int tope = stoi(cantidad_permitidos);
+        // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
+
+        Edificio* nuevo_edificio = setearEdificio(nombre, piedras, maderas, metales, tope);
+
+
+        //*edificios = nuevo_edificio;
+        //cout << edificios[i]->obtenerNombre() << endl;
+        i++;
+
+        //edificios->agregarEdificio(nuevo_edificio);
+        // edificios->agregar(edificio);
+    }
 }
 
 
@@ -228,10 +268,34 @@ Edificio* Archivo::crearEdificio(string &nombre) {
         } else if (nombre == "obelisco") {
             nuevo = new Obelisco();
         } else if (nombre == "planta") {
-            nuevo = new Planeta();
+            nuevo = new Planta();
         }
 
         return nuevo;
+
+}
+
+Edificio* Archivo::setearEdificio(string nombre, int piedra, int madera, int metal, int tope) {
+
+    Edificio* nuevo;
+
+    if (nombre == "mina") {
+        nuevo = new Mina(piedra, madera, metal, tope);
+    } else if (nombre == "aserradero") {
+        nuevo = new Aserradero(piedra, madera, metal, tope);
+    } else if (nombre == "escuela") {
+        nuevo = new Escuela(piedra, madera, metal, tope);
+    } else if (nombre == "yacimiento") {
+        nuevo = new Yacimiento(piedra, madera, metal, tope);
+    } else if (nombre == "fabrica") {
+        nuevo = new Fabrica(piedra, madera, metal, tope);
+    } else if (nombre == "obelisco") {
+        nuevo = new Obelisco(piedra, madera, metal, tope);
+    } else if (nombre == "planta") {
+        nuevo = new Planta(piedra, madera, metal, tope);
+    }
+
+    return nuevo;
 
 }
 

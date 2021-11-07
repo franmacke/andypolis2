@@ -7,6 +7,13 @@
 Mina::Mina() : Edificio(MINA) {
     this->cantidadTotal++;
 }*/
+Mina::Mina(int piedra, int madera, int metal, int cantidadPermitida) {
+    this->nombre = "Mina";
+    this->cantNecesariPiedra = piedra;
+    this->cantNecesariaMadera = madera;
+    this->cantNecesariMetal = metal;
+    this->cantPermitido = cantidadPermitida;
+}
 
 int Mina::cantidadTotal = 0;
 

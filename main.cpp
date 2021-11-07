@@ -10,6 +10,8 @@ int main() {
     Juego juego;
     int filas, columnas;
     Ciudad * ciudad = new Ciudad;
+    //Edificio** edificios;
+    //Edificio** edificios = new Edificio*;
     //Materiales * lista_materiales = datos.leer_materiales();
     //crear un vector aparte q contenga las clases materiales. de esa manera se puede acceder alli
 
@@ -20,6 +22,7 @@ int main() {
 
     Mapa mapa(filas, columnas);//aca creo una mapa con todos los casilleros como null
 
+    //datos.procesarArchivoDatosEdificios(edificios);
     datos.procesarArchivoMapa(mapa);
     datos.procesarArchivoEdificios(mapa);
     datos.leerArchivoEdificios(ciudad);
@@ -34,10 +37,15 @@ int main() {
     // } 
 
     // PARA PROBAR SI LEE BIEN LOS EDIFICIOS
-    juego.mostarEdificiosTodos(ciudad);
-    juego.mostrarEdificiosConstruidos(ciudad);
+    //juego.mostarEdificiosTodos(ciudad);
+    //juego.mostrarEdificiosConstruidos(ciudad);
 
     // PARA PROBAR SI LEE BIEN EL MAPA
+
+    juego.mostrarTodosLosEdificios(ciudad);
+    //juego.interfazPrincipal(mapa, ciudad);
+
+    //cout << ciudad->obtenerEdificio(2)->obtenerNombre() << endl;
     mapa.mostrar();
     // juego.interfazPrincipal(mapa);
 

@@ -14,6 +14,7 @@
 #include "casilleroTransitable.h"
 //#include "interfaz.h"
 #include "parser.h"
+#include "edificio.h"
 
 using namespace std;
 
@@ -38,9 +39,12 @@ class Archivo {
     void leerMapa(Mapa& mapa);
     void procesarArchivoMapa(Mapa& mapa);
     void leerArchivoEdificios(Ciudad * edificios);
+    //void procesarArchivoDatosEdificios(Edificio** edificios);
+    void procesarArchivoDatosEdificios(Edificio** edificios);
 
 private:
     Edificio* crearEdificio(string& nombre);
+    Edificio* setearEdificio(string nombre, int piedra, int madera, int metal, int tope);
     Dato crearCasillero(string& nombre);
 
 

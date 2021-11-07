@@ -55,7 +55,7 @@ int Juego::pedirColumna(Mapa& mapa) {
     return columna;
 }
 
-void Juego::interfazPrincipal(Mapa &mapa) {
+void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad) {
 
     while (opcion != GUARDAR_Y_SALIR){
         
@@ -114,7 +114,25 @@ void Juego::interfazPrincipal(Mapa &mapa) {
     }
 }
 
+void Juego::mostrarTodosLosEdificios(Ciudad* ciudad) {
 
+    for (int i = 0; i < CANTIDAD_TIPOS_EDIFICIOS; ++i) {
+        cout << "Tipo de edificio: " << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
+        cout << "Cantidad de piedras necesarias: " << ciudad->obtenerEdificio(i)->obtenerPiedra() << endl;
+        cout << "Cantidad de maderas necesarias: " << ciudad->obtenerEdificio(i)->obtenerMadera() << endl;
+        cout << "Cantidad de metales necesarias: " << ciudad->obtenerEdificio(i)->obtenerMetal() << endl;
+        cout << "Cantidad de construidos: " << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
+        cout << "Cantidad de permitidos: " << ciudad->obtenerEdificio(i)->obtenerTope() << endl;
+        cout << "___________________________________________________" << endl;
+    }
+
+}
+
+void Juego::mostrarDato(string nombre, int piedra, int madera, int metal, int total, int cantidadPermitida) {
+    
+}
+
+/*
 void Juego::mostarEdificiosTodos(Ciudad * edificios) {
     // Esta hecho feo, solo funcional
     // PROBANDO 123
@@ -132,4 +150,4 @@ void Juego::mostrarEdificiosConstruidos(Ciudad * edificios) {
             cout << edificio->obtenerNombre() << ": " << edificio->obtenerTotal() << endl;
         }
     } 
-}
+}*/

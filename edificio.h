@@ -16,27 +16,39 @@ const string ESCUELA = "E";
 
 using namespace std;
 
-class Edificio /* : public Objeto*/ {
+class Edificio {
 protected:
     string nombre;
+    int cantNecesariaMadera, cantNecesariPiedra, cantNecesariMetal, cantPermitido;
     //int cantidad_edificios = 0;
     //int cantidad_permitidos;
     //int madera_minima;
     //int piedra_minima;
     //int metal_minimo;
     //string identificador;
-    //static int cantidadTotal;
 
+
+    //static int cantidadTotal;
 public:
     //Edificio();
     //Edificio(string identificador);
     //Edificio(string nombre, int piedra, int madera, int metal, int cantidad_permitidos);
     //string nombre();
     string obtenerNombre(){ return this->nombre;}
-    int cantNecesariaMadera, cantNecesariPiedra, cantNecesariMetal;
+
+    void agregarEdificio(Edificio** edificios, Edificio* nuevoEdificio, int tope);
+
+    int obtenerMadera(){return this->cantNecesariaMadera;}
+
+    int obtenerPiedra(){return this->cantNecesariPiedra;}
+
+    int obtenerMetal(){return this->cantNecesariMetal;}
+
+    int obtenerTope(){return this->cantPermitido;}
     //int cantidad();
     virtual void mostrarEnMapa() = 0;
-    virtual int obtenerTotal() = 0;   // Yo lo declararia aca
+    virtual int obtenerTotal() = 0;// Yo lo declararia aca
+
 
 
     //int maxima_cantidad();

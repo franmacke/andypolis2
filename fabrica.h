@@ -12,7 +12,9 @@ protected:
     static int cantidadTotal;
 
 public:
-    Fabrica(){this->nombre = "fabrica"; cantidadTotal++;}
+    Fabrica(){ cantidadTotal++;}
+
+    Fabrica(int piedra, int madera, int metal, int cantidadPermitida);
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas

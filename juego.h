@@ -19,7 +19,7 @@ class Juego {
     void jugar();
     void mostrarOpciones();
     void pedirOpcion();
-    void interfazPrincipal(Mapa& mapa);
+    void interfazPrincipal(Mapa& mapa, Ciudad* ciudad);
 
     int pedirFila(Mapa& mapa);
 
@@ -29,9 +29,12 @@ class Juego {
 
     void demolerEdificio(Mapa& mapa);
 
-    void mostarEdificiosTodos(Ciudad * edificios);
+    void mostrarTodosLosEdificios(Ciudad* ciudad);
 
-    void mostrarEdificiosConstruidos(Ciudad * edificios);
+    void mostrarDato(string nombre, int piedra, int madera, int metal, int total, int cantidadPermitida);
+    //void mostarEdificiosTodos(Ciudad * edificios);
+
+    //void mostrarEdificiosConstruidos(Ciudad * edificios);
 
 
 

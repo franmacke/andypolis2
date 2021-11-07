@@ -16,6 +16,8 @@ const int RECOLECTAR_RECURSOS_PRODUCIDOS = 8;
 const int LLUVIA_DE_RECURSOS = 9;
 const int GUARDAR_Y_SALIR = 10;
 
+const int CANTIDAD_TIPOS_EDIFICIOS = 6;
+
 class Utilidad {
     public:
     string minuscula(string palabra);

@@ -1,9 +1,11 @@
 #include "ciudad.h"
 
+/*
 int Ciudad::cantidadEdificios() {
     return cantidad;
-}
+}*/
 
+int Ciudad::cantidad = 0;
 
 void Ciudad::copiarLista(Edificio ** copia) {
     for (int i = 0; i < cantidadEdificios(); i++) {
