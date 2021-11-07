@@ -19,7 +19,7 @@ class Juego {
     void jugar();
     void mostrarOpciones();
     void pedirOpcion();
-    void interfazPrincipal(Mapa& mapa, Ciudad* ciudad);
+    void interfazPrincipal(Mapa& mapa, Ciudad* ciudad, Inventario* inventario);
 
     int pedirFila(Mapa& mapa);
 

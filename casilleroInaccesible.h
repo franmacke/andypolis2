@@ -8,14 +8,19 @@
 
 class CasilleroInaccesible : public Casillero {
     private:
-    Objeto * dato;
     
     public:
-    //CasilleroInaccesible();
+    CasilleroInaccesible(){this->vacio = true;
+        this->tipoCasillero = "Inaccesible";};
     //void cambiar_dato(Objeto * dato);
     void mostrarEnMapa(){cout << "L";}// estaria bueno en colores en vez de una letra
 
     void agregarEdificio(Edificio* edificio){}
+
+    string obtenerNombre(){}
+
+
+
 
 };
 

@@ -5,18 +5,24 @@
 #ifndef CASILLERO_TRANSITABLE_H
 #define CASILLERO_TRANSITABLE_H
 #include "casillero.h"
-//#include "material.h"
+#include "material.h"
 
 class CasilleroTransitable : public Casillero {
     protected:
-    Objeto * material; 
+    Material * material;
 
     public:
-    //CasilleroTransitable();
+    CasilleroTransitable(){this->vacio = true;
+        this->tipoCasillero = "Transitable";};
     //void cambiar_dato(Objeto * dato);
+
+    void agregarMateriales(Material* material){ this->material = material;
+        this->vacio = false;}
 
     void agregarEdificio(Edificio* edificio){}
     void mostrarEnMapa(){cout << "C";}// estaria bueno en colores en vez de una letra
+
+    string obtenerNombre(){return this->material->obtenerNombre();}
 };
 
 

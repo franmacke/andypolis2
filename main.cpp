@@ -47,10 +47,10 @@ int main() {
     juego.mostrarTodosLosEdificios(ciudad);
 
     juego.mostrarInventario(inventario);
-    //juego.interfazPrincipal(mapa, ciudad);
 
     //cout << ciudad->obtenerEdificio(2)->obtenerNombre() << endl;
     mapa.mostrar();
+    juego.interfazPrincipal(mapa, ciudad, inventario);
     // juego.interfazPrincipal(mapa);
 
     return 0;

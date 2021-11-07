@@ -55,7 +55,7 @@ int Juego::pedirColumna(Mapa& mapa) {
     return columna;
 }
 
-void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad) {
+void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Inventario* inventario) {
 
     while (opcion != GUARDAR_Y_SALIR){
         
@@ -73,6 +73,7 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad) {
 
             case LISTAR_TODOS_LOS_EDIFICIOS:
                 cout << "\n\n\t\t LISTAR TODOS LOS EDIFICIOS \n\n\n";
+                mostrarTodosLosEdificios(ciudad);
                 break;
 
             case DEMOLER_UN_EDIFICIO_POR_COORDENADA:
@@ -86,12 +87,12 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad) {
 
             case CONSULTAR_COORDENADA:
                 cout << "\n\n\t\t CONSULTAR COORDENADA \n\n\n";
-                //consultarCoordenada(mapa);
+                consultarCoordenada(mapa);
                 break;
 
             case MOSTRAR_INVENTARIO:
                 cout << "\n\n\t\t MOSTRAR INVENTARIO \n\n\n";
-
+                mostrarInventario(inventario);
                 break;
 
             case RECOLECTAR_RECURSOS_PRODUCIDOS:
@@ -135,6 +136,18 @@ void Juego::mostrarTodosLosEdificios(Ciudad* ciudad) {
         cout << "___________________________________________________" << endl;
     }
 
+}
+
+void Juego::consultarCoordenada(Mapa &mapa) {
+    int fila = pedirFila(mapa) - 1;
+    int columna = pedirColumna(mapa) - 1;
+
+    cout << "el casillero es de tipo: " << mapa.obtenerDato(fila, columna)->obtenerTC() << endl;
+    if (mapa.obtenerDato(fila, columna)->esVacio()){
+        cout << "este casillero esta vacio." << endl;
+    } else{
+        cout << "este casillero esta ocupado por: " << mapa.obtenerDato(fila, columna)->obtenerNombre() << endl;
+    }
 }
 
 void Juego::mostrarConstruidos(Ciudad *ciudad) {

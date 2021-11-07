@@ -15,11 +15,15 @@ private:
 
 
 public:
-    CasilleroConstruible(){ this->tipoCasillero = "construible"; this->edificio = nullptr;}
+    CasilleroConstruible(){ this->tipoCasillero = "Construible"; this->edificio = nullptr;
+        this->vacio = true;}
 
-    void agregarEdificio(Edificio* edificio){ this->edificio = edificio;}
+    void agregarEdificio(Edificio* edificio){ this->edificio = edificio;
+        this->vacio = false;}
 
     void mostrarEnMapa();
+
+    string obtenerNombre(){return this->edificio->obtenerNombre();}
 
     //void cambiar_dato(Objeto * dato);
     //void convertir(string dato);
