@@ -15,7 +15,8 @@ protected:
 
 
 public:
-    Aserradero(){ cantidadTotal++;}//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
+    Aserradero(int fila, int columna){ this->fila = fila;
+        this->columna = columna; cantidadTotal++;}//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
 
     Aserradero(int piedra, int madera, int metal, int cantidadPermitida);
     /*static*/  int obtenerTotal(){return cantidadTotal;} //aca obtengo la cantidad total de aserradero

@@ -1,9 +1,40 @@
-/*
 #include "inventario.h"
 
+int Inventario::cantidad = 0;
+
+void Inventario::copiarLista(Material **copiaLista) {
+    for (int i = 0; i < cantidad_materiales(); ++i) {
+        copiaLista[i] = obtenerMaterial(i);
+    }
+}
+
+Material* Inventario::obtenerMaterial(int posicion) {
+    return materiales[posicion];
+}
+
+void Inventario::agregarMaterial(Material *nuevoMaterial) {
+    Material** listaCopia = new Material* [cantidad_materiales() + 1];
+    copiarLista(listaCopia);
+    listaCopia[cantidad_materiales()] = nuevoMaterial;
+
+    if (cantidad_materiales() != 0){
+        liberarMemoria();
+    }
+
+    materiales = listaCopia;
+    cantidad++;
+
+
+
+}
+
+
+
+/*
 Inventario::Inventario() {
     this->cantidad = 0;
 }
+
 
 
 int Inventario::cantidad_materiales() {

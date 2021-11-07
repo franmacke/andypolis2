@@ -3,3 +3,4 @@
 //
 
 #include "metal.h"
+int Metal::cantidadTotal = 0;

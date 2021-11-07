@@ -12,7 +12,8 @@ protected:
     static int cantidadTotal;
 
 public:
-    Fabrica(){ cantidadTotal++;}
+    Fabrica(int fila, int columna){ this->fila = fila;
+        this->columna = columna; cantidadTotal++;}
 
     Fabrica(int piedra, int madera, int metal, int cantidadPermitida);
 

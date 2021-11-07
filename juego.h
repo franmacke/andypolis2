@@ -29,7 +29,11 @@ class Juego {
 
     void demolerEdificio(Mapa& mapa);
 
+    void mostrarInventario(Inventario* inventario);
+
     void mostrarTodosLosEdificios(Ciudad* ciudad);
+
+    void mostrarConstruidos(Ciudad* ciudad);
 
     void mostrarDato(string nombre, int piedra, int madera, int metal, int total, int cantidadPermitida);
     //void mostarEdificiosTodos(Ciudad * edificios);

@@ -12,7 +12,8 @@ protected:
     static int cantidadTotal;
 
 public:
-    Mina(){ cantidadTotal++;}
+    Mina(int fila, int columna){ this->fila = fila;
+        this->columna = columna; cantidadTotal++;}
 
     Mina(int piedra, int madera, int metal, int cantidadPermitida);
 

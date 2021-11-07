@@ -13,7 +13,8 @@ protected:
     static int cantidadTotal;
 
 public:
-    Yacimiento(){ /*this->nombre = "planta";*/ cantidadTotal++;}
+    Yacimiento(int fila, int columna){ this->fila = fila;
+        this->columna = columna; cantidadTotal++;}
 
     Yacimiento(int piedra, int madera, int metal, int cantidadPermitida);
 

@@ -10,7 +10,7 @@ Obelisco::Obelisco() : Edificio(OBELISCO) {
 }*/
 
 Obelisco::Obelisco(int piedra, int madera, int metal, int cantidadPermitida) {
-    this->nombre = "AObelisco";
+    this->nombre = "Obelisco";
     this->cantNecesariPiedra = piedra;
     this->cantNecesariaMadera = madera;
     this->cantNecesariMetal = metal;

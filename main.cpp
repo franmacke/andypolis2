@@ -10,6 +10,7 @@ int main() {
     Juego juego;
     int filas, columnas;
     Ciudad * ciudad = new Ciudad;
+    Inventario* inventario = new Inventario;
     //Edificio** edificios;
     //Edificio** edificios = new Edificio*;
     //Materiales * lista_materiales = datos.leer_materiales();
@@ -26,6 +27,7 @@ int main() {
     datos.procesarArchivoMapa(mapa);
     datos.procesarArchivoEdificios(mapa);
     datos.leerArchivoEdificios(ciudad);
+    datos.leerArchivosMateriales(inventario);
     // Ciudad * edificios = datos.leer_edificios();
 
     // DESCOMENTAR PARA PROBAR
@@ -43,6 +45,8 @@ int main() {
     // PARA PROBAR SI LEE BIEN EL MAPA
 
     juego.mostrarTodosLosEdificios(ciudad);
+
+    juego.mostrarInventario(inventario);
     //juego.interfazPrincipal(mapa, ciudad);
 
     //cout << ciudad->obtenerEdificio(2)->obtenerNombre() << endl;

@@ -26,6 +26,22 @@ void Archivo::cerrar(fstream &archivo) {
     archivo.close();
 }
 
+
+void Archivo::leerArchivosMateriales(Inventario *materiales) {
+    fstream archivo;
+    abrir(archivo, PATH_MATERIALES);
+    string nombre, cantidad;
+    while(getline(archivo, nombre, ESPACIO)){
+        getline(archivo, cantidad);
+
+        int cantidadInicial = stoi(cantidad);
+        Material* nuevoMaterial = setearMaterial(nombre, cantidadInicial);
+        materiales->agregarMaterial(nuevoMaterial);
+    }
+}
+
+
+
 void Archivo::leerArchivoEdificios(Ciudad * edificios) {
     fstream archivo;
     abrir(archivo, PATH_EDIFICIOS);
@@ -106,7 +122,7 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
         int filas = stoi(fila) - 1;
         int columnas = stoi(columna) - 1;
 
-        nuevoEdificio = crearEdificio(nombre);
+        nuevoEdificio = crearEdificio(nombre, filas, columnas);
         //mapa.alta(*nuevoEdificio, filas, columnas);
         mapa.obtenerDato(filas, columnas)->agregarEdificio(nuevoEdificio);
 
@@ -253,26 +269,44 @@ int Archivo::leerColumnas() {
     return y;
 }
 
-Edificio* Archivo::crearEdificio(string &nombre) {
+Edificio* Archivo::crearEdificio(string &nombre, int fila, int columna) {
 
         Edificio* nuevo;
 
         if (nombre == "mina") {
-            nuevo = new Mina();
+            nuevo = new Mina(fila, columna);
         } else if (nombre == "aserradero") {
-            nuevo = new Aserradero();
+            nuevo = new Aserradero(fila, columna);
         } else if (nombre == "escuela") {
-            nuevo = new Escuela();
+            nuevo = new Escuela(fila, columna);
         } else if (nombre == "fabrica") {
-            nuevo = new Fabrica();
+            nuevo = new Aserradero(fila, columna);
+        } else if (nombre == "yacimiento") {
+            nuevo = new Yacimiento(fila, columna);
         } else if (nombre == "obelisco") {
-            nuevo = new Obelisco();
+            nuevo = new Obelisco(fila, columna);
         } else if (nombre == "planta") {
-            nuevo = new Planta();
+            nuevo = new Planta(fila, columna);
         }
 
         return nuevo;
 
+}
+
+
+Material* Archivo::setearMaterial(string nombre, int cantidad) {
+    Material* nuevo;
+
+    if (nombre == "madera"){
+        nuevo = new Madera(cantidad);
+    } else if (nombre == "piedra"){
+        nuevo = new Piedra(cantidad);
+    } else if (nombre == "metal"){
+        nuevo = new Metal(cantidad);
+    } else if (nombre == "oro"){
+        nuevo = new Oro(cantidad);
+    }
+    return nuevo;
 }
 
 Edificio* Archivo::setearEdificio(string nombre, int piedra, int madera, int metal, int tope) {

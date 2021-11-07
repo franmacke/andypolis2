@@ -3,3 +3,5 @@
 //
 
 #include "madera.h"
+
+ int Madera::cantidadTotal = 0;

@@ -20,6 +20,7 @@ class Edificio {
 protected:
     string nombre;
     int cantNecesariaMadera, cantNecesariPiedra, cantNecesariMetal, cantPermitido;
+    int fila, columna;
     //int cantidad_edificios = 0;
     //int cantidad_permitidos;
     //int madera_minima;
@@ -45,6 +46,10 @@ public:
     int obtenerMetal(){return this->cantNecesariMetal;}
 
     int obtenerTope(){return this->cantPermitido;}
+
+    int obtenerFila(){return this->fila;}
+
+    int obtenerColumna(){return this->columna;}
     //int cantidad();
     virtual void mostrarEnMapa() = 0;
     virtual int obtenerTotal() = 0;// Yo lo declararia aca

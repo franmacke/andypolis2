@@ -17,6 +17,7 @@ const int LLUVIA_DE_RECURSOS = 9;
 const int GUARDAR_Y_SALIR = 10;
 
 const int CANTIDAD_TIPOS_EDIFICIOS = 6;
+const int CANTIDAD_TIPO_MATERIALES = 4;
 
 class Utilidad {
     public:

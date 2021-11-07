@@ -13,6 +13,10 @@
 #include "planta.h"
 #include "yacimiento.h"
 #include "material.h"
+#include "madera.h"
+#include "piedra.h"
+#include "metal.h"
+#include "oro.h"
 #include "objeto.h"
 
 using namespace std;

@@ -12,7 +12,8 @@ private:
     static int cantidadTotal;
 
 public:
-    Escuela(){ cantidadTotal++;}
+    Escuela(int fila, int columna){ this->fila = fila;
+        this->columna = columna; cantidadTotal++;}
 
     Escuela(int piedra, int madera, int metal, int cantidadPermitida);
 

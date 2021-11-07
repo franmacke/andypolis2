@@ -114,6 +114,15 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad) {
     }
 }
 
+void Juego::mostrarInventario(Inventario *inventario) {
+    for (int i = 0; i < CANTIDAD_TIPO_MATERIALES; ++i) {
+        cout << "Tipo de material: " << inventario->obtenerMaterial(i)->obtenerNombre() << endl;
+        cout << "Cantidad: " << inventario->obtenerMaterial(i)->obtenerTotal() << endl;
+        cout << "---------------------------------------------------" << endl;
+    }
+}
+
+
 void Juego::mostrarTodosLosEdificios(Ciudad* ciudad) {
 
     for (int i = 0; i < CANTIDAD_TIPOS_EDIFICIOS; ++i) {
@@ -127,6 +136,21 @@ void Juego::mostrarTodosLosEdificios(Ciudad* ciudad) {
     }
 
 }
+
+void Juego::mostrarConstruidos(Ciudad *ciudad) {
+
+    for (int i = 0; i < CANTIDAD_TIPOS_EDIFICIOS; ++i) {
+
+        if (ciudad->obtenerEdificio(i)->obtenerTotal() > 0){
+            cout << "Tipo de edificio: " << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
+            cout << "Cantidad de construidos: " << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
+            cout << "Cantidad de permitidos: " << ciudad->obtenerEdificio(i)->obtenerTope() << endl;
+            cout << "___________________________________________________" << endl;
+        }
+    }
+}
+
+
 
 void Juego::mostrarDato(string nombre, int piedra, int madera, int metal, int total, int cantidadPermitida) {
     

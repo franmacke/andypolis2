@@ -6,12 +6,23 @@
 #define ANDYPOLIS2_ORO_H
 #include "material.h"
 
-class Oro : Material{
+class Oro : public Material{
 protected:
 
     static int cantidadTotal;
 
 public:
+    Oro(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
+        this->cantidadTotal += cantidad;}
+
+    Oro(int cantidad){ this->nombre_material = "Oro";
+        this->cantidadTotal = cantidad;}
+
+    void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
+
+    int obtenerTotal(){return cantidadTotal;}
+
+    void mostrarEnMapa(){cout << "W";}
 
 };
 

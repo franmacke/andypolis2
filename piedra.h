@@ -7,12 +7,23 @@
 #include "material.h"
 
 
-class Piedra : Material{
+class Piedra : public Material{
 protected:
 
     static int cantidadTotal;
 
 public:
+    Piedra(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
+        this->cantidadTotal += cantidad;}
+
+    Piedra(int cantidad){ this->nombre_material = "Piedra";
+        this->cantidadTotal = cantidad;}
+
+    void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
+
+    int obtenerTotal(){return cantidadTotal;}
+
+    void mostrarEnMapa(){cout << "S";}
 
 
 };

@@ -2,7 +2,7 @@
 #define MATERIAL_H
 
 #include <iostream>
-#include "objeto.h"
+//#include "objeto.h"
 #include "utilidad.h"
 
 using namespace std;
@@ -10,6 +10,7 @@ using namespace std;
 class Material /*: public Objeto*/ {
 protected:
     string nombre_material;
+    int fila, columna;
     //int cantidad_material;
 
 public:
@@ -19,7 +20,13 @@ public:
     //int cantidad();
     string obtenerNombre(){return this->nombre_material;}
 
+    int obtenerFila(){return this->fila;}
+
+    int obtenerColumna(){return this->columna;}
+
     virtual void mostrarEnMapa() = 0;
+
+    virtual int obtenerTotal() = 0;
 };
 
     /*

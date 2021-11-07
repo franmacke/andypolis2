@@ -5,6 +5,7 @@
 #include <fstream>
 #include "edificio.h"
 #include "ciudad.h"
+#include "inventario.h"
 #include "material.h"
 #include "materiales.h"
 #include "mapa.h"
@@ -39,12 +40,14 @@ class Archivo {
     void leerMapa(Mapa& mapa);
     void procesarArchivoMapa(Mapa& mapa);
     void leerArchivoEdificios(Ciudad * edificios);
+    void leerArchivosMateriales(Inventario* materiales);
     //void procesarArchivoDatosEdificios(Edificio** edificios);
     void procesarArchivoDatosEdificios(Edificio** edificios);
 
 private:
-    Edificio* crearEdificio(string& nombre);
+    Edificio* crearEdificio(string& nombre, int fila, int columna);
     Edificio* setearEdificio(string nombre, int piedra, int madera, int metal, int tope);
+    Material* setearMaterial(string nombre, int cantidad);
     Dato crearCasillero(string& nombre);
 
 
