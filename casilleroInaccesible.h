@@ -17,9 +17,7 @@ class CasilleroInaccesible : public Casillero {
 
     void agregarEdificio(Edificio* edificio){}
 
-    string obtenerNombre(){}
-
-
+    string obtenerNombre(){return "";}
 
 
 };

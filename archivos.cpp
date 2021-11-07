@@ -53,6 +53,7 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
         getline(archivo, madera, ESPACIO);
         getline(archivo, metal, ESPACIO);
         getline(archivo, cantidad_permitidos);
+    
 
         // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
         int piedras = stoi(piedra);
@@ -66,6 +67,7 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
         //Edificio * nuevo_edificio = crearEdificio(nombre);
 
         edificios->agregarEdificio(nuevo_edificio);
+        
         // edificios->agregar(edificio);
     }
    
@@ -119,12 +121,12 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
         getline(archivo, columna, ')');
         getline(archivo, basura);
 
-        int filas = stoi(fila) - 1;
-        int columnas = stoi(columna) - 1;
-
+        int filas = stoi(fila);
+        int columnas = stoi(columna);
         nuevoEdificio = crearEdificio(nombre, filas, columnas);
         //mapa.alta(*nuevoEdificio, filas, columnas);
         mapa.obtenerDato(filas, columnas)->agregarEdificio(nuevoEdificio);
+        cout << "ACA 1 " << endl; 
 
     }
     nuevoEdificio = nullptr;

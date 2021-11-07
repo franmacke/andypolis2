@@ -139,8 +139,8 @@ void Juego::mostrarTodosLosEdificios(Ciudad* ciudad) {
 }
 
 void Juego::consultarCoordenada(Mapa &mapa) {
-    int fila = pedirFila(mapa) - 1;
-    int columna = pedirColumna(mapa) - 1;
+    int fila = pedirFila(mapa);
+    int columna = pedirColumna(mapa);
 
     cout << "el casillero es de tipo: " << mapa.obtenerDato(fila, columna)->obtenerTC() << endl;
     if (mapa.obtenerDato(fila, columna)->esVacio()){
