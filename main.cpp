@@ -34,7 +34,8 @@ int main() {
     // } 
 
     // PARA PROBAR SI LEE BIEN LOS EDIFICIOS
-    
+    juego.mostarEdificiosTodos(ciudad);
+    juego.mostrarEdificiosConstruidos(ciudad);
 
     // PARA PROBAR SI LEE BIEN EL MAPA
     mapa.mostrar();

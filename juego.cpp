@@ -115,7 +115,7 @@ void Juego::interfazPrincipal(Mapa &mapa) {
 }
 
 
-void mostrarEdificiosTodos(Ciudad * edificios) {
+void Juego::mostarEdificiosTodos(Ciudad * edificios) {
     // Esta hecho feo, solo funcional
     // PROBANDO 123
     for (int i = 0; i < edificios->cantidadEdificios(); i++) {
@@ -123,7 +123,7 @@ void mostrarEdificiosTodos(Ciudad * edificios) {
     } 
 }
 
-void mostrarEdificiosConstruidos(Ciudad * edificios) {
+void Juego::mostrarEdificiosConstruidos(Ciudad * edificios) {
     // Esta hecho feo, solo funcional
     for (int i = 0; i < edificios->cantidadEdificios(); i++) {
         Edificio * edificio =  edificios->obtenerEdificio(i);
