@@ -12,7 +12,9 @@ protected:
     static int cantidadTotal;
 
 public:
-    Fabrica(int fila, int columna){ this->fila = fila;
+    Fabrica(int fila, int columna){ 
+        this->nombre = "fabrica";
+        this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 
     Fabrica(int piedra, int madera, int metal, int cantidadPermitida);

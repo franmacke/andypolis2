@@ -12,7 +12,9 @@ protected:
     static int cantidadTotal;
 
 public:
-    Obelisco(int fila, int columna){ this->fila = fila;
+    Obelisco(int fila, int columna){
+        this->nombre = "obelisco";
+        this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 
     Obelisco(int piedra, int madera, int metal, int cantidadPermitida);

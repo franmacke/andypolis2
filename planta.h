@@ -2,23 +2,21 @@
 // Created by ydsas on 7/11/2021.
 //
 
-#ifndef ANDYPOLIS2_YACIMIENTO_H
-#define ANDYPOLIS2_YACIMIENTO_H
+#ifndef ANDYPOLIS2_PLANTA_H
+#define ANDYPOLIS2_PLANTA_H
 #include "edificio.h"
 
-class Yacimiento : public Edificio {
+class Planta : public Edificio {
 protected:
 
     //static  int cantNecesariaMadera, cantNecesariPiedra, cantNecesariMetal, cantPermitido;
     static int cantidadTotal;
 
 public:
-    Yacimiento(int fila, int columna){ 
-        this->nombre = "yacimiento";
-        this->fila = fila;
+    Planta(int fila, int columna){ this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 
-    Yacimiento(int piedra, int madera, int metal, int cantidadPermitida);
+    Planta(int piedra, int madera, int metal, int cantidadPermitida);
 
     // PRE: -
     // POS: resta uno a la cantidad total
