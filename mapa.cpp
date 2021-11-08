@@ -19,6 +19,33 @@ Dato Mapa::obtener(int fila, int columna) {
 Dato Mapa::obtenerDato(int fila, int columna) {
     return (mapa[fila][columna]);
 }
+
+string Mapa::buscarCoordenadasPorNombre(string nombre) {
+    Utilidad utilidad;
+    string coordenadas = "[ ";
+    
+    for (int i = 0; i < filaMapa(); i++) {
+        for (int j = 0; j < columnaMapa(); j++) {
+            
+            Dato dato = obtenerDato(i,j);
+    
+            if (!dato->esVacio()) {
+                if (utilidad.minuscula(nombre) == utilidad.minuscula(dato->obtenerNombre())) {
+                    coordenadas += "(";
+                    coordenadas += to_string(i);
+                    coordenadas += ",";
+                    coordenadas += to_string(j);
+                    coordenadas += ") ";                
+                }
+            }
+        }
+    }
+    coordenadas += "]";
+
+    return coordenadas;
+}
+
+
 /*
 void Mapa::cargar_casillero(string casillero, Coordenada coordenada) {
     Parser parser = Parser(casillero);
