@@ -9,6 +9,7 @@ void Inventario::copiarLista(Material **copiaLista) {
 }
 
 Material* Inventario::obtenerMaterial(int posicion) {
+    // cout << materiales[posicion]->obtenerNombre() << " ";
     return materiales[posicion];
 }
 
@@ -23,9 +24,19 @@ void Inventario::agregarMaterial(Material *nuevoMaterial) {
 
     materiales = listaCopia;
     cantidad++;
+}
 
+Material* Inventario::obtenerPorNombre(string nombre) {
+    Utilidad utilidad;
+    Material * material;
+    
+    for (int i = 0; i < cantidad_materiales(); i++) {
+        if (nombre == utilidad.minuscula(obtenerMaterial(i)->obtenerNombre())) {
+            material = obtenerMaterial(i);
+        }
+    }
 
-
+    return material;
 }
 
 

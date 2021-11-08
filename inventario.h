@@ -22,6 +22,11 @@ class Inventario {
     void copiarLista(Material** copiaLista);
     Material* obtenerMaterial(int posicion);
     void liberarMemoria(){delete [] materiales;}
+    Material * obtenerPorNombre(string nombre);
+    int obtenerMadera() {return obtenerPorNombre("madera")->obtenerTotal();}
+    int obtenerPiedra() {return obtenerPorNombre("piedra")->obtenerTotal();}
+    int obtenerMetal() {return obtenerPorNombre("metal")->obtenerTotal();}
+
     /*
     MaterialInventario obtener(int posicion);
     MaterialInventario buscar(string nombre_material);
