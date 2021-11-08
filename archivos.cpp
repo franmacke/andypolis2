@@ -126,7 +126,6 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
         nuevoEdificio = crearEdificio(nombre, filas, columnas);
         //mapa.alta(*nuevoEdificio, filas, columnas);
         mapa.obtenerDato(filas, columnas)->agregarEdificio(nuevoEdificio);
-        cout << "ACA 1 " << endl; 
 
     }
     nuevoEdificio = nullptr;
@@ -282,7 +281,7 @@ Edificio* Archivo::crearEdificio(string &nombre, int fila, int columna) {
         } else if (nombre == "escuela") {
             nuevo = new Escuela(fila, columna);
         } else if (nombre == "fabrica") {
-            nuevo = new Aserradero(fila, columna);
+            nuevo = new Fabrica(fila, columna);
         } else if (nombre == "yacimiento") {
             nuevo = new Yacimiento(fila, columna);
         } else if (nombre == "obelisco") {
