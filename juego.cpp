@@ -102,6 +102,7 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Inventario* inventario
 
             case LLUVIA_DE_RECURSOS:
                 cout << "\n\n\t\t LLUVIA DE RECURSOS \n\n\n";
+                lluviaDeRecursos(mapa, inventario);
                 break;
 
             case GUARDAR_Y_SALIR:
@@ -170,6 +171,90 @@ void Juego::mostrarConstruidos(Ciudad *ciudad, Mapa &mapa) {
 void Juego::mostrarDato(string nombre, int piedra, int madera, int metal, int total, int cantidadPermitida) {
     
 }
+
+int Juego::filaAleatorio(Mapa &mapa) {
+    return rand() % mapa.filaMapa();
+}
+
+int Juego::columnaAleatorio(Mapa &mapa) {
+    return rand() % mapa.columnaMapa();
+}
+
+int Juego::cantAleatoriaMadera() {
+    return rand() % 2;
+}
+
+int Juego::cantAleatoriaMetal() {
+    return rand() % 4 + 2;
+}
+
+int Juego::cantAleatoriaPiedra() {
+    return rand() % 2 + 1;
+}
+
+void Juego::lluviaDeMadera(Mapa &mapa, Inventario *inventario) {
+
+    int fila = filaAleatorio(mapa);
+    int columna = columnaAleatorio(mapa);
+    int cantidad = cantAleatoriaMadera();
+    //cout << fila << " " << columna << endl;
+    while (!mapa.obtenerDato(fila, columna)->esVacio() || mapa.obtenerDato(fila, columna)->obtenerTC() != "Transitable"){
+        fila = filaAleatorio(mapa);
+        columna = columnaAleatorio(mapa);
+    }
+    if (cantidad > 0){
+
+        mapa.obtenerDato(fila, columna)->agregarMateriales(new Madera(cantidad));
+        cout << "aparecieron " << cantidad << " maderas en: " << fila << " ," << columna << endl;
+    }
+}
+
+
+void Juego::lluviaDeMetal(Mapa &mapa, Inventario *inventario) {
+
+    int fila = filaAleatorio(mapa);
+    int columna = columnaAleatorio(mapa);
+    int cantidad = cantAleatoriaMetal();
+    //cout << fila << " " << columna << endl;
+    while (!mapa.obtenerDato(fila, columna)->esVacio() || mapa.obtenerDato(fila, columna)->obtenerTC() != "Transitable"){
+        fila = filaAleatorio(mapa);
+        columna = columnaAleatorio(mapa);
+    }
+    if (cantidad > 0){
+
+        mapa.obtenerDato(fila, columna)->agregarMateriales(new Metal(cantidad));
+        cout << "aparecieron " << cantidad << " metales en: " << fila << " ," << columna << endl;
+    }
+}
+
+
+void Juego::lluviaDePiedra(Mapa &mapa, Inventario *inventario) {
+
+    int fila = filaAleatorio(mapa);
+    int columna = columnaAleatorio(mapa);
+    int cantidad = cantAleatoriaPiedra();
+    //cout << fila << " " << columna << endl;
+    while (!mapa.obtenerDato(fila, columna)->esVacio() || mapa.obtenerDato(fila, columna)->obtenerTC() != "Transitable"){
+        fila = filaAleatorio(mapa);
+        columna = columnaAleatorio(mapa);
+    }
+    if (cantidad > 0){
+
+        mapa.obtenerDato(fila, columna)->agregarMateriales(new Piedra(cantidad));
+        cout << "aparecieron " << cantidad << " piedras en: " << fila << " ," << columna << endl;
+    }
+}
+
+void Juego::lluviaDeRecursos(Mapa &mapa, Inventario *inventario) {
+
+    srand (time(NULL));
+    lluviaDeMadera(mapa, inventario);
+    lluviaDeMetal(mapa, inventario);
+    lluviaDePiedra(mapa, inventario);
+
+}
+
+
 
 /*
 void Juego::mostarEdificiosTodos(Ciudad * edificios) {

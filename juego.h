@@ -36,6 +36,26 @@ class Juego {
     void mostrarConstruidos(Ciudad* ciudad, Mapa &mapa);
 
     void mostrarDato(string nombre, int piedra, int madera, int metal, int total, int cantidadPermitida);
+
+    void lluviaDeRecursos(Mapa& mapa, Inventario* inventario);
+
+    void lluviaDeMadera(Mapa& mapa, Inventario* inventario);
+
+    void lluviaDeMetal(Mapa& mapa, Inventario* inventario);
+
+    void lluviaDePiedra(Mapa& mapa, Inventario* inventario);
+
+    int filaAleatorio(Mapa& mapa);
+
+    int columnaAleatorio(Mapa& mapa);
+
+    int cantAleatoriaMadera();
+
+    int cantAleatoriaMetal();
+
+    int cantAleatoriaPiedra();
+
+
     //void mostarEdificiosTodos(Ciudad * edificios);
 
     //void mostrarEdificiosConstruidos(Ciudad * edificios);

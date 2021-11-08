@@ -2,6 +2,9 @@
 #define UTILIDAD_H
 
 #include <iostream>
+#include <ctime>
+#include <stdio.h>      /* printf, NULL */
+#include <stdlib.h>
 
 using namespace std;
 
