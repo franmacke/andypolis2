@@ -31,6 +31,24 @@ void Ciudad::agregarEdificio(Edificio * edificio_nuevo) {
     cantidad++;
 }
 
+Edificio * Ciudad::buscarEdificioPorNombre(string nombre) {
+    int contador = 0;
+    bool resultado = false;
+    Edificio * edificio = nullptr;
+    Utilidad utilidad;
+
+    while (contador < cantidadEdificios() && !resultado) {
+        if (utilidad.minuscula(obtenerEdificio(contador)->obtenerNombre()) == utilidad.minuscula(nombre)) {
+            resultado = true;
+            edificio = obtenerEdificio(contador);
+        } else {
+            contador++;
+        }
+    }
+    //Devuelve un edificio si existe y si no devuelve un nullptr
+    return edificio;
+}
+
 void Ciudad::liberarMemoria() {
     // for (int i = 0; i < cantidadEdificios(); i++) {
     //     delete edificios[i];

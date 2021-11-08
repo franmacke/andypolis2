@@ -17,6 +17,7 @@ class Ciudad {
     void agregarEdificio(Edificio * nuevo_edificio);
     void copiarLista(Edificio ** copia_lista);
     Edificio * obtenerEdificio(int posicion);
+    Edificio * buscarEdificioPorNombre(string nombre);
     void liberarMemoria();
 };
 
