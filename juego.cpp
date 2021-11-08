@@ -69,6 +69,7 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Inventario* inventario
 
             case LISTAR_LOS_EDIFICIOS_CONSTRUIDOS:
                 cout << "\n\n\t\t LISTAR LOS EDIFICIOS CONSTRUIDOS \n\n\n";
+                mostrarConstruidos(ciudad, mapa);
                 break;
 
             case LISTAR_TODOS_LOS_EDIFICIOS:
@@ -150,7 +151,7 @@ void Juego::consultarCoordenada(Mapa &mapa) {
     }
 }
 
-void Juego::mostrarConstruidos(Ciudad *ciudad) {
+void Juego::mostrarConstruidos(Ciudad *ciudad, Mapa &mapa) {
 
     for (int i = 0; i < CANTIDAD_TIPOS_EDIFICIOS; ++i) {
 
@@ -158,6 +159,7 @@ void Juego::mostrarConstruidos(Ciudad *ciudad) {
             cout << "Tipo de edificio: " << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
             cout << "Cantidad de construidos: " << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
             cout << "Cantidad de permitidos: " << ciudad->obtenerEdificio(i)->obtenerTope() << endl;
+            cout << "Ubicaciones: " << mapa.buscarCoordenadasPorNombre(ciudad->obtenerEdificio(i)->obtenerNombre()) << endl;
             cout << "___________________________________________________" << endl;
         }
     }

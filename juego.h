@@ -33,7 +33,7 @@ class Juego {
 
     void mostrarTodosLosEdificios(Ciudad* ciudad);
 
-    void mostrarConstruidos(Ciudad* ciudad);
+    void mostrarConstruidos(Ciudad* ciudad, Mapa &mapa);
 
     void mostrarDato(string nombre, int piedra, int madera, int metal, int total, int cantidadPermitida);
     //void mostarEdificiosTodos(Ciudad * edificios);
