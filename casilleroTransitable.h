@@ -7,20 +7,21 @@
 #include "casillero.h"
 #include "material.h"
 
+using namespace std;
 class CasilleroTransitable : public Casillero {
     protected:
     Material * material;
 
     public:
     CasilleroTransitable(){this->vacio = true;
-        this->tipoCasillero = "Transitable";};
+        this->tipoCasillero = "Transitable"; this->material = nullptr;}
     //void cambiar_dato(Objeto * dato);
 
     void agregarMateriales(Material* material){ this->material = material;
         this->vacio = false;}
 
     void agregarEdificio(Edificio* edificio){}
-    void mostrarEnMapa(){cout << "C";}// estaria bueno en colores en vez de una letra
+    void mostrarEnMapa();// estaria bueno en colores en vez de una letra
 
     string obtenerNombre(){return this->material->obtenerNombre();}
 };

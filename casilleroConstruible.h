@@ -18,8 +18,9 @@ public:
     CasilleroConstruible(){ this->tipoCasillero = "Construible"; this->edificio = nullptr;
         this->vacio = true;}
 
-    void agregarEdificio(Edificio* edificio){ this->edificio = edificio;
-        this->vacio = false;}
+    void agregarEdificio(Edificio* edificio){ this->edificio = edificio; this->vacio = false;}
+
+    void agregarMateriales(Material* material){}
 
     void mostrarEnMapa();
 

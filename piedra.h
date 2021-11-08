@@ -16,7 +16,7 @@ public:
     Piedra(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
         this->cantidadTotal += cantidad;}
 
-    Piedra(int cantidad){ this->nombre_material = "Piedra";
+    Piedra(int cantidad){ this->nombre = "Piedra";
         this->cantidadTotal = cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}

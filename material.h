@@ -9,7 +9,7 @@ using namespace std;
 
 class Material /*: public Objeto*/ {
 protected:
-    string nombre_material;
+    string nombre;
     int fila, columna;
     //int cantidad_material;
 
@@ -18,7 +18,7 @@ public:
     //Material(string nombre, int cantidad);
     //string nombre();
     //int cantidad();
-    string obtenerNombre(){return this->nombre_material;}
+    string obtenerNombre(){ return this->nombre;}
 
     int obtenerFila(){return this->fila;}
 

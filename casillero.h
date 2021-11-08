@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include "objeto.h"
+#include "material.h"
 #include "edificio.h"
+
 
 using namespace std;
 
@@ -25,6 +27,8 @@ public:
         string obtenerTC(); //TC: tipoCasillero
 
         bool esVacio(){return this->vacio;}
+
+        virtual void agregarMateriales(Material* material) = 0;
 
         virtual void agregarEdificio(Edificio* edificio) = 0;//virtual void es una funcion q si o si todas las hijas tienen q tener la funcion?
 
