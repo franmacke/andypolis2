@@ -13,7 +13,7 @@ protected:
     int cantidad;
 
 public:
-    Oro(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
+    Oro(int fila, int columna, int cantidad){this->nombre = "Oro"; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
     Oro(int cantidad){ this->nombre = "Oro";

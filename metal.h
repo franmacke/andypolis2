@@ -15,7 +15,7 @@ protected:
     int cantidad;
 
 public:
-    Metal(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
+    Metal(int fila, int columna, int cantidad){this->nombre = "Metal"; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
     Metal(int cantidad){ this->nombre = "Metal";

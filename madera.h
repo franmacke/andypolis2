@@ -13,7 +13,7 @@ protected:
     int cantidad;
 
 public:
-    Madera(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
+    Madera(int fila, int columna, int cantidad){this->nombre = "Madera"; this->fila = fila; this->columna = columna;
         this->cantidadTotal += cantidad;}
 
     Madera(int cantidad){ this->nombre = "Madera";

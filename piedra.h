@@ -14,7 +14,7 @@ protected:
     int cantidad;
 
 public:
-    Piedra(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
+    Piedra(int fila, int columna, int cantidad){this->nombre = "Piedra"; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
     Piedra(int cantidad){ this->nombre = "Piedra";
