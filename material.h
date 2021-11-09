@@ -25,7 +25,7 @@ public:
 
     int obtenerColumna(){return this->columna;}
 
-    virtual void sumarCantidad(int cantidad) = 0;
+    //virtual void sumarCantidad(int cantidad) = 0;
 
     virtual void mostrarEnMapa() = 0;
 

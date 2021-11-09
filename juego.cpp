@@ -319,19 +319,19 @@ void Juego::recolectarMateriales(Mapa &mapa, Inventario *inventario, Ciudad* ciu
         if (inventario->obtenerMaterial(i)->obtenerNombre() == "Madera"){
             cantParaSumar = cantProducidoPorAserradero(ciudad);
             cout << cantParaSumar << endl;
-            inventario->obtenerMaterial(i)->sumarCantidad(cantParaSumar);
+            inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
             cout<< inventario->obtenerMaterial(i)->obtenerNombre() << endl;
             cantParaSumar = 0;
         } else if(inventario->obtenerMaterial(i)->obtenerNombre() == "Metal"){
             cantParaSumar = cantProducidoPorFabrica(ciudad);
             cout << cantParaSumar << endl;
-            inventario->obtenerMaterial(i)->sumarCantidad(cantParaSumar);
+            inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
             cout<< inventario->obtenerMaterial(i)->obtenerNombre() << endl;
             cantParaSumar = 0;
         } else if(inventario->obtenerMaterial(i)->obtenerNombre() == "Piedra") {
             cantParaSumar = cantProducidoPorMina(ciudad);
             cout << cantParaSumar << endl;
-            inventario->obtenerMaterial(i)->sumarCantidad(cantParaSumar);
+            inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
             cout<< inventario->obtenerMaterial(i)->obtenerNombre() << endl;
             cantParaSumar = 0;
         }
