@@ -19,6 +19,7 @@ public:
         this->cantidadTotal = cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
+    void aumentarTotal(int cantidad) {this->cantidadTotal += cantidad;}
 
     int obtenerTotal(){return cantidadTotal;}
 

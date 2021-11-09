@@ -26,6 +26,10 @@ public:
 
     virtual void mostrarEnMapa() = 0;
 
+    virtual void restarTotal(int cantidad) = 0;
+
+    virtual void aumentarTotal(int cantidad) = 0;
+
     virtual int obtenerTotal() = 0;
 };
 
