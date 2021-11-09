@@ -14,7 +14,7 @@ protected:
 
 public:
     Yacimiento(int fila, int columna){ 
-        this->nombre = "yacimiento";
+        this->nombre = "Yacimiento";
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

@@ -10,15 +10,18 @@ class Oro : public Material{
 protected:
 
     static int cantidadTotal;
+    int cantidad;
 
 public:
     Oro(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
-        this->cantidadTotal += cantidad;}
+        this->cantidad = cantidad;}
 
     Oro(int cantidad){ this->nombre = "Oro";
-        this->cantidadTotal = cantidad;}
+        this->cantidadTotal += cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
+
+    virtual void sumarCantidad(int cantidad) { this->cantidadTotal += cantidad;}
 
     int obtenerTotal(){return cantidadTotal;}
 

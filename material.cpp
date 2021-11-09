@@ -1,5 +1,7 @@
 #include "material.h"
 
+//int Material::cantidadTotal = 0;
+
 /*
 Material::Material() { }
 

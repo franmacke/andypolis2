@@ -49,13 +49,13 @@ class Juego {
 
     void mostrarDato(string nombre, int piedra, int madera, int metal, int total, int cantidadPermitida);
 
-    void lluviaDeRecursos(Mapa& mapa, Inventario* inventario);
+    void lluviaDeRecursos(Mapa& mapa);
 
-    void lluviaDeMadera(Mapa& mapa, Inventario* inventario);
+    void lluviaDeMadera(Mapa& mapa);
 
-    void lluviaDeMetal(Mapa& mapa, Inventario* inventario);
+    void lluviaDeMetal(Mapa& mapa);
 
-    void lluviaDePiedra(Mapa& mapa, Inventario* inventario);
+    void lluviaDePiedra(Mapa& mapa);
 
     int filaAleatorio(Mapa& mapa);
 
@@ -69,6 +69,14 @@ class Juego {
 
     // Se repite en archivos.h
     Edificio * crearEdificio(string nombre, int fila, int columna);
+
+    void recolectarMateriales(Mapa& mapa, Inventario* inventario, Ciudad* ciudad);
+
+    int cantProducidoPorAserradero(Ciudad* ciudad);
+
+    int cantProducidoPorFabrica(Ciudad* ciudad);
+
+    int cantProducidoPorMina(Ciudad* ciudad);
 
 
     //void mostarEdificiosTodos(Ciudad * edificios);

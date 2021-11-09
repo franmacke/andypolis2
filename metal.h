@@ -12,15 +12,18 @@ class Metal : public Material {
 protected:
 
     static int cantidadTotal;
+    int cantidad;
 
 public:
     Metal(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
-        this->cantidadTotal += cantidad;}
+        this->cantidad = cantidad;}
 
     Metal(int cantidad){ this->nombre = "Metal";
-        this->cantidadTotal = cantidad;}
+        this->cantidadTotal += cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
+
+    virtual void sumarCantidad(int cantidad){ this->cantidadTotal += cantidad;}
 
     int obtenerTotal(){return cantidadTotal;}
 

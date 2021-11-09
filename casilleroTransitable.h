@@ -20,6 +20,8 @@ class CasilleroTransitable : public Casillero {
     void agregarMateriales(Material* material){ this->material = material;
         this->vacio = false;}
 
+    void recolectarmaterial(){this->vacio = true;}
+
     void agregarEdificio(Edificio* edificio){}
     void mostrarEnMapa();// estaria bueno en colores en vez de una letra
 

@@ -13,7 +13,7 @@ protected:
 
 public:
     Obelisco(int fila, int columna){
-        this->nombre = "obelisco";
+        this->nombre = "Obelisco";
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

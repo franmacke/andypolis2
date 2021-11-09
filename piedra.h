@@ -11,17 +11,20 @@ class Piedra : public Material{
 protected:
 
     static int cantidadTotal;
+    int cantidad;
 
 public:
     Piedra(int fila, int columna, int cantidad){this->fila = fila; this->columna = columna;
-        this->cantidadTotal += cantidad;}
+        this->cantidad = cantidad;}
 
     Piedra(int cantidad){ this->nombre = "Piedra";
-        this->cantidadTotal = cantidad;}
+        this->cantidadTotal += cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
 
-    int obtenerTotal(){return cantidadTotal;}
+    virtual void sumarCantidad(int cantidad){ this->cantidadTotal += cantidad;}
+
+    int obtenerTotal(){return this->cantidadTotal;}
 
     void mostrarEnMapa(){cout << "S";}
 

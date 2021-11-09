@@ -16,12 +16,13 @@ protected:
 
 public:
     Aserradero(int fila, int columna){ 
-        this->nombre = "aserradero";
+        this->nombre = "Aserradero";
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
 
     Aserradero(int piedra, int madera, int metal, int cantidadPermitida);
-    /*static*/  int obtenerTotal(){return cantidadTotal;} //aca obtengo la cantidad total de aserradero
+    /*static*/
+    int obtenerTotal(){return cantidadTotal;} //aca obtengo la cantidad total de aserradero
 
     // PRE: -
     // POS: resta uno a la cantidad total

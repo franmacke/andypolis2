@@ -11,6 +11,7 @@ class Material /*: public Objeto*/ {
 protected:
     string nombre;
     int fila, columna;
+    //static int cantidadTotal;
     //int cantidad_material;
 
 public:
@@ -23,6 +24,8 @@ public:
     int obtenerFila(){return this->fila;}
 
     int obtenerColumna(){return this->columna;}
+
+    virtual void sumarCantidad(int cantidad) = 0;
 
     virtual void mostrarEnMapa() = 0;
 
