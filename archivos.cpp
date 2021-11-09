@@ -105,7 +105,7 @@ void Archivo::procesarArchivoDatosEdificios(Edificio** edificios) {
 }
 
 
-void Archivo::procesarArchivoEdificios(Mapa &mapa) {
+void Archivo::procesarArchivoEdificios(Mapa &mapa, Ciudad * edificiosConstruidos) {
 
     Edificio* nuevoEdificio;
     string nombre, fila, columna, basura;
@@ -125,6 +125,8 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa) {
         int columnas = stoi(columna);
         nuevoEdificio = crearEdificio(nombre, filas, columnas);
         //mapa.alta(*nuevoEdificio, filas, columnas);
+        edificiosConstruidos->agregarEdificio(nuevoEdificio);
+        
         mapa.obtenerDato(filas, columnas)->agregarEdificio(nuevoEdificio);
 
     }

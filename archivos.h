@@ -33,7 +33,7 @@ class Archivo {
     // POS: devuelve la cantidad de columnas indicadas en el .txt
     int leerColumnas();
 
-    void procesarArchivoEdificios(Mapa& mapa);
+    void procesarArchivoEdificios(Mapa& mapa, Ciudad * edificiosConstruidos);
     //Materiales * leer_materiales();
     Coordenada * leer_ubicaciones();
     Mapa leer_mapa();
