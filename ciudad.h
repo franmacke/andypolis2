@@ -10,10 +10,11 @@
 class Ciudad {
     private:
     Edificio ** edificios;
-    static int cantidad;
+    // static int cantidad;
+    int cantidad = 0;
 
     public:
-    static int cantidadEdificios(){return cantidad;};
+    int cantidadEdificios(){return this->cantidad;};
     void agregarEdificio(Edificio * nuevo_edificio);
     void copiarLista(Edificio ** copia_lista);
     Edificio * obtenerEdificio(int posicion);
