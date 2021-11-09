@@ -25,13 +25,13 @@ class Juego {
 
     int pedirColumna(Mapa& mapa);
 
-    void pedirNombreEdificio(string &nombre);
+    Edificio * pedirNombreEdificio(Ciudad * datosEdificios);
 
     bool pedirConfirmacion();
 
     void consultarCoordenada(Mapa& mapa);
 
-    void demolerEdificio(Mapa& mapa, Ciudad * edificiosConstruidos);
+    void demolerEdificio(Mapa &mapa, Ciudad* datosEdificios, Ciudad* edificiosConstruidos, Inventario * inventario);
 
     bool esCasilleroConstruible(Mapa& mapa, int fila, int columna);
 
@@ -39,9 +39,15 @@ class Juego {
 
     void construirEdificioPorNombre(Mapa& mapa, Ciudad* ciudad, Ciudad * edificiosConstruidos, Inventario * inventario);
 
-    void construirEdificio(Mapa &mapa, Ciudad* edificiosConstruidos ,Edificio* edificio);
+    // void construirEdificio(Mapa &mapa, Ciudad* datosEdificios,Ciudad* edificiosConstruidos ,Edificio* edificio, Inventario * inventario);
+
+    void constuirEdificio(Mapa &mapa, Edificio* datosEdificio, Ciudad* edificiosConstruidos, Inventario * inventario);
 
     bool comprobarMateriales(Edificio * edificio, Inventario * inventario);
+
+    bool comprobarCantidadMaxima(Edificio * edificioParaConstruir);
+
+    bool comprobarCantidadMinima(Edificio* edificio);
 
     void mostrarInventario(Inventario* inventario);
 

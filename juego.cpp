@@ -96,7 +96,7 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConst
 
             case DEMOLER_UN_EDIFICIO_POR_COORDENADA:
                 cout << "\n\n\t\t DEMOLER UN EDIFICIO POR COORDENADA \n\n\n";
-                demolerEdificio(mapa, edificiosConstruidos);
+                demolerEdificio(mapa, ciudad, edificiosConstruidos, inventario);
                 break;
 
             case MOSTRAR_MAPA:
@@ -147,7 +147,7 @@ void Juego::mostrarInventario(Inventario *inventario) {
 
 void Juego::mostrarTodosLosEdificios(Ciudad* ciudad) {
 
-    for (int i = 0; i < CANTIDAD_TIPOS_EDIFICIOS; ++i) {
+    for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
         cout << "Tipo de edificio: " << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
         cout << "Cantidad de piedras necesarias: " << ciudad->obtenerEdificio(i)->obtenerPiedra() << endl;
         cout << "Cantidad de maderas necesarias: " << ciudad->obtenerEdificio(i)->obtenerMadera() << endl;
@@ -173,7 +173,7 @@ void Juego::consultarCoordenada(Mapa &mapa) {
 
 void Juego::mostrarConstruidos(Ciudad *ciudad, Mapa &mapa) {
 
-    for (int i = 0; i < CANTIDAD_TIPOS_EDIFICIOS; ++i) {
+    for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
         if (ciudad->obtenerEdificio(i)->obtenerTotal() > 0){
             cout << "Tipo de edificio: " << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
@@ -339,17 +339,28 @@ void Juego::recolectarMateriales(Mapa &mapa, Inventario *inventario, Ciudad* ciu
     }
 }
 
-void Juego::pedirNombreEdificio(string &nombre) {
+Edificio * Juego::pedirNombreEdificio(Ciudad* datosEdificios) {
     Utilidad utilidad;
+    string nombre;
+
+    cout << "Ingrese el nombre del edificio que desea construir: ";
     cin >> nombre;
 
-    nombre = utilidad.minuscula(nombre);
+    Edificio * edificioBuscado = nullptr;
+    edificioBuscado = datosEdificios->buscarEdificioPorNombre(nombre);
+
+    while (edificioBuscado == nullptr && nombre != "fin") {
+        cout << "No se encontro el edificio ingresado. Intente de nuevo: ";
+        cin >> nombre;
+        edificioBuscado = datosEdificios->buscarEdificioPorNombre(nombre);
+    }
+
+    // Devuelve nullptr o FIN
+    return edificioBuscado;
 }
 
 
 bool Juego::esCasilleroConstruible(Mapa& mapa, int fila, int columna) {
-
-    //Se podria hacer en casillero
     Utilidad utilidad;
     bool vacio = true;
     bool esConstruible = true;
@@ -385,64 +396,121 @@ bool Juego::esCasilleroDemolible(Mapa& mapa, int fila, int columna) {
     return vacio && esConstruible;
 }
 
-void Juego::demolerEdificio(Mapa &mapa, Ciudad* edificiosConstruidos) {
+// void Juego::demolerEdificio(Mapa &mapa, Ciudad* edificiosConstruidos) {
+//     int fila = pedirFila(mapa);
+//     int columna = pedirColumna(mapa);
+
+//     if (esCasilleroDemolible(mapa, fila, columna)) {
+//         Utilidad util;
+//         string edificioParaDestruir = mapa.obtenerDato(fila, columna)->obtenerNombre();
+//         cout << "Se demolio el edificio " << edificioParaDestruir << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
+//         mapa.baja(fila, columna);
+//         edificiosConstruidos->eliminarPorCoordenadas(fila, columna);
+//     }       
+// }
+
+void Juego::demolerEdificio(Mapa &mapa, Ciudad* datosEdificios, Ciudad* edificiosConstruidos, Inventario * inventario) {
+    Utilidad util;
+
     int fila = pedirFila(mapa);
     int columna = pedirColumna(mapa);
 
     if (esCasilleroDemolible(mapa, fila, columna)) {
-        Utilidad util;
-        string edificioParaDestruir = mapa.obtenerDato(fila, columna)->obtenerNombre();
-        cout << "Se demolio el edificio " << edificioParaDestruir << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
+        // Busco el edificio en construidos
+        Edificio * edificioParaDemoler = edificiosConstruidos->buscarEdificioPorCoordenadas(fila, columna);
+        // Necesito datos del edificio
+        Edificio * datoEdificio = datosEdificios->buscarEdificioPorNombre(edificioParaDemoler->obtenerNombre());
+        // Mensaje
+        cout << "Se demolio el edificio " << edificioParaDemoler->obtenerNombre() << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
+        // Elimino a mapa
         mapa.baja(fila, columna);
+        // Elimino a vector construidos
         edificiosConstruidos->eliminarPorCoordenadas(fila, columna);
-    }       
+        // Saco materiales del inventario
+        inventario->demolerEdificio(datoEdificio);
+    }
 }
 
+// void Juego::construirEdificio(Mapa &mapa, Ciudad* datosEdificios, Ciudad* edificiosConstruidos, Edificio * edificio, Inventario * inventario) {
+//     int fila = pedirFila(mapa);
+//     int columna = pedirColumna(mapa);
 
-void Juego::construirEdificio(Mapa &mapa, Ciudad* edificiosConstruidos, Edificio * edificio) {
+//     if (esCasilleroConstruible(mapa)) {
+//         Utilidad util;
+//         string nombre = edificio->obtenerNombre();
+//         nombre = util.minuscula(nombre);
+
+//         Edificio * edificioConstruido = crearEdificio(nombre, fila, columna);
+//         mapa.obtenerDato(fila, columna)->agregarEdificio(edificioConstruido);
+//         edificiosConstruidos->agregarEdificio(edificioConstruido);
+//         cout << "Se agrego el edificio " << edificioConstruido->obtenerNombre() << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
+//     }              
+// }
+
+void Juego::constuirEdificio(Mapa &mapa, Edificio* datosEdificio, Ciudad* edificiosConstruidos, Inventario * inventario) {
+    Utilidad util;
+
     int fila = pedirFila(mapa);
     int columna = pedirColumna(mapa);
 
     if (esCasilleroConstruible(mapa, fila, columna)) {
-        Utilidad util;
-        string nombre = edificio->obtenerNombre();
-        nombre = util.minuscula(nombre);
-        cout << "Nombre: " << nombre << endl;
-        Edificio * edificioConstruido = crearEdificio(nombre, fila, columna);
+        // Creo el edificio
+        Edificio * edificioConstruido = crearEdificio(util.minuscula(datosEdificio->obtenerNombre()), fila, columna);
+        // Agrego a mapa
         mapa.obtenerDato(fila, columna)->agregarEdificio(edificioConstruido);
+        // Agrego a vector construidos
+        edificiosConstruidos->agregarEdificio(edificioConstruido);
+        // Saco materiales del inventario
+        inventario->construirEdificio(datosEdificio);
+        
         cout << "Se agrego el edificio " << edificioConstruido->obtenerNombre() << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
-    }              
+    }
 }
 
 
-void Juego::construirEdificioPorNombre(Mapa &mapa, Ciudad * edificios, Ciudad * edifciosConstruidos, Inventario * inventario) {
-    string nombre;
-    Utilidad utilidad;
-    Edificio * edificioBuscado = nullptr;
-
-    cout << "Ingrese el nombre del edificio que desea construir: ";
-
-    pedirNombreEdificio(nombre);
-    edificioBuscado = edificios->buscarEdificioPorNombre(nombre);
-
-    if (edificioBuscado == nullptr && nombre != "fin") {
-        cout << "No se encontro el edificio ingresado. Intente de nuevo: ";
-        pedirNombreEdificio(nombre);
-        edificioBuscado = edificios->buscarEdificioPorNombre(nombre);
-    }
+void Juego::construirEdificioPorNombre(Mapa &mapa, Ciudad * datosEdificios, Ciudad * edificiosConstruidos, Inventario * inventario) {
+    Edificio * edificioBuscado = pedirNombreEdificio(datosEdificios);
 
     if (edificioBuscado) {
         cout << "Se encontro el edificio " << edificioBuscado->obtenerNombre() << "." << endl;
-    }
-
-    if (nombre != "fin" && comprobarMateriales(edificioBuscado, inventario)) {
-        if (pedirConfirmacion()) {
-            construirEdificio(mapa, edifciosConstruidos, edificioBuscado);
+    
+        if (comprobarMateriales(edificioBuscado, inventario) && 
+        comprobarCantidadMaxima(edificioBuscado) && 
+        pedirConfirmacion()) {
+            
+            constuirEdificio(mapa, edificioBuscado, edificiosConstruidos, inventario);
+            // construirEdificio(mapa, datosEdificios, edifciosConstruidos, edificioBuscado, inventario);
+        } 
+        else {
+            cout << "Se cancelo la construccion del edificio.";
         }
 
     } else {
         cout << "Se cancelo la construccion del edificio.";
     }
+
+}
+
+bool Juego::comprobarCantidadMaxima(Edificio* edificio) {
+    bool esConstruible = false;
+    if (edificio->obtenerTotal() + 1 <= edificio->obtenerTope()) {
+        esConstruible = true;
+    } else {
+        cout << "Ya tenes la cantidad maxima del edicicio " << edificio->obtenerNombre() << "." << endl;
+    }
+
+    return esConstruible;
+}
+
+bool Juego::comprobarCantidadMinima(Edificio* edificio) {
+    bool esDemolible = false;
+    if (edificio->obtenerTotal() - 1 >= 0) {
+        esDemolible = true;
+    } else {
+        cout << "Ya no tenes mas edificios de " << edificio->obtenerNombre() << " para destruir." << endl;
+    }
+
+    return esDemolible;
 }
 
 bool Juego::comprobarMateriales(Edificio * edificio, Inventario * inventario) {
