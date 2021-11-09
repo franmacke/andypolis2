@@ -96,6 +96,7 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConst
 
             case DEMOLER_UN_EDIFICIO_POR_COORDENADA:
                 cout << "\n\n\t\t DEMOLER UN EDIFICIO POR COORDENADA \n\n\n";
+                demolerEdificio(mapa, edificiosConstruidos);
                 break;
 
             case MOSTRAR_MAPA:
@@ -281,6 +282,8 @@ void Juego::pedirNombreEdificio(string &nombre) {
 
 
 bool Juego::esCasilleroConstruible(Mapa& mapa, int fila, int columna) {
+
+    //Se podria hacer en casillero
     Utilidad utilidad;
     bool vacio = true;
     bool esConstruible = true;
@@ -296,6 +299,37 @@ bool Juego::esCasilleroConstruible(Mapa& mapa, int fila, int columna) {
     }
 
     return vacio && esConstruible;
+}
+
+bool Juego::esCasilleroDemolible(Mapa& mapa, int fila, int columna) {
+    Utilidad utilidad;
+    bool vacio = true;
+    bool esConstruible = true;
+
+    if (utilidad.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != "construible") {
+        cout << "El casillero (" << fila << ", " << columna << ") no es de tipo construible" << endl;
+        esConstruible = false;
+    }
+
+    if(mapa.obtenerDato(fila, columna)->esVacio() && esConstruible) {
+        cout << "El casillero (" << fila << ", " << columna << ") esta vacio." << endl;
+        vacio = false;
+    }
+
+    return vacio && esConstruible;
+}
+
+void Juego::demolerEdificio(Mapa &mapa, Ciudad* edificiosConstruidos) {
+    int fila = pedirFila(mapa);
+    int columna = pedirColumna(mapa);
+
+    if (esCasilleroDemolible(mapa, fila, columna)) {
+        Utilidad util;
+        string edificioParaDestruir = mapa.obtenerDato(fila, columna)->obtenerNombre();
+        cout << "Se demolio el edificio " << edificioParaDestruir << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
+        mapa.baja(fila, columna);
+        edificiosConstruidos->eliminarPorCoordenadas(fila, columna);
+    }       
 }
 
 
