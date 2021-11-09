@@ -19,7 +19,7 @@ class Juego {
     void jugar();
     void mostrarOpciones();
     void pedirOpcion();
-    void interfazPrincipal(Mapa& mapa, Ciudad* ciudad, Inventario* inventario);
+    void interfazPrincipal(Mapa& mapa, Ciudad* ciudad, Ciudad* edificiosConstruidos ,Inventario* inventario);
 
     int pedirFila(Mapa& mapa);
 
@@ -35,9 +35,9 @@ class Juego {
 
     bool esCasilleroConstruible(Mapa& mapa, int fila, int columna);
 
-    void construirEdificioPorNombre(Mapa& mapa, Ciudad* ciudad, Inventario * inventario);
+    void construirEdificioPorNombre(Mapa& mapa, Ciudad* ciudad, Ciudad * edificiosConstruidos, Inventario * inventario);
 
-    void construirEdificio(Mapa &mapa, Edificio* edificio);
+    void construirEdificio(Mapa &mapa, Ciudad* edificiosConstruidos ,Edificio* edificio);
 
     bool comprobarMateriales(Edificio * edificio, Inventario * inventario);
 
@@ -67,6 +67,8 @@ class Juego {
 
     int cantAleatoriaPiedra();
 
+    // Se repite en archivos.h
+    Edificio * crearEdificio(string nombre, int fila, int columna);
 
 
     //void mostarEdificiosTodos(Ciudad * edificios);

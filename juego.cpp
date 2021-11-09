@@ -71,7 +71,7 @@ bool Juego::pedirConfirmacion() {
     return utilidad.minuscula(opcion) == "si"; 
 }
 
-void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Inventario* inventario) {
+void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConstruidos , Inventario* inventario) {
 
     while (opcion != GUARDAR_Y_SALIR){
         
@@ -81,7 +81,7 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Inventario* inventario
         switch (opcion) {
             case CONSTRUIR_EDIFICIO_POR_NOMBRE:
                 cout << "\n\n\t\t CONSTRUIR EDIFICIO POR NOMBRE \n\n\n";
-                construirEdificioPorNombre(mapa, ciudad, inventario);
+                construirEdificioPorNombre(mapa, ciudad, edificiosConstruidos, inventario);
                 break;
 
             case LISTAR_LOS_EDIFICIOS_CONSTRUIDOS:
@@ -276,7 +276,7 @@ void Juego::pedirNombreEdificio(string &nombre) {
     Utilidad utilidad;
     cin >> nombre;
 
-    utilidad.minuscula(nombre);
+    nombre = utilidad.minuscula(nombre);
 }
 
 
@@ -290,7 +290,6 @@ bool Juego::esCasilleroConstruible(Mapa& mapa, int fila, int columna) {
         esConstruible = false;
     }
 
-    cout << "vacio: " << mapa.obtenerDato(fila, columna)->esVacio() << endl;
     if(!mapa.obtenerDato(fila, columna)->esVacio() && esConstruible) {
         cout << "El casillero (" << fila << ", " << columna << ") no esta vacio." << endl;
         vacio = false;
@@ -300,18 +299,23 @@ bool Juego::esCasilleroConstruible(Mapa& mapa, int fila, int columna) {
 }
 
 
-void Juego::construirEdificio(Mapa &mapa, Edificio * edificio) {
+void Juego::construirEdificio(Mapa &mapa, Ciudad* edificiosConstruidos, Edificio * edificio) {
     int fila = pedirFila(mapa);
     int columna = pedirColumna(mapa);
 
     if (esCasilleroConstruible(mapa, fila, columna)) {
-        mapa.obtenerDato(fila, columna)->agregarEdificio(edificio);
-        cout << "Se agrego el edificio " << edificio->obtenerNombre() << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
+        Utilidad util;
+        string nombre = edificio->obtenerNombre();
+        nombre = util.minuscula(nombre);
+        cout << "Nombre: " << nombre << endl;
+        Edificio * edificioConstruido = crearEdificio(nombre, fila, columna);
+        mapa.obtenerDato(fila, columna)->agregarEdificio(edificioConstruido);
+        cout << "Se agrego el edificio " << edificioConstruido->obtenerNombre() << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
     }              
 }
 
 
-void Juego::construirEdificioPorNombre(Mapa &mapa, Ciudad * edificios, Inventario * inventario) {
+void Juego::construirEdificioPorNombre(Mapa &mapa, Ciudad * edificios, Ciudad * edifciosConstruidos, Inventario * inventario) {
     string nombre;
     Utilidad utilidad;
     Edificio * edificioBuscado = nullptr;
@@ -333,7 +337,7 @@ void Juego::construirEdificioPorNombre(Mapa &mapa, Ciudad * edificios, Inventari
 
     if (nombre != "fin" && comprobarMateriales(edificioBuscado, inventario)) {
         if (pedirConfirmacion()) {
-            construirEdificio(mapa, edificioBuscado);
+            construirEdificio(mapa, edifciosConstruidos, edificioBuscado);
         }
 
     } else {
@@ -385,3 +389,29 @@ void Juego::mostrarEdificiosConstruidos(Ciudad * edificios) {
         }
     } 
 }*/
+
+
+Edificio* Juego::crearEdificio(string nombre, int fila, int columna) {
+
+        Edificio * nuevo;
+
+        if (nombre == "mina") {
+            nuevo = new Mina(fila, columna);
+        } else if (nombre == "aserradero") {
+            nuevo = new Aserradero(fila, columna);
+        } else if (nombre == "escuela") {
+            nuevo = new Escuela(fila, columna);
+        } else if (nombre == "fabrica") {
+            nuevo = new Fabrica(fila, columna);
+        } else if (nombre == "yacimiento") {
+            nuevo = new Yacimiento(fila, columna);
+        } else if (nombre == "obelisco") {
+            nuevo = new Obelisco(fila, columna);
+        } else if (nombre == "planta") {
+            nuevo = new Planta(fila, columna);
+        }
+
+        return nuevo;
+
+}
+
