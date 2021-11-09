@@ -39,6 +39,17 @@ Material* Inventario::obtenerPorNombre(string nombre) {
     return material;
 }
 
+void Inventario::construirEdificio(Edificio * edificio) {
+    obtenerPorNombre("madera")->restarTotal(edificio->obtenerMadera());
+    obtenerPorNombre("piedra")->restarTotal(edificio->obtenerPiedra());
+    obtenerPorNombre("metal")->restarTotal(edificio->obtenerMetal());
+}
+
+void Inventario::demolerEdificio(Edificio * edificio) {
+    obtenerPorNombre("madera")->aumentarTotal(edificio->obtenerMadera() / 2);
+    obtenerPorNombre("piedra")->aumentarTotal(edificio->obtenerPiedra() / 2);
+    obtenerPorNombre("metal")->aumentarTotal(edificio->obtenerMetal() / 2);
+}
 
 
 /*

@@ -53,7 +53,7 @@ public:
     //int cantidad();
     virtual void mostrarEnMapa() = 0;
     virtual int obtenerTotal() = 0;// Yo lo declararia aca
-
+    virtual void restarTotal() = 0;
 
 
     //int maxima_cantidad();

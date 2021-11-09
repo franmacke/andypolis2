@@ -32,6 +32,8 @@ public:
 
         virtual void agregarEdificio(Edificio* edificio) = 0;//virtual void es una funcion q si o si todas las hijas tienen q tener la funcion?
 
+        virtual void eliminarEdificio() = 0;
+
         virtual void mostrarEnMapa() = 0;
 
         virtual string obtenerNombre() = 0;

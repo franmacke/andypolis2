@@ -89,7 +89,9 @@ void Mapa::mostrar() {
     }
 }
 
-void Mapa::baja(int fila, int columna) {}
+void Mapa::baja(int fila, int columna) {
+    obtenerDato(fila, columna)->eliminarEdificio();
+}
 
 /*
 void Mapa::alta(string dato, int fila, int columna) {

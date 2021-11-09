@@ -25,6 +25,8 @@ class CasilleroTransitable : public Casillero {
     void agregarEdificio(Edificio* edificio){}
     void mostrarEnMapa();// estaria bueno en colores en vez de una letra
 
+    void eliminarEdificio() {}
+
     string obtenerNombre(){return this->material->obtenerNombre();}
 };
 

@@ -13,12 +13,13 @@ class CasilleroConstruible : public Casillero {
 private:
     Edificio* edificio;
 
-
 public:
     CasilleroConstruible(){ this->tipoCasillero = "Construible"; this->edificio = nullptr;
         this->vacio = true;}
 
     void agregarEdificio(Edificio* edificio){ this->edificio = edificio; this->vacio = false;}
+
+    void eliminarEdificio() { this->edificio = nullptr; this->vacio = true;}
 
     void agregarMateriales(Material* material){}
 

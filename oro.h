@@ -20,6 +20,7 @@ public:
         this->cantidadTotal += cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
+    void aumentarTotal(int cantidad) {this->cantidadTotal += cantidad;}
 
     virtual void sumarCantidad(int cantidad) { this->cantidadTotal += cantidad;}
 

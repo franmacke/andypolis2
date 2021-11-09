@@ -31,9 +31,11 @@ class Juego {
 
     void consultarCoordenada(Mapa& mapa);
 
-    void demolerEdificio(Mapa& mapa);
+    void demolerEdificio(Mapa& mapa, Ciudad * edificiosConstruidos);
 
     bool esCasilleroConstruible(Mapa& mapa, int fila, int columna);
+
+    bool esCasilleroDemolible(Mapa& mapa, int fila, int columna);
 
     void construirEdificioPorNombre(Mapa& mapa, Ciudad* ciudad, Ciudad * edificiosConstruidos, Inventario * inventario);
 
