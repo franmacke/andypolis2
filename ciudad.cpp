@@ -69,23 +69,23 @@ void Ciudad::eliminarPorCoordenadas(int fila, int columna) {
     eliminarEdificio(posicion);
 }
 
-// Edificio * Ciudad::buscarEdificioPorCoordenadas(int fila, int columna) {
-//     int contador = 0;
-//     bool resultado = false;
-//     int posicion = -1;
-//     Utilidad utilidad;
+Edificio * Ciudad::buscarEdificioPorCoordenadas(int fila, int columna) {
+    int contador = 0;
+    bool resultado = false;
+    int posicion = -1;
+    Utilidad utilidad;
 
-//     while (contador < cantidadEdificios() && !resultado) {
-//         if (obtenerEdificio(contador)->obtenerFila() == fila && obtenerEdificio(contador)->obtenerColumna() == columna) {
-//             resultado = true;
-//             posicion = contador;
-//         } else {
-//             contador++;
-//         }
-//     }
-//     //Devuelve un edificio si existe y si no devuelve un nullptr
-//     return edificios[posicion];
-// }
+    while (contador < cantidadEdificios() && !resultado) {
+        if (obtenerEdificio(contador)->obtenerFila() == fila && obtenerEdificio(contador)->obtenerColumna() == columna) {
+            resultado = true;
+            posicion = contador;
+        } else {
+            contador++;
+        }
+    }
+    //Devuelve un edificio si existe y si no devuelve un nullptr
+    return edificios[posicion];
+}
 
 
 Edificio * Ciudad::buscarEdificioPorNombre(string nombre) {
