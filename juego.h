@@ -25,9 +25,21 @@ class Juego {
 
     int pedirColumna(Mapa& mapa);
 
+    void pedirNombreEdificio(string &nombre);
+
+    bool pedirConfirmacion();
+
     void consultarCoordenada(Mapa& mapa);
 
     void demolerEdificio(Mapa& mapa);
+
+    bool esCasilleroConstruible(Mapa& mapa, int fila, int columna);
+
+    void construirEdificioPorNombre(Mapa& mapa, Ciudad* ciudad, Inventario * inventario);
+
+    void construirEdificio(Mapa &mapa, Edificio* edificio);
+
+    bool comprobarMateriales(Edificio * edificio, Inventario * inventario);
 
     void mostrarInventario(Inventario* inventario);
 
@@ -54,6 +66,7 @@ class Juego {
     int cantAleatoriaMetal();
 
     int cantAleatoriaPiedra();
+
 
 
     //void mostarEdificiosTodos(Ciudad * edificios);

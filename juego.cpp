@@ -37,7 +37,8 @@ int Juego::pedirFila(Mapa& mapa) {
     int fila;
     cout << "\t\tIngrese el numero de fila: ";
     cin >> fila;
-    while (fila > mapa.filaMapa()){
+
+    while (fila >= mapa.filaMapa() || fila < 0){
         cout << "\t\tFila ingresada esta mal, intentalo de nuevo: ";
         cin >> fila;
     }
@@ -48,11 +49,26 @@ int Juego::pedirColumna(Mapa& mapa) {
     int columna;
     cout << "\t\tIngrese el numero de columna: ";
     cin >> columna;
-    while (columna > mapa.columnaMapa()){
+    while (columna >= mapa.columnaMapa() || columna < 0){
         cout << "\t\tColumna ingresada esta mal, intentalo de nuevo: ";
         cin >> columna;
     }
     return columna;
+}
+
+bool Juego::pedirConfirmacion() {
+    string opcion;
+    Utilidad utilidad;
+    bool respuesta = false;
+    cout << "Esta seguro que queres proceder? [si/no]" << endl;
+    cin >> opcion;
+
+    while (utilidad.minuscula(opcion) != "si" && utilidad.minuscula(opcion) != "no" ) {
+        cout << "Ingreso invalido. Ingrese si o no: ";
+        cin >> opcion;
+    }
+
+    return utilidad.minuscula(opcion) == "si"; 
 }
 
 void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Inventario* inventario) {
@@ -65,6 +81,7 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Inventario* inventario
         switch (opcion) {
             case CONSTRUIR_EDIFICIO_POR_NOMBRE:
                 cout << "\n\n\t\t CONSTRUIR EDIFICIO POR NOMBRE \n\n\n";
+                construirEdificioPorNombre(mapa, ciudad, inventario);
                 break;
 
             case LISTAR_LOS_EDIFICIOS_CONSTRUIDOS:
@@ -254,6 +271,99 @@ void Juego::lluviaDeRecursos(Mapa &mapa, Inventario *inventario) {
 
 }
 
+
+void Juego::pedirNombreEdificio(string &nombre) {
+    Utilidad utilidad;
+    cin >> nombre;
+
+    utilidad.minuscula(nombre);
+}
+
+
+bool Juego::esCasilleroConstruible(Mapa& mapa, int fila, int columna) {
+    Utilidad utilidad;
+    bool vacio = true;
+    bool esConstruible = true;
+
+    if (utilidad.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != "construible") {
+        cout << "El casillero (" << fila << ", " << columna << ") no es de tipo construible" << endl;
+        esConstruible = false;
+    }
+
+    cout << "vacio: " << mapa.obtenerDato(fila, columna)->esVacio() << endl;
+    if(!mapa.obtenerDato(fila, columna)->esVacio() && esConstruible) {
+        cout << "El casillero (" << fila << ", " << columna << ") no esta vacio." << endl;
+        vacio = false;
+    }
+
+    return vacio && esConstruible;
+}
+
+
+void Juego::construirEdificio(Mapa &mapa, Edificio * edificio) {
+    int fila = pedirFila(mapa);
+    int columna = pedirColumna(mapa);
+
+    if (esCasilleroConstruible(mapa, fila, columna)) {
+        mapa.obtenerDato(fila, columna)->agregarEdificio(edificio);
+        cout << "Se agrego el edificio " << edificio->obtenerNombre() << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
+    }              
+}
+
+
+void Juego::construirEdificioPorNombre(Mapa &mapa, Ciudad * edificios, Inventario * inventario) {
+    string nombre;
+    Utilidad utilidad;
+    Edificio * edificioBuscado = nullptr;
+
+    cout << "Ingrese el nombre del edificio que desea construir: ";
+
+    pedirNombreEdificio(nombre);
+    edificioBuscado = edificios->buscarEdificioPorNombre(nombre);
+
+    if (edificioBuscado == nullptr && nombre != "fin") {
+        cout << "No se encontro el edificio ingresado. Intente de nuevo: ";
+        pedirNombreEdificio(nombre);
+        edificioBuscado = edificios->buscarEdificioPorNombre(nombre);
+    }
+
+    if (edificioBuscado) {
+        cout << "Se encontro el edificio " << edificioBuscado->obtenerNombre() << "." << endl;
+    }
+
+    if (nombre != "fin" && comprobarMateriales(edificioBuscado, inventario)) {
+        if (pedirConfirmacion()) {
+            construirEdificio(mapa, edificioBuscado);
+        }
+
+    } else {
+        cout << "Se cancelo la construccion del edificio.";
+    }
+}
+
+bool Juego::comprobarMateriales(Edificio * edificio, Inventario * inventario) {
+    bool madera = true;
+    bool metal = true;
+    bool piedra = true;
+
+    if (edificio->obtenerMadera() > inventario->obtenerMadera()) {
+        cout << "No tenes suficiente madera." << endl;
+        cout << "Tenes " << inventario->obtenerMadera() << " y necesitas " << edificio->obtenerMadera() << endl;
+        madera = false;
+    }
+    if (edificio->obtenerMetal() > inventario->obtenerMetal()) {
+        cout << "No tenes suficiente metal." << endl;
+        cout << "Tenes " << inventario->obtenerMetal() << " y necesitas " << edificio->obtenerMetal() << endl;
+        metal = false;
+    }
+    if (edificio->obtenerPiedra() > inventario->obtenerPiedra()) {
+        cout << "No tenes suficiente piedra." << endl;
+        cout << "Tenes " << inventario->obtenerPiedra() << " y necesitas " << edificio->obtenerPiedra() << endl;
+        piedra = false;
+    }
+
+    return (piedra && madera && metal);
+}
 
 
 /*
