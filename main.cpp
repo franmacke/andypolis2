@@ -10,6 +10,7 @@ int main() {
     Juego juego;
     int filas, columnas;
     Ciudad * ciudad = new Ciudad;
+    Ciudad * edificiosConstruidos = new Ciudad;
     Inventario* inventario = new Inventario;
     //Edificio** edificios;
     //Edificio** edificios = new Edificio*;
@@ -25,7 +26,7 @@ int main() {
 
     //datos.procesarArchivoDatosEdificios(edificios);
     datos.procesarArchivoMapa(mapa);
-    datos.procesarArchivoEdificios(mapa);
+    datos.procesarArchivoEdificios(mapa, edificiosConstruidos);
     datos.leerArchivoEdificios(ciudad);
     datos.leerArchivosMateriales(inventario);
     // Ciudad * edificios = datos.leer_edificios();
@@ -50,7 +51,7 @@ int main() {
 
     //cout << ciudad->obtenerEdificio(2)->obtenerNombre() << endl;
     mapa.mostrar();
-    juego.interfazPrincipal(mapa, ciudad, inventario);
+    juego.interfazPrincipal(mapa, ciudad, edificiosConstruidos, inventario);
     // juego.interfazPrincipal(mapa);
 
     return 0;
