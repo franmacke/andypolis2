@@ -30,6 +30,64 @@ void Ciudad::agregarEdificio(Edificio * edificio_nuevo) {
     cantidad++;
 }
 
+void Ciudad::eliminarEdificio(int posicion) {
+    // REVISAR PARA CANTIDAD 1 Y 0
+    if (cantidadEdificios() != 0) {
+        Edificio ** lista_copia = new Edificio * [cantidadEdificios() - 1];
+        
+        int contador = 0;
+
+        for (int i = 0; i < cantidadEdificios(); i++) {
+            if (i != posicion) {
+                lista_copia[contador] = obtenerEdificio(i);
+                contador++;
+            } else {
+                delete edificios[posicion];
+            }
+        }
+        cantidad--;
+        edificios = lista_copia;
+    }
+}
+
+void Ciudad::eliminarPorCoordenadas(int fila, int columna) {
+    int contador = 0;
+    bool resultado = false;
+    int posicion = -1;
+    Utilidad utilidad;
+
+    while (contador < cantidadEdificios() && !resultado) {
+
+        if (obtenerEdificio(contador)->obtenerFila() == fila && obtenerEdificio(contador)->obtenerColumna() == columna) {
+            resultado = true;
+            posicion = contador;
+            obtenerEdificio(contador)->restarTotal();
+        } else {
+            contador++;
+        }
+    }
+    eliminarEdificio(posicion);
+}
+
+// Edificio * Ciudad::buscarEdificioPorCoordenadas(int fila, int columna) {
+//     int contador = 0;
+//     bool resultado = false;
+//     int posicion = -1;
+//     Utilidad utilidad;
+
+//     while (contador < cantidadEdificios() && !resultado) {
+//         if (obtenerEdificio(contador)->obtenerFila() == fila && obtenerEdificio(contador)->obtenerColumna() == columna) {
+//             resultado = true;
+//             posicion = contador;
+//         } else {
+//             contador++;
+//         }
+//     }
+//     //Devuelve un edificio si existe y si no devuelve un nullptr
+//     return edificios[posicion];
+// }
+
+
 Edificio * Ciudad::buscarEdificioPorNombre(string nombre) {
     int contador = 0;
     bool resultado = false;

@@ -12,13 +12,19 @@ class Ciudad {
     Edificio ** edificios;
     // static int cantidad;
     int cantidad = 0;
+    int cantidadConstruidos = 0;
 
     public:
     int cantidadEdificios(){return this->cantidad;};
+    int cantidadEdificiosConstruidos();
     void agregarEdificio(Edificio * nuevo_edificio);
+    void eliminarEdificio(int posicion);
     void copiarLista(Edificio ** copia_lista);
     Edificio * obtenerEdificio(int posicion);
     Edificio * buscarEdificioPorNombre(string nombre);
+    Edificio * buscarEdificioPorCoordenadas(int fila, int columna);
+    void eliminarPorCoordenadas(int fila, int columna);
+
     void liberarMemoria();
 };
 
