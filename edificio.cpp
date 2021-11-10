@@ -17,14 +17,16 @@ void Edificio::agregarEdificio(Edificio** edificios, Edificio *nuevoEdificio, in
     for (int i = 0; i < tope; ++i) {
         nuevoVectorEdificios[i] = edificios[i];
     }
+    if (tope != 0) {
+        delete[] edificios;
+    }
+
     nuevoVectorEdificios[topeViejo] = nuevoEdificio;
 
     edificios = nuevoVectorEdificios;
 
 
-    /*if (tope != 0)
-        delete[] edificios
-*/
+
 
 }
 
