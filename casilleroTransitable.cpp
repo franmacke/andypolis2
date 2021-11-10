@@ -4,6 +4,11 @@
 
 #include "casilleroTransitable.h"
 
+CasilleroTransitable::~CasilleroTransitable() {
+    material = NULL;
+    delete [] material;
+}
+
 void CasilleroTransitable::mostrarEnMapa() {
     if (this->material == nullptr){
         cout << "C";

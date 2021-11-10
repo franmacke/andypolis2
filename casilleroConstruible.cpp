@@ -14,6 +14,11 @@ void CasilleroConstruible::cambiar_dato(Objeto * dato) {
 }
 */
 
+CasilleroConstruible::~CasilleroConstruible() {
+    edificio = NULL;
+    delete edificio;
+}
+
 void CasilleroConstruible::mostrarEnMapa() {
     if (this->edificio == nullptr){
         cout << "T";

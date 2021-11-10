@@ -52,6 +52,8 @@ class Mapa {
 
     int columnaMapa(){return columna;}
 
+    ~Mapa();
+
 };
 
 

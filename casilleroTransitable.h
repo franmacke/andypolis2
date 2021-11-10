@@ -28,6 +28,8 @@ class CasilleroTransitable : public Casillero {
     void eliminarEdificio() {}
 
     string obtenerNombre(){return this->material->obtenerNombre();}
+
+    ~CasilleroTransitable();
 };
 
 

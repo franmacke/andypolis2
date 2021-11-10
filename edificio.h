@@ -55,7 +55,6 @@ public:
     virtual int obtenerTotal() = 0;// Yo lo declararia aca
     virtual void restarTotal() = 0;
 
-
     //int maxima_cantidad();
     //int madera();
     //int piedra();
