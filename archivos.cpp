@@ -45,6 +45,10 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
     string nombre, piedra, madera, metal, cantidad_permitidos;
 
     while (getline(archivo, nombre, ESPACIO)) {
+        if (nombre == "planta") {
+            string aux = "";
+            getline(archivo, aux, ESPACIO);
+        }
         getline(archivo, piedra, ESPACIO);
         getline(archivo, madera, ESPACIO);
         getline(archivo, metal, ESPACIO);
@@ -69,36 +73,43 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
    
 }
 
-void Archivo::procesarArchivoDatosEdificios(Edificio** edificios) {
-    fstream archivo;
-    abrir(archivo, PATH_EDIFICIOS);
+// void Archivo::procesarArchivoDatosEdificios(Edificio** edificios) {
+//     fstream archivo;
+//     abrir(archivo, PATH_EDIFICIOS);
 
-    string nombre, piedra, madera, metal, cantidad_permitidos;
-    //edificios = new Edificio* [CANTIDAD_TIPOS_EDIFICIOS];
-    int i = 0;
-    while (getline(archivo, nombre, ESPACIO)) {
-        getline(archivo, piedra, ESPACIO);
-        getline(archivo, madera, ESPACIO);
-        getline(archivo, metal, ESPACIO);
-        getline(archivo, cantidad_permitidos);
+//     string nombre, piedra, madera, metal, cantidad_permitidos;
+//     //edificios = new Edificio* [CANTIDAD_TIPOS_EDIFICIOS];
+//     int i = 0;
+//     cout << "XD" << endl;
+//     while (getline(archivo, nombre, ESPACIO)) {
+//         cout << "\"" << nombre <<  "\"" << endl;
+//         if (nombre == "planta") {
+//             string aux = "";
+//             getline(archivo, aux, ESPACIO);
+//             nombre = nombre + " " + aux;
+//         }
+//         getline(archivo, piedra, ESPACIO);
+//         getline(archivo, madera, ESPACIO);
+//         getline(archivo, metal, ESPACIO);
+//         getline(archivo, cantidad_permitidos);
 
-        int piedras = stoi(piedra);
-        int maderas = stoi(madera);
-        int metales = stoi(metal);
-        int tope = stoi(cantidad_permitidos);
-        // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
+//         int piedras = stoi(piedra);
+//         int maderas = stoi(madera);
+//         int metales = stoi(metal);
+//         int tope = stoi(cantidad_permitidos);
+//         // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
 
-        Edificio* nuevo_edificio = setearEdificio(nombre, piedras, maderas, metales, tope);
+//         Edificio* nuevo_edificio = setearEdificio(nombre, piedras, maderas, metales, tope);
 
 
-        //*edificios = nuevo_edificio;
-        //cout << edificios[i]->obtenerNombre() << endl;
-        i++;
+//         //*edificios = nuevo_edificio;
+//         //cout << edificios[i]->obtenerNombre() << endl;
+//         i++;
 
-        //edificios->agregarEdificio(nuevo_edificio);
-        // edificios->agregar(edificio);
-    }
-}
+//         //edificios->agregarEdificio(nuevo_edificio);
+//         // edificios->agregar(edificio);
+//     }
+// }
 
 
 void Archivo::procesarArchivoEdificios(Mapa &mapa, Ciudad * edificiosConstruidos) {
