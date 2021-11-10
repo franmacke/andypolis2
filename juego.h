@@ -92,6 +92,7 @@ class Juego {
 
     void guardarArchivoUbicaciones(Mapa& mapa, Ciudad* ciudad);
 
+    void liberarMemoria(Ciudad* edificiosConstruidos, Ciudad* datosEdificios, Inventario* inventario);
 
     //void mostarEdificiosTodos(Ciudad * edificios);
 

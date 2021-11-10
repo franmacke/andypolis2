@@ -128,16 +128,13 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConst
             case GUARDAR_Y_SALIR:
                 cout << "\n\n\t\t GUARDAR Y SALIR \n\n\n";
                 guardarYSalir(mapa, ciudad, inventario);
+                liberarMemoria(edificiosConstruidos, ciudad, inventario);
                 break;
-
 
             default: cout << " Ingreso una opcion invalida" << endl;
 
         }
-
-
     }
-
 }
 
 void Juego::mostrarInventario(Inventario *inventario) {
@@ -643,3 +640,9 @@ Edificio* Juego::crearEdificio(string nombre, int fila, int columna) {
 
 }
 
+
+void Juego::liberarMemoria(Ciudad* edificiosConstruidos, Ciudad* datosEdificios, Inventario* inventario) {
+    delete edificiosConstruidos;
+    delete datosEdificios;
+    delete inventario;
+}
