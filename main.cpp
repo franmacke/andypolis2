@@ -54,5 +54,13 @@ int main() {
     juego.interfazPrincipal(mapa, ciudad, edificiosConstruidos, inventario);
     // juego.interfazPrincipal(mapa);
 
+    // inventario->~Inventario();
+    // ciudad->~Ciudad();
+    // edificiosConstruidos->~Ciudad();
+
+    delete inventario;
+    delete ciudad;
+    delete edificiosConstruidos;
+
     return 0;
 }

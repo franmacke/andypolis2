@@ -2,12 +2,14 @@
 
 Mapa::~Mapa() {
     for (int i = 0; i < filaMapa(); i++) {
+        cout << i <<": Desctructor mapa." << endl;
         for (int j = 0; j < columnaMapa(); j++) {
             delete mapa[i][j];
 
         }
         delete[] mapa[i];
     }
+
     delete[] mapa;
 }
 

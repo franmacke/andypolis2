@@ -5,8 +5,7 @@
 #include "casilleroTransitable.h"
 
 CasilleroTransitable::~CasilleroTransitable() {
-    material = NULL;
-    delete [] material;
+    delete material;
 }
 
 void CasilleroTransitable::mostrarEnMapa() {
