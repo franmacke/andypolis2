@@ -34,6 +34,8 @@ public:
 
         virtual void eliminarEdificio() = 0;
 
+        virtual void eliminarObjeto() = 0;
+
         virtual void mostrarEnMapa() = 0;
 
         virtual string obtenerNombre() = 0;

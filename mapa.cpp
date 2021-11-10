@@ -6,7 +6,9 @@ Mapa::~Mapa() {
             delete mapa[i][j];
 
         }
+        delete[] mapa[i];
     }
+    delete[] mapa;
 }
 
 Mapa::Mapa(int fila, int columna) {

@@ -9,7 +9,7 @@ Fabrica::Fabrica() : Edificio(FABRICA) {
     this->cantidadTotal++;
 }*/
 Fabrica::Fabrica(int piedra, int madera, int metal, int cantidadPermitida) {
-    this->nombre = "Fabrica";
+    this->nombre = "fabrica";
     this->cantNecesariPiedra = piedra;
     this->cantNecesariaMadera = madera;
     this->cantNecesariMetal = metal;

@@ -15,6 +15,7 @@ void Juego::jugar() {
 }
 
 void Juego::mostrarOpciones() {
+    cout << endl;
     cout << "[1] CONSTRUIR EDIFICIO POR NOMBRE" << endl;
     cout << "[2] LISTAR LOS EDIFICIOS CONSTRUIDOS" << endl;
     cout << "[3] LISTAR TODOS LOS EDIFICIOS" << endl;
@@ -566,7 +567,7 @@ void Juego::mostrarEdificiosConstruidos(Ciudad * edificios) {
 
 void Juego::guardarYSalir(Mapa &mapa, Ciudad* ciudad, Inventario *inventario) {
     guardarArchivoMateriales(inventario);
-    //guardarArchivoUbicaciones(mapa, ciudad);
+    guardarArchivoUbicaciones(mapa, ciudad);
 }
 
 
@@ -588,25 +589,33 @@ void Juego::guardarArchivoMateriales(Inventario *inventario) {
 
 }
 
-/*
+
 void Juego::guardarArchivoUbicaciones(Mapa &mapa, Ciudad* ciudad) {
     ofstream archivo;
     archivo.open(PATH_UBICACIONES);
 
-    for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
-
-        if (ciudad->obtenerEdificio(i)->obtenerTotal() > 0){
-            //cout << "Tipo de edificio: " << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
-            archivo << ciudad->obtenerEdificio(i)->obtenerNombre() << " (" << mapa.<< ", " << ciudad->obtenerEdificio(i)->obtenerColumna() << ")" << '\n';
+    for (int i = 0; i < mapa.filaMapa(); ++i) {
+        for (int j = 0; j < mapa.columnaMapa(); ++j) {
+            if (!mapa.obtenerDato(i, j)->esVacio()){
+                archivo << mapa.obtenerDato(i, j)->obtenerNombre() << " (" << i << ", " << j << ")" << '\n';
+                cout << "se guardo: " << mapa.obtenerDato(i, j)->obtenerNombre() << " (" << i << ", " << j << ")" << '\n';
+                //mapa.obtenerDato(i, j)->eliminarObjeto();
+            }
+            //mapa.baja(i, j);
+            //delete mapa.obtenerDato(i, j);
 
         }
+    }
+
+    for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
         delete ciudad->obtenerEdificio(i);
         ciudad->sacarEdificio();
     }
+
     ciudad->liberarMemoria();
     archivo.close();
 }
-*/
+
 
 
 

@@ -8,7 +8,7 @@ Aserradero::Aserradero() : Edificio(ASERRADERO) {
     this->cantidadTotal++;
 }*/
 Aserradero::Aserradero(int piedra, int madera, int metal, int cantidadPermitida) {
-    this->nombre = "Aserradero";
+    this->nombre = "aserradero";
     this->cantNecesariPiedra = piedra;
     this->cantNecesariaMadera = madera;
     this->cantNecesariMetal = metal;

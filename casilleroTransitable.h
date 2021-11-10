@@ -27,6 +27,8 @@ class CasilleroTransitable : public Casillero {
 
     void eliminarEdificio() {}
 
+    void eliminarObjeto() { this->material = nullptr; this->vacio = true;}
+
     string obtenerNombre(){return this->material->obtenerNombre();}
 
     ~CasilleroTransitable();

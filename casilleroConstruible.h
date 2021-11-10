@@ -21,6 +21,8 @@ public:
 
     void eliminarEdificio() { this->edificio = nullptr; this->vacio = true;}
 
+    void eliminarObjeto() { this->edificio = nullptr; this->vacio = true;}
+
     void agregarMateriales(Material* material){}
 
     void mostrarEnMapa();

@@ -9,7 +9,7 @@ Escuela::Escuela() : Edificio(ESCUELA) {
     this->cantidadTotal++;
 }*/
 Escuela::Escuela(int piedra, int madera, int metal, int cantidadPermitida) {
-    this->nombre = "Escuela";
+    this->nombre = "escuela";
     this->cantNecesariPiedra = piedra;
     this->cantNecesariaMadera = madera;
     this->cantNecesariMetal = metal;

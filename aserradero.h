@@ -16,7 +16,7 @@ protected:
 
 public:
     Aserradero(int fila, int columna){ 
-        this->nombre = "Aserradero";
+        this->nombre = "aserradero";
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
 

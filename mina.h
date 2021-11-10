@@ -13,7 +13,7 @@ protected:
 
 public:
     Mina(int fila, int columna){ 
-        this->nombre = "Mina";
+        this->nombre = "mina";
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

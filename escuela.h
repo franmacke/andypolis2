@@ -13,7 +13,7 @@ private:
 
 public:
     Escuela(int fila, int columna){ 
-        this->nombre = "Escuela";
+        this->nombre = "escuela";
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

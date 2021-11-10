@@ -13,7 +13,7 @@ protected:
 
 public:
     Obelisco(int fila, int columna){
-        this->nombre = "Obelisco";
+        this->nombre = "obelisco";
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 
@@ -21,7 +21,7 @@ public:
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
-    /*static*/   int obtenerTotal();
+    /*static*/   int obtenerTotal(){return cantidadTotal;}
 
     // PRE: -
     // POS: resta uno a la cantidad total

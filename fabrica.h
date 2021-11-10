@@ -13,7 +13,7 @@ protected:
 
 public:
     Fabrica(int fila, int columna){ 
-        this->nombre = "Fabrica";
+        this->nombre = "fabrica";
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

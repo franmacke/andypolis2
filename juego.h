@@ -90,7 +90,7 @@ class Juego {
 
     void guardarArchivoMateriales(Inventario* inventario);
 
-    //void guardarArchivoUbicaciones(Mapa& mapa, Ciudad* ciudad);
+    void guardarArchivoUbicaciones(Mapa& mapa, Ciudad* ciudad);
 
 
     //void mostarEdificiosTodos(Ciudad * edificios);

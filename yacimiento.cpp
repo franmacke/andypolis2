@@ -5,7 +5,7 @@
 #include "yacimiento.h"
 
 Yacimiento::Yacimiento(int piedra, int madera, int metal, int cantidadPermitida) {
-    this->nombre = "Yacimiento";
+    this->nombre = "yacimiento";
     this->cantNecesariPiedra = piedra;
     this->cantNecesariaMadera = madera;
     this->cantNecesariMetal = metal;

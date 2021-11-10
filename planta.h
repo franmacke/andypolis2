@@ -16,7 +16,7 @@ protected:
     static int cantidadTotal;
 
 public:
-    Planta(int fila, int columna){ this->fila = fila; this->columna = columna; cantidadTotal++;}
+    Planta(int fila, int columna){ this->nombre = "planta electrica"; this->fila = fila; this->columna = columna; cantidadTotal++;}
 
     Planta(int piedra, int madera, int metal, int cantidadPermitida);
 
