@@ -5,10 +5,19 @@ int Ciudad::cantidadEdificios() {
     return cantidad;
 }*/
 
+Ciudad::~Ciudad() {
+    for (int i = 0; i < cantidadEdificios(); i++) {
+        delete edificios[i];
+    }
+
+    delete [] edificios;
+    delete this;
+}
+
 
 void Ciudad::copiarLista(Edificio ** copia) {
     for (int i = 0; i < cantidadEdificios(); i++) {
-        copia[i] = obtenerEdificio(i);
+        copia[i] = edificios[i];
     }
 }
 
@@ -39,13 +48,15 @@ void Ciudad::eliminarEdificio(int posicion) {
 
         for (int i = 0; i < cantidadEdificios(); i++) {
             if (i != posicion) {
-                lista_copia[contador] = obtenerEdificio(i);
+                lista_copia[contador] = edificios[i];
                 contador++;
             } else {
                 delete edificios[posicion];
             }
         }
         cantidad--;
+
+        delete [] edificios;
         edificios = lista_copia;
     }
 }
@@ -107,10 +118,6 @@ Edificio * Ciudad::buscarEdificioPorNombre(string nombre) {
 }
 
 void Ciudad::liberarMemoria() {
-    // for (int i = 0; i < cantidadEdificios(); i++) {
-    //     delete edificios[i];
-    // }
-
     delete [] edificios;
 }
 

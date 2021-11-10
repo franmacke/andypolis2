@@ -26,6 +26,7 @@ class Ciudad {
     void eliminarPorCoordenadas(int fila, int columna);
 
     void liberarMemoria();
+    ~Ciudad();    
 };
 
 /*
