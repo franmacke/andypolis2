@@ -32,6 +32,7 @@ class Inventario {
     void construirEdificio(Edificio * edificio);
     void demolerEdificio(Edificio * edificio);
 
+    ~Inventario();
     /*
     MaterialInventario obtener(int posicion);
     MaterialInventario buscar(string nombre_material);

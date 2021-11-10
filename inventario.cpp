@@ -1,5 +1,15 @@
 #include "inventario.h"
 
+Inventario::~Inventario() {
+    for (int i = 0; i < cantidad_materiales(); i++) {
+        delete [] materiales[i];
+    } 
+
+    delete [] materiales;
+    delete this;
+}
+
+
 int Inventario::cantidad = 0;
 
 void Inventario::copiarLista(Material **copiaLista) {
