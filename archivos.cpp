@@ -1,10 +1,6 @@
 #include "archivos.h"
 
 
-const string PATH_MATERIALES = "materiales.txt";
-const string PATH_UBICACIONES = "ubicaciones.txt";
-const string PATH_MAPA = "mapa.txt";
-const string PATH_EDIFICIOS = "edificios.txt";
 
 const char ESPACIO = 32;
 const char RETORNO = 13;
@@ -300,13 +296,13 @@ Edificio* Archivo::crearEdificio(string &nombre, int fila, int columna) {
 Material* Archivo::setearMaterial(string nombre, int cantidad) {
     Material* nuevo;
 
-    if (nombre == "madera"){
+    if (nombre == "madera" || nombre == "Madera"){
         nuevo = new Madera(cantidad);
-    } else if (nombre == "piedra"){
+    } else if (nombre == "piedra" || nombre == "Piedra"){
         nuevo = new Piedra(cantidad);
-    } else if (nombre == "metal"){
+    } else if (nombre == "metal" || nombre == "Metal"){
         nuevo = new Metal(cantidad);
-    } else if (nombre == "oro"){
+    } else if (nombre == "oro" || nombre == "Oro"){
         nuevo = new Oro(cantidad);
     }
     return nuevo;
@@ -316,19 +312,19 @@ Edificio* Archivo::setearEdificio(string nombre, int piedra, int madera, int met
 
     Edificio* nuevo;
 
-    if (nombre == "mina") {
+    if (nombre == "mina"  || nombre == "Mina") {
         nuevo = new Mina(piedra, madera, metal, tope);
-    } else if (nombre == "aserradero") {
+    } else if (nombre == "aserradero"  || nombre == "Aserradero") {
         nuevo = new Aserradero(piedra, madera, metal, tope);
-    } else if (nombre == "escuela") {
+    } else if (nombre == "escuela" || nombre == "Escuela") {
         nuevo = new Escuela(piedra, madera, metal, tope);
-    } else if (nombre == "yacimiento") {
+    } else if (nombre == "yacimiento"  || nombre == "Yacimiento") {
         nuevo = new Yacimiento(piedra, madera, metal, tope);
-    } else if (nombre == "fabrica") {
+    } else if (nombre == "fabrica" || nombre == "Fabrica") {
         nuevo = new Fabrica(piedra, madera, metal, tope);
-    } else if (nombre == "obelisco") {
+    } else if (nombre == "obelisco" || nombre == "Obelisco") {
         nuevo = new Obelisco(piedra, madera, metal, tope);
-    } else if (nombre == "planta") {
+    } else if (nombre == "planta" || nombre == "Planta") {
         nuevo = new Planta(piedra, madera, metal, tope);
     }
 

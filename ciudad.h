@@ -16,6 +16,9 @@ class Ciudad {
 
     public:
     int cantidadEdificios(){return this->cantidad;};
+
+    void sacarEdificio(){ this->cantidad --;}
+
     int cantidadEdificiosConstruidos();
     void agregarEdificio(Edificio * nuevo_edificio);
     void eliminarEdificio(int posicion);

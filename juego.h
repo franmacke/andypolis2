@@ -86,6 +86,12 @@ class Juego {
 
     int cantProducidoPorMina(Ciudad* ciudad);
 
+    void guardarYSalir(Mapa& mapa,  Ciudad* ciudad, Inventario* inventario);
+
+    void guardarArchivoMateriales(Inventario* inventario);
+
+    //void guardarArchivoUbicaciones(Mapa& mapa, Ciudad* ciudad);
+
 
     //void mostarEdificiosTodos(Ciudad * edificios);
 

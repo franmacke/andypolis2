@@ -45,6 +45,26 @@ string Mapa::buscarCoordenadasPorNombre(string nombre) {
     return coordenadas;
 }
 
+/*
+int Mapa::buscarFilaPorNombre(string nombre) {
+    Utilidad utilidad;
+    int fila;
+
+    for (int i = 0; i < filaMapa(); i++) {
+        for (int j = 0; j < columnaMapa(); j++) {
+
+            Dato dato = obtenerDato(i,j);
+
+            if (!dato->esVacio()) {
+                if (utilidad.minuscula(nombre) == utilidad.minuscula(dato->obtenerNombre())) {
+                    fila = i;
+                }
+            }
+        }
+    }
+
+}
+*/
 
 /*
 void Mapa::cargar_casillero(string casillero, Coordenada coordenada) {

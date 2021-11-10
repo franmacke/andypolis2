@@ -73,7 +73,7 @@ bool Juego::pedirConfirmacion() {
 
 void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConstruidos , Inventario* inventario) {
 
-    while (opcion != GUARDAR_Y_SALIR){
+    while (opcion < GUARDAR_Y_SALIR){//aca quizas hay q corregir
         
        mostrarOpciones();
        pedirOpcion();
@@ -126,14 +126,17 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConst
 
             case GUARDAR_Y_SALIR:
                 cout << "\n\n\t\t GUARDAR Y SALIR \n\n\n";
+                guardarYSalir(mapa, ciudad, inventario);
                 break;
 
 
             default: cout << " Ingreso una opcion invalida" << endl;
 
         }
-        
+
+
     }
+
 }
 
 void Juego::mostrarInventario(Inventario *inventario) {
@@ -557,6 +560,54 @@ void Juego::mostrarEdificiosConstruidos(Ciudad * edificios) {
         }
     } 
 }*/
+
+
+
+
+void Juego::guardarYSalir(Mapa &mapa, Ciudad* ciudad, Inventario *inventario) {
+    guardarArchivoMateriales(inventario);
+    //guardarArchivoUbicaciones(mapa, ciudad);
+}
+
+
+void Juego::guardarArchivoMateriales(Inventario *inventario) {
+
+    ofstream archivo;
+    archivo.open(PATH_MATERIALES);
+    int cantidadMateriales = inventario->cantidad_materiales();
+    for (int i = 0; i < cantidadMateriales; ++i) {
+
+        archivo << inventario->obtenerMaterial(i)->obtenerNombre() << " " << inventario->obtenerMaterial(i)->obtenerTotal() << '\n';
+
+        delete inventario->obtenerMaterial(i);
+        inventario->sacarMateriales();
+
+    }
+    inventario->liberarMemoria();
+    archivo.close();
+
+}
+
+/*
+void Juego::guardarArchivoUbicaciones(Mapa &mapa, Ciudad* ciudad) {
+    ofstream archivo;
+    archivo.open(PATH_UBICACIONES);
+
+    for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
+
+        if (ciudad->obtenerEdificio(i)->obtenerTotal() > 0){
+            //cout << "Tipo de edificio: " << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
+            archivo << ciudad->obtenerEdificio(i)->obtenerNombre() << " (" << mapa.<< ", " << ciudad->obtenerEdificio(i)->obtenerColumna() << ")" << '\n';
+
+        }
+        delete ciudad->obtenerEdificio(i);
+        ciudad->sacarEdificio();
+    }
+    ciudad->liberarMemoria();
+    archivo.close();
+}
+*/
+
 
 
 Edificio* Juego::crearEdificio(string nombre, int fila, int columna) {

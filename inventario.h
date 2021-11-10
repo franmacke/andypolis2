@@ -19,10 +19,13 @@ class Inventario {
     //Inventario(MaterialInventario * lista_materiales);
     static int cantidad_materiales(){return cantidad;}
 
+    void sacarMateriales(){ this->cantidad --;}
+
     void agregarMaterial(Material* nuevoMaterial);
     void copiarLista(Material** copiaLista);
     Material* obtenerMaterial(int posicion);
-    void liberarMemoria(){delete [] materiales;}
+    void liberarMemoria(){delete [] materiales;
+        this->materiales = nullptr;}
     Material * obtenerPorNombre(string nombre);
 
     int obtenerMadera() {return obtenerPorNombre("madera")->obtenerTotal();}

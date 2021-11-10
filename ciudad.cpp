@@ -112,6 +112,7 @@ void Ciudad::liberarMemoria() {
     // }
 
     delete [] edificios;
+    this->edificios = nullptr;
 }
 
 /*

@@ -36,6 +36,10 @@ class Mapa {
 
     string buscarCoordenadasPorNombre(string nombre);
 
+    //int buscarFilaPorNombre(string nombre);
+
+    //int buscarColumnaPorNombre(string nombre);
+
     //bool estaVacio(int fila, int columna);
 
     void baja(int fila, int columna);
