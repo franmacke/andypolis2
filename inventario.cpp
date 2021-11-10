@@ -1,12 +1,11 @@
 #include "inventario.h"
 
 Inventario::~Inventario() {
-    for (int i = 0; i < cantidad_materiales(); i++) {
-        delete [] materiales[i];
-    } 
-
-    delete [] materiales;
-    delete this;
+    // for (int i = 0; i < cantidad_materiales(); i++) {
+    //     cout << "Destructor inventario" << endl;
+    //     delete materiales[i];
+    // } 
+    cout << "INVENTARIO" << endl;
 }
 
 
