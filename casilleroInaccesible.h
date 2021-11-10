@@ -25,6 +25,7 @@ class CasilleroInaccesible : public Casillero {
 
     string obtenerNombre(){return "";}
 
+    void liberarMemoria() {}
 
 };
 

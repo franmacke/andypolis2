@@ -31,6 +31,9 @@ class CasilleroTransitable : public Casillero {
 
     string obtenerNombre(){return this->material->obtenerNombre();}
 
+    void liberarMemoria() {delete material;}
+
+
     ~CasilleroTransitable();
 };
 

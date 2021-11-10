@@ -4,13 +4,13 @@ Mapa::~Mapa() {
     for (int i = 0; i < filaMapa(); i++) {
         cout << i <<": Desctructor mapa." << endl;
         for (int j = 0; j < columnaMapa(); j++) {
+            //destructor casillero
+            mapa[i][j]->liberarMemoria();
             delete mapa[i][j];
-
         }
-        delete[] mapa[i];
+        delete [] mapa [i];
     }
-
-    delete[] mapa;
+    delete [] mapa;
 }
 
 Mapa::Mapa(int fila, int columna) {
