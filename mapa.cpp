@@ -5,7 +5,7 @@ Mapa::~Mapa() {
         cout << i <<": Desctructor mapa." << endl;
         for (int j = 0; j < columnaMapa(); j++) {
             //destructor casillero
-            mapa[i][j]->liberarMemoria();
+            // mapa[i][j]->liberarMemoria();
             delete mapa[i][j];
         }
         delete [] mapa [i];

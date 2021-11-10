@@ -6,12 +6,14 @@ int Ciudad::cantidadEdificios() {
 }*/
 
 Ciudad::~Ciudad() {
-    // for (int i = 0; i < cantidadEdificios(); i++) {
-    //     cout << i <<": Descturctor edificio" << endl;
-    //     delete [] edificios[i];
-    // }
+    for (int i = 0; i < cantidadEdificios(); i++) {
+        cout << i <<": Descturctor edificio" << endl;
+        delete edificios[i];
+    }
 
-    liberarMemoria();
+    delete [] edificios;
+
+    // liberarMemoria();
 }
 
 

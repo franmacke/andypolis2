@@ -581,7 +581,7 @@ void Juego::guardarArchivoMateriales(Inventario *inventario) {
         inventario->sacarMateriales();
 
     }
-    inventario->liberarMemoria();
+    // inventario->liberarMemoria();
     archivo.close();
 
 }
@@ -604,12 +604,12 @@ void Juego::guardarArchivoUbicaciones(Mapa &mapa, Ciudad* ciudad) {
         }
     }
 
-    for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
-        delete ciudad->obtenerEdificio(i);
-        ciudad->sacarEdificio();
-    }
+    // for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
+    //     delete ciudad->obtenerEdificio(i);
+    //     ciudad->sacarEdificio();
+    // }
 
-    ciudad->liberarMemoria();
+    // ciudad->liberarMemoria();
     archivo.close();
 }
 
