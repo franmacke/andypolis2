@@ -27,6 +27,7 @@ public:
 
     string obtenerNombre(){return this->edificio->obtenerNombre();}
 
+    ~CasilleroConstruible();
     //void cambiar_dato(Objeto * dato);
     //void convertir(string dato);
 
