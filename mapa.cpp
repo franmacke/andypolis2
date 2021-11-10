@@ -1,12 +1,21 @@
 #include "mapa.h"
 
+Mapa::~Mapa() {
+    for (int i = 0; i < filaMapa(); i++) {
+        for (int j = 0; j < columnaMapa(); j++) {
+            delete mapa[i][j];
+
+        }
+    }
+}
+
 Mapa::Mapa(int fila, int columna) {
     this->fila = fila;
     this->columna = columna;
     mapa = new Dato* [fila];
-    for (int i = 0; i < fila; ++i) {
+    for (int i = 0; i < fila; i++) {
         mapa[i] = new Dato[columna];
-        for (int j = 0; j < columna; ++j) {
+        for (int j = 0; j < columna; j++) {
             mapa[i][j] = nullptr;
         }
     }
