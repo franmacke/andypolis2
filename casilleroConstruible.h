@@ -17,9 +17,12 @@ private:
 public:
     CasilleroConstruible(){ this->tipoCasillero = CONSTRUIBLE; this->edificio = nullptr;
         this->vacio = true;}
-
+    // PRE: -
+    // POS: agrega edificios al casillero y indica q esta ocupado
     void agregarEdificio(Edificio* edificio){ this->edificio = edificio; this->vacio = false;}
 
+    // PRE: -
+    // POS: elimino el edificio y desocupo el casillero.
     void eliminarEdificio() { this->edificio = nullptr; this->vacio = true;}
 
     void eliminarObjeto() { this->edificio = nullptr; this->vacio = true;}

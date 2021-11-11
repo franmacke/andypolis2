@@ -116,13 +116,17 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
 void Archivo::procesarArchivoEdificios(Mapa &mapa, Ciudad * edificiosConstruidos) {
 
     Edificio* nuevoEdificio;
-    string nombre, fila, columna, basura;
+    string nombre, nombre2, fila, columna, basura;
 
     fstream archivo;
     abrir(archivo, PATH_UBICACIONES);
 
     while (getline(archivo, nombre, ' ')) {
 
+        if (nombre == "planta"){
+            getline(archivo, nombre2, ' ');
+            nombre = nombre + " " + nombre2;
+        }
         getline(archivo, basura, '(');
         getline(archivo, fila, ',');
         getline(archivo, basura, ESPACIO);
@@ -338,7 +342,7 @@ Edificio* Archivo::setearEdificio(string nombre, int piedra, int madera, int met
         nuevo = new Fabrica(piedra, madera, metal, tope);
     } else if (nombre == OBELISCO || nombre == "Obelisco") {
         nuevo = new Obelisco(piedra, madera, metal, tope);
-    } else if (nombre == PLANTA || nombre == "Planta") {
+    } else if (nombre == PLANTA || nombre == "planta") {
         nuevo = new Planta(piedra, madera, metal, tope);
     }
 

@@ -26,7 +26,12 @@ const string PATH_EDIFICIOS = "edificios.txt";
 
 class Archivo {
     public:
+    // PRE: -
+    // POS: abre el archivo con PATH_ARCHIVO
     void abrir(fstream &archivo, string path);
+
+    // PRE: -
+    // POS: cierra el archivo
     void cerrar(fstream &archivo);
     //Ciudad * leer_edificios();
 
@@ -38,21 +43,60 @@ class Archivo {
     // POS: devuelve la cantidad de columnas indicadas en el .txt
     int leerColumnas();
 
+    // PRE: abre ubicacio.txt vienen los edificios y las coordenadas bien cargadas
+    // POS: lee y carga los edificios en la mapa y en la ciudad
     void procesarArchivoEdificios(Mapa& mapa, Ciudad * edificiosConstruidos);
+
+
+
+
+
     //Materiales * leer_materiales();
-    Coordenada * leer_ubicaciones();
-    Mapa leer_mapa();
-    void leerMapa(Mapa& mapa);
+
+
+    //Coordenada * leer_ubicaciones();
+    //Mapa leer_mapa();
+    //void leerMapa(Mapa& mapa);
+
+
+
+
+
+
+    // PRE: abre mapa.txt vienen los datos bien cargados
+    // POS: crea y carga los datos de casilleros a la mapa
     void procesarArchivoMapa(Mapa& mapa);
-    void leerArchivoEdificios(Ciudad * edificios);
+
+    // PRE: abre materiales.txt vienen los datos bien cargados
+    // POS: crea y carga los datos de materiales a inventario
     void leerArchivosMateriales(Inventario* materiales);
+
+
+
+
     //void procesarArchivoDatosEdificios(Edificio** edificios);
     void procesarArchivoDatosEdificios(Edificio** edificios);
 
+
+
+
+
 private:
+
+    // PRE: -
+    // POS: reserva espacio para el edificio correspondiente en el heap y lo devuelve como puntero a Edificio para cargarlo en la mapa
     Edificio* crearEdificio(string& nombre, int fila, int columna);
+
+    // PRE: -
+    // POS: reserva espacio para el edificio correspondiente en el heap y lo devuelve como puntero a Edificio para cargarlo en la ciudad
     Edificio* setearEdificio(string nombre, int piedra, int madera, int metal, int tope);
+
+    // PRE: -
+    // POS: reserva espacio para el material correspondiente en el heap y lo devuelve como puntero a Material
     Material* setearMaterial(string nombre, int cantidad);
+
+    // PRE: -
+    // POS: reserva espacio para el casillero correspondiente en el heap y lo devuelve como puntero a Casillero
     Dato crearCasillero(string& nombre);
 
 

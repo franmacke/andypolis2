@@ -19,6 +19,8 @@ class CasilleroTransitable : public Casillero {
         this->tipoCasillero = TRANSITABLE; this->material = nullptr;}
     //void cambiar_dato(Objeto * dato);
 
+    // PRE: -
+    // POS: agrega materiales al casillero y indica q esta ocupado
     void agregarMateriales(Material* material){ this->material = material;
         this->vacio = false;}
 
