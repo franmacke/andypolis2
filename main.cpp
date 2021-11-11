@@ -27,7 +27,7 @@ int main() {
     //datos.procesarArchivoDatosEdificios(edificios);
     datos.procesarArchivoMapa(mapa);
     datos.procesarArchivoEdificios(mapa, edificiosConstruidos);
-    datos.leerArchivoEdificios(ciudad);
+    // datos.leerArchivoEdificios(ciudad);
     datos.leerArchivosMateriales(inventario);
     // Ciudad * edificios = datos.leer_edificios();
 
@@ -45,19 +45,10 @@ int main() {
 
     // PARA PROBAR SI LEE BIEN EL MAPA
 
-    juego.mostrarTodosLosEdificios(ciudad);
-
-    juego.mostrarInventario(inventario);
 
     mapa.mostrar();
     juego.interfazPrincipal(mapa, ciudad, edificiosConstruidos, inventario);
     // juego.interfazPrincipal(mapa);
-
-    // inventario->~Inventario();
-    // ciudad->~Ciudad();
-    // edificiosConstruidos->~Ciudad();
-
-
 
     return 0;
 }

@@ -279,7 +279,7 @@ int Juego::cantProducidoPorAserradero(Ciudad *ciudad) {
 
         cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
         if (ciudad->obtenerEdificio(i)->obtenerNombre() == ASERRADERO){
-            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
+            // cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
             valor = (ciudad->obtenerEdificio(i)->obtenerTotal() * 25);
         }
     }
@@ -293,7 +293,7 @@ int Juego::cantProducidoPorFabrica(Ciudad *ciudad) {
 
         cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
         if (ciudad->obtenerEdificio(i)->obtenerNombre() == FABRICA) {
-            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
+            // cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
             valor = (ciudad->obtenerEdificio(i)->obtenerTotal() * 40);
         }
     }
@@ -308,7 +308,7 @@ int Juego::cantProducidoPorMina(Ciudad *ciudad) {
 
         //cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
         if (ciudad->obtenerEdificio(i)->obtenerNombre() == MINA){
-            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
+            // cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
             valor = (ciudad->obtenerEdificio(i)->obtenerTotal() * 15);
         }
     }
@@ -325,19 +325,19 @@ void Juego::recolectarMateriales(Mapa &mapa, Inventario *inventario, Ciudad* ciu
         cantParaSumar = 0;
         if (inventario->obtenerMaterial(i)->obtenerNombre() == MADERA){
             cantParaSumar = cantProducidoPorAserradero(ciudad);
-            cout << cantParaSumar << endl;
+            cout << ASERRADERO << ": " <<cantParaSumar << endl;
             inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
             cout<< inventario->obtenerMaterial(i)->obtenerNombre() << endl;
             cantParaSumar = 0;
         } else if(inventario->obtenerMaterial(i)->obtenerNombre() == METAL){
             cantParaSumar = cantProducidoPorFabrica(ciudad);
-            cout << cantParaSumar << endl;
+            cout << FABRICA << ": " << cantParaSumar << endl;
             inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
             cout<< inventario->obtenerMaterial(i)->obtenerNombre() << endl;
             cantParaSumar = 0;
         } else if(inventario->obtenerMaterial(i)->obtenerNombre() == PIEDRA) {
             cantParaSumar = cantProducidoPorMina(ciudad);
-            cout << cantParaSumar << endl;
+            cout << MINA << ": " <<cantParaSumar << endl;
             inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
             cout<< inventario->obtenerMaterial(i)->obtenerNombre() << endl;
             cantParaSumar = 0;
