@@ -15,10 +15,10 @@ protected:
     //int cantidad_material;
 
 public:
-    //Material();
-    //Material(string nombre, int cantidad);
-    //string nombre();
-    //int cantidad();
+    Material() {};
+    Material(int cantidad) {};
+    Material(int fila, int columna, int cantidad) {};
+
     string obtenerNombre(){ return this->nombre;}
 
     int obtenerFila(){return this->fila;}
@@ -34,6 +34,8 @@ public:
     virtual void aumentarTotal(int cantidad) = 0;
 
     virtual int obtenerTotal() = 0;
+
+    virtual ~Material() {};
 };
 
     /*

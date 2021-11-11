@@ -22,7 +22,7 @@ int main() {
     filas = datos.leerFilas();
     columnas = datos.leerColumnas();
 
-    Mapa mapa(filas, columnas);//aca creo una mapa con todos los casilleros como null
+    Mapa mapa(filas, columnas);
 
     //datos.procesarArchivoDatosEdificios(edificios);
     datos.procesarArchivoMapa(mapa);
@@ -49,8 +49,7 @@ int main() {
 
     juego.mostrarInventario(inventario);
 
-    //cout << ciudad->obtenerEdificio(2)->obtenerNombre() << endl;
-    //mapa.mostrar();
+    mapa.mostrar();
     juego.interfazPrincipal(mapa, ciudad, edificiosConstruidos, inventario);
     // juego.interfazPrincipal(mapa);
 

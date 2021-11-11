@@ -1,0 +1,6 @@
+fabrica (1, 1)
+obelisco (1, 2)
+mina (3, 4)
+aserradero (3, 7)
+escuela (4, 4)
+aserradero (7, 8)

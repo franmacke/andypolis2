@@ -1,12 +1,5 @@
-//
-// Created by ydsas on 3/11/2021.
-//
-
 #include "mina.h"
-/*
-Mina::Mina() : Edificio(MINA) {
-    this->cantidadTotal++;
-}*/
+
 Mina::Mina(int piedra, int madera, int metal, int cantidadPermitida) {
     this->nombre = "mina";
     this->cantNecesariPiedra = piedra;
@@ -16,8 +9,3 @@ Mina::Mina(int piedra, int madera, int metal, int cantidadPermitida) {
 }
 
 int Mina::cantidadTotal = 0;
-
-/*
-int Mina::obtenerTotal() {
-    return cantidadTotal;
-}*/

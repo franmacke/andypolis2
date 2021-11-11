@@ -46,40 +46,17 @@ class Archivo {
     // PRE: abre ubicacio.txt vienen los edificios y las coordenadas bien cargadas
     // POS: lee y carga los edificios en la mapa y en la ciudad
     void procesarArchivoEdificios(Mapa& mapa, Ciudad * edificiosConstruidos);
-
-
-
-
-
     //Materiales * leer_materiales();
-
-
-    //Coordenada * leer_ubicaciones();
-    //Mapa leer_mapa();
-    //void leerMapa(Mapa& mapa);
-
-
-
-
-
-
-    // PRE: abre mapa.txt vienen los datos bien cargados
-    // POS: crea y carga los datos de casilleros a la mapa
+    Coordenada * leer_ubicaciones();
+    Mapa leer_mapa();
+    void leerMapa(Mapa& mapa);
     void procesarArchivoMapa(Mapa& mapa);
 
     // PRE: abre materiales.txt vienen los datos bien cargados
     // POS: crea y carga los datos de materiales a inventario
     void leerArchivosMateriales(Inventario* materiales);
-
-
-
-
     //void procesarArchivoDatosEdificios(Edificio** edificios);
     void procesarArchivoDatosEdificios(Edificio** edificios);
-
-
-
-
 
 private:
 

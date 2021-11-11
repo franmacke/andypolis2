@@ -1,7 +1,3 @@
-//
-// Created by ydsas on 7/11/2021.
-//
-
 #include "yacimiento.h"
 
 Yacimiento::Yacimiento(int piedra, int madera, int metal, int cantidadPermitida) {

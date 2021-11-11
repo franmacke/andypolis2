@@ -59,8 +59,7 @@ public:
     // POS: libero memoria de material
         virtual void liberarMemoria() = 0;
 
-        //virtual void cambiar_dato(Objeto * dato) = 0;
-
+        virtual ~Casillero() = default;
 };
 
 

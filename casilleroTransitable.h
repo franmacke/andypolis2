@@ -1,7 +1,3 @@
-//
-// Created by ydsas on 3/11/2021.
-//
-
 #ifndef CASILLERO_TRANSITABLE_H
 #define CASILLERO_TRANSITABLE_H
 #include "casillero.h"
@@ -17,7 +13,6 @@ class CasilleroTransitable : public Casillero {
     public:
     CasilleroTransitable(){this->vacio = true;
         this->tipoCasillero = TRANSITABLE; this->material = nullptr;}
-    //void cambiar_dato(Objeto * dato);
 
     // PRE: -
     // POS: agrega materiales al casillero y indica q esta ocupado
@@ -27,7 +22,8 @@ class CasilleroTransitable : public Casillero {
     void recolectarmaterial(){this->vacio = true;}
 
     void agregarEdificio(Edificio* edificio){}
-    void mostrarEnMapa();// estaria bueno en colores en vez de una letra
+    
+    void mostrarEnMapa();
 
     void eliminarEdificio() {}
 
@@ -40,7 +36,6 @@ class CasilleroTransitable : public Casillero {
             delete material;
         }
     }
-
 
     ~CasilleroTransitable();
 };

@@ -41,14 +41,14 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
     fstream archivo;
     abrir(archivo, PATH_EDIFICIOS);
 
-    string nombre, piedra, madera, metal, cantidad_permitidos;
+    string nombre, nombre_2 ,piedra, madera, metal, cantidad_permitidos;
 
     while (getline(archivo, nombre, ESPACIO)) {
         if (nombre == "planta") {
-            string aux = "";
-            getline(archivo, aux, ESPACIO);
-            nombre = nombre + " " + aux;
+            getline(archivo, nombre_2, ESPACIO);
+            nombre = nombre + " " + nombre_2;
         }
+        cout << "nombre: " << nombre << endl;
         getline(archivo, piedra, ESPACIO);
         getline(archivo, madera, ESPACIO);
         getline(archivo, metal, ESPACIO);
@@ -56,61 +56,17 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
 
         cout << "nombre: " << nombre << endl;
 
-        // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
         int piedras = stoi(piedra);
         int maderas = stoi(madera);
         int metales = stoi(metal);
         int tope = stoi(cantidad_permitidos);
-        // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
 
         Edificio* nuevo_edificio = setearEdificio(nombre, piedras, maderas, metales, tope);
 
-        //Edificio * nuevo_edificio = crearEdificio(nombre);
-
-        edificios->agregarEdificio(nuevo_edificio);
-        
-        // edificios->agregar(edificio);
+        edificios->agregarEdificio(nuevo_edificio);   
     }
    
 }
-
-// void Archivo::procesarArchivoDatosEdificios(Edificio** edificios) {
-//     fstream archivo;
-//     abrir(archivo, PATH_EDIFICIOS);
-
-//     string nombre, piedra, madera, metal, cantidad_permitidos;
-//     //edificios = new Edificio* [CANTIDAD_TIPOS_EDIFICIOS];
-//     int i = 0;
-//     cout << "XD" << endl;
-//     while (getline(archivo, nombre, ESPACIO)) {
-//         cout << "\"" << nombre <<  "\"" << endl;
-//         if (nombre == "planta") {
-//             string aux = "";
-//             getline(archivo, aux, ESPACIO);
-//             nombre = nombre + " " + aux;
-//         }
-//         getline(archivo, piedra, ESPACIO);
-//         getline(archivo, madera, ESPACIO);
-//         getline(archivo, metal, ESPACIO);
-//         getline(archivo, cantidad_permitidos);
-
-//         int piedras = stoi(piedra);
-//         int maderas = stoi(madera);
-//         int metales = stoi(metal);
-//         int tope = stoi(cantidad_permitidos);
-//         // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
-
-//         Edificio* nuevo_edificio = setearEdificio(nombre, piedras, maderas, metales, tope);
-
-
-//         //*edificios = nuevo_edificio;
-//         //cout << edificios[i]->obtenerNombre() << endl;
-//         i++;
-
-//         //edificios->agregarEdificio(nuevo_edificio);
-//         // edificios->agregar(edificio);
-//     }
-// }
 
 
 void Archivo::procesarArchivoEdificios(Mapa &mapa, Ciudad * edificiosConstruidos) {
@@ -136,7 +92,6 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa, Ciudad * edificiosConstruidos
         int filas = stoi(fila);
         int columnas = stoi(columna);
         nuevoEdificio = crearEdificio(nombre, filas, columnas);
-        //mapa.alta(*nuevoEdificio, filas, columnas);
         edificiosConstruidos->agregarEdificio(nuevoEdificio);
         
         mapa.obtenerDato(filas, columnas)->agregarEdificio(nuevoEdificio);
@@ -148,80 +103,6 @@ void Archivo::procesarArchivoEdificios(Mapa &mapa, Ciudad * edificiosConstruidos
 }
 
 
-/*
-Materiales * Archivo::leer_materiales() {
-    fstream archivo;
-    abrir(archivo, PATH_MATERIALES);
-    Materiales * lista_materiales = new Materiales;
-
-    string nombre, cantidad;
-
-    while(archivo >> nombre) {
-        archivo >> cantidad;
-
-        MaterialInventario nuevo_material (nombre, stoi(cantidad));
-
-        lista_materiales->agregar(nuevo_material);
-    }
-    cerrar(archivo);
-    return lista_materiales;
-}
-
-*/
-// Coordenada * Archivo::leer_ubicaciones() {
-//     fstream archivo;
-//     abrir(archivo, PATH_UBICACIONES);
-
-//     string nombre, coordenada_x, coordenada_y, basura;
-
-//     while(getline(archivo, nombre, ESPACIO)) {
-//         getline(archivo, basura, '(');      //SACA PARENTESIS
-//         getline(archivo, coordenada_x, ',');    
-//         getline(archivo, basura, ESPACIO);      //SACA ESPACIO VACIO
-//         getline(archivo, coordenada_y, ')');
-
-//         Coordenada coordenada (stoi(coordenada_x), stoi(coordenada_y));
-
-//     }
- 
-// }
-
-
-/*
-Mapa Archivo::leer_mapa() {
-    fstream archivo;
-    abrir(archivo, PATH_MAPA);
-
-    string filas, columnas, casillero;
-    int fila, columna;
-
-    getline(archivo, filas, ESPACIO);
-    getline(archivo, columnas);
-
-    cout << "FILAS: " << filas << endl;
-    cout << "COLUMNAS: " << columnas << endl;
-
-    fila = stoi(filas);
-    columna = stoi(columnas);
-    Mapa mapa (stoi(filas), stoi(columnas));
-
-    for (int i = 0; i < fila; i++) {
-        for (int j = 0; j < columna; j++) {
-            if (j != columna - 1) {
-                getline(archivo, casillero, ESPACIO);
-            } else {
-                getline(archivo, casillero);
-            }
-            // cout << casillero << " ";
-            Coordenada coordenadas(i,j);
-            mapa.cargar_casillero(casillero, coordenadas);
-        }
-    }
-    
-    cerrar(archivo);
-    return mapa;
-}
-*/
 void Archivo::procesarArchivoMapa(Mapa& mapa) {
     fstream archivo;
     abrir(archivo, PATH_MAPA);
@@ -236,9 +117,6 @@ void Archivo::procesarArchivoMapa(Mapa& mapa) {
     cout << "FILAS: " << filas << endl;
     cout << "COLUMNAS: " << columnas << endl;
 
-    //fila = stoi(filas);
-    //columna = stoi(columnas);
-
     fila = mapa.filaMapa();
     columna = mapa.columnaMapa();
 
@@ -249,14 +127,8 @@ void Archivo::procesarArchivoMapa(Mapa& mapa) {
             } else {
                 getline(archivo, tipoCasillero);
             }
-            // cout << casillero << " ";
-            //Coordenada coordenadas(i,j);
-            //mapa.alta(casillero, i, j);
             nuevoCasillero = crearCasillero(tipoCasillero);
-            //mapa.setearMapa(tipoCasillero, i, j);
             mapa.alta(nuevoCasillero, i, j);
-
-
         }
     }
 }

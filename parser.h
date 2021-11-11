@@ -35,8 +35,7 @@ class Parser {
     bool es_inaccesible();
     bool es_transitable();
     bool es_construible();
-    // Objeto * crear_edificio();
-    // MaterialRecogible * crear_material();
+
     Objeto * crear_dato();
 
 };

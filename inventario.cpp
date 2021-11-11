@@ -2,12 +2,10 @@
 
 Inventario::~Inventario() {
     for (int i = 0; i < cantidad_materiales(); i++) {
-        cout << "Destructor inventario" << endl;
         delete materiales[i];
     } 
 
     delete [] materiales;
-    cout << "INVENTARIO" << endl;
 }
 
 

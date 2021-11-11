@@ -16,6 +16,8 @@ protected:
     int cantidad;
 
 public:
+    Madera() {};
+
     Madera(int fila, int columna, int cantidad){this->nombre = MADERA; this->fila = fila; this->columna = columna;
         this->cantidadTotal += cantidad;}
 
@@ -30,6 +32,7 @@ public:
 
     void mostrarEnMapa(){cout << COLOR_BLANCO << EMOJI_MADERA;}
 
+    ~Madera() {};
 };
 
 

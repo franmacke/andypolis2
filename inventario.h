@@ -15,13 +15,11 @@ using namespace std;
 
 class Inventario {
     private:
-    //MaterialInventario * lista_materiales;
     Material** materiales;
     static int cantidad;
 
     public:
-    //Inventario();
-    //Inventario(MaterialInventario * lista_materiales);
+
     static int cantidad_materiales(){return cantidad;}
 
     void sacarMateriales(){ this->cantidad --;}
@@ -41,13 +39,6 @@ class Inventario {
     void demolerEdificio(Edificio * edificio);
 
     ~Inventario();
-    /*
-    MaterialInventario obtener(int posicion);
-    MaterialInventario buscar(string nombre_material);
-    int madera();
-    int piedra();
-    int metal();
-*/
 };
 
 

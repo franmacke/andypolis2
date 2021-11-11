@@ -2,9 +2,7 @@
 
 Mapa::~Mapa() {
     for (int i = 0; i < filaMapa(); i++) {
-        cout << i <<": Desctructor mapa." << endl;
         for (int j = 0; j < columnaMapa(); j++) {
-            //destructor casillero
             mapa[i][j]->liberarMemoria();
             delete mapa[i][j];
         }
@@ -24,11 +22,7 @@ Mapa::Mapa(int fila, int columna) {
         }
     }
 }
-/*
-Dato Mapa::obtener(int fila, int columna) {
-    return casilleros[fila][columna];
-}
-*/
+
 Dato Mapa::obtenerDato(int fila, int columna) {
     return (mapa[fila][columna]);
 }

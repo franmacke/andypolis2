@@ -1,14 +1,7 @@
-//
-// Created by ydsas on 3/11/2021.
-//
-
 #include "aserradero.h"
-/*
-Aserradero::Aserradero() : Edificio(ASERRADERO) {
-    this->cantidadTotal++;
-}*/
+
 Aserradero::Aserradero(int piedra, int madera, int metal, int cantidadPermitida) {
-    this->nombre = "aserradero";
+    this->nombre = ASERRADERO;
     this->cantNecesariPiedra = piedra;
     this->cantNecesariaMadera = madera;
     this->cantNecesariMetal = metal;

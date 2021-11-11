@@ -11,9 +11,6 @@ const string PLANTA = "planta electrica";
 
 class Planta : public Edificio {
 protected:
-    //string identificador = "P";
-
-    //static  int cantNecesariaMadera, cantNecesariPiedra, cantNecesariMetal, cantPermitido;
     static int cantidadTotal;
 
 public:
@@ -32,6 +29,7 @@ public:
 
     void mostrarEnMapa(){cout << COLOR_VERDE<< EMOJI_PLANTA ;}
 
+    ~Planta() {};
 };
 
 

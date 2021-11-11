@@ -1,7 +1,3 @@
-//
-// Created by ydsas on 5/11/2021.
-//
-
 #ifndef ANDYPOLIS2_ORO_H
 #define ANDYPOLIS2_ORO_H
 #include "material.h"
@@ -16,6 +12,7 @@ protected:
     int cantidad;
 
 public:
+    Oro() {}
     Oro(int fila, int columna, int cantidad){this->nombre = ORO; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
@@ -25,12 +22,11 @@ public:
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
     void aumentarTotal(int cantidad) {this->cantidadTotal += cantidad;}
 
-    //virtual void sumarCantidad(int cantidad) { this->cantidadTotal += cantidad;}
-
     int obtenerTotal(){return cantidadTotal;}
 
     void mostrarEnMapa(){cout << "W";}
 
+    ~Oro() {};
 };
 
 
