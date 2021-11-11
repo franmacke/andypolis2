@@ -30,5 +30,11 @@ int main() {
     mapa.mostrar();
     juego.interfazPrincipal(mapa, ciudad, edificiosConstruidos, inventario);
 
+    // inventario->~Inventario();
+    // ciudad->~Ciudad();
+    // edificiosConstruidos->~Ciudad();
+
+
+
     return 0;
 }

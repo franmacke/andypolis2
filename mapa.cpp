@@ -116,7 +116,7 @@ void Mapa::mostrar() {
             //cout << casilleros[i][j]->obtenerId() << " ";
             //cout << obtenerDato(i,j)->obtenerId() << " ";
             obtenerDato(i,j)->mostrarEnMapa();
-            cout << " | ";
+            cout << " ";
         }
         cout << endl;
     }

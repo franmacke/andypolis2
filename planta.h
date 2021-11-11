@@ -27,7 +27,7 @@ public:
     // POS: imprime por pantalla la letra "E"
     void mostrarSimbolo();
 
-    void mostrarEnMapa(){cout << "P";}
+    void mostrarEnMapa(){cout << COLOR_VERDE<< EMOJI_PLANTA ;}
 
 };
 

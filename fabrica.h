@@ -26,7 +26,7 @@ public:
     // POS: resta uno a la cantidad total
     void restarTotal(){cantidadTotal--; }
 
-    void mostrarEnMapa(){cout << "F";}
+    void mostrarEnMapa(){cout << COLOR_VERDE<< EMOJI_FABRICA ;}
 
 };
 

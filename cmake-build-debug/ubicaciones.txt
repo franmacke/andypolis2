@@ -1,0 +1,7 @@
+fabrica (0, 4)
+obelisco (1, 2)
+planta electrica (2, 4)
+mina (3, 4)
+aserradero (3, 7)
+escuela (4, 4)
+aserradero (7, 8)

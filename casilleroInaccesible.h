@@ -10,6 +10,8 @@ class CasilleroInaccesible : public Casillero {
     public:
     CasilleroInaccesible(){this->vacio = true;
         this->tipoCasillero = INACCESIBLE;};
+    //void cambiar_dato(Objeto * dato);
+    void mostrarEnMapa(){cout << COLOR_AZUL<< EMOJI_LAGO ;}// estaria bueno en colores en vez de una letra
 
     void mostrarEnMapa(){cout << "L";}
 

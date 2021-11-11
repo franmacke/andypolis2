@@ -9,16 +9,18 @@ void Juego::jugar() {
 
 void Juego::mostrarOpciones() {
     cout << endl;
-    cout << "[1] CONSTRUIR EDIFICIO POR NOMBRE" << endl;
-    cout << "[2] LISTAR LOS EDIFICIOS CONSTRUIDOS" << endl;
-    cout << "[3] LISTAR TODOS LOS EDIFICIOS" << endl;
-    cout << "[4] DEMOLER EDIFICIO POR COORDENADAS" << endl;
-    cout << "[5] MOSTRAR MAPA" << endl;
-    cout << "[6] CONSULTAR COORDENADAS" << endl;
-    cout << "[7] MOSTRAR INVENTARIO" << endl;
-    cout << "[8] RECOLECTAR RECURSOS PRODUCIDOS" << endl;
-    cout << "[9] LLUVIA DE RECURSOS" << endl;
-    cout << "[10] GUARDAR Y SALIR" << endl;
+    cout << COLOR_DORADO << " ╔═══════════════════════════════════════════════════════╗" << endl;
+    cout << " ║ " << "[1] CONSTRUIR EDIFICIO POR NOMBRE " << EMOJI_OBRA << COLOR_DORADO << "                  ║" << endl;
+    cout << " ║ " << "[2] LISTAR LOS EDIFICIOS CONSTRUIDOS " << EMOJI_PERSONA << COLOR_DORADO << "               ║" <<endl;
+    cout << " ║ " << "[3] LISTAR TODOS LOS EDIFICIOS " << EMOJI_EDIFICIO << COLOR_DORADO << "                     ║" <<endl;
+    cout << " ║ " << "[4] DEMOLER EDIFICIO POR COORDENADAS " << EMOJI_TRACTOR << COLOR_DORADO << "               ║" << endl;
+    cout << " ║ " << "[5] MOSTRAR MAPA " << EMOJI_MAPA << COLOR_DORADO << "                                   ║" <<endl;
+    cout << " ║ " << "[6] CONSULTAR COORDENADAS " << EMOJI_BRUJULA << COLOR_DORADO << "                          ║" << endl;
+    cout << " ║ " << "[7] MOSTRAR INVENTARIO " << EMOJI_LISTA << COLOR_DORADO << "                             ║" <<endl;
+    cout << " ║ " << "[8] RECOLECTAR RECURSOS PRODUCIDOS " << EMOJI_CAMION << COLOR_DORADO << "                 ║" <<endl;
+    cout << " ║ " << "[9] LLUVIA DE RECURSOS " << EMOJI_LLUVIA << COLOR_DORADO << "                             ║" <<endl;
+    cout << " ║ " << "[10] GUARDAR Y SALIR " << EMOJI_TARJETA << COLOR_DORADO << "                               ║" <<endl;
+    cout << " ╚═══════════════════════════════════════════════════════╝" << COLOR_POR_DEFECTO <<endl;
 }
 
 void Juego::pedirOpcion() {
@@ -57,12 +59,12 @@ bool Juego::pedirConfirmacion() {
     cout << "Esta seguro que queres proceder? [si/no]" << endl;
     cin >> opcion;
 
-    while (utilidad.minuscula(opcion) != SI && utilidad.minuscula(opcion) != NO ) {
+    while (utilidad.minuscula(opcion) != "si" && utilidad.minuscula(opcion) != "no" ) {
         cout << "Ingreso invalido. Ingrese si o no: ";
         cin >> opcion;
     }
 
-    return utilidad.minuscula(opcion) == SI; 
+    return utilidad.minuscula(opcion) == "si"; 
 }
 
 void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConstruidos , Inventario* inventario) {
@@ -206,7 +208,6 @@ int Juego::cantAleatoriaPiedra() {
 }
 
 void Juego::lluviaDeMadera(Mapa &mapa) {
-    Utilidad util;
 
     int fila = filaAleatorio(mapa);
     int columna = columnaAleatorio(mapa);
@@ -225,13 +226,12 @@ void Juego::lluviaDeMadera(Mapa &mapa) {
 
 
 void Juego::lluviaDeMetal(Mapa &mapa) {
-    Utilidad util;
 
     int fila = filaAleatorio(mapa);
     int columna = columnaAleatorio(mapa);
     int cantidad = cantAleatoriaMetal();
     //cout << fila << " " << columna << endl;
-    while (!mapa.obtenerDato(fila, columna)->esVacio() || util.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != TRANSITABLE){
+    while (!mapa.obtenerDato(fila, columna)->esVacio() || mapa.obtenerDato(fila, columna)->obtenerTC() != "Transitable"){
         fila = filaAleatorio(mapa);
         columna = columnaAleatorio(mapa);
     }
@@ -244,13 +244,12 @@ void Juego::lluviaDeMetal(Mapa &mapa) {
 
 
 void Juego::lluviaDePiedra(Mapa &mapa) {
-    Utilidad util;
 
     int fila = filaAleatorio(mapa);
     int columna = columnaAleatorio(mapa);
     int cantidad = cantAleatoriaPiedra();
     //cout << fila << " " << columna << endl;
-    while (!mapa.obtenerDato(fila, columna)->esVacio() || util.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != TRANSITABLE){
+    while (!mapa.obtenerDato(fila, columna)->esVacio() || mapa.obtenerDato(fila, columna)->obtenerTC() != "Transitable"){
         fila = filaAleatorio(mapa);
         columna = columnaAleatorio(mapa);
     }

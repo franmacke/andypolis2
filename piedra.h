@@ -26,7 +26,7 @@ public:
 
     int obtenerTotal(){return this->cantidadTotal;}
 
-    void mostrarEnMapa(){cout << "S";}
+    void mostrarEnMapa(){cout << COLOR_BLANCO << EMOJI_PIEDRA;}
 
 
 };
