@@ -8,8 +8,6 @@ const string FABRICA = "fabrica";
 
 class Fabrica : public Edificio {
 protected:
-    //string identificador = "A";
-
     static int cantidadTotal;
 
 public:
@@ -22,7 +20,7 @@ public:
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
-    /*static*/   int obtenerTotal(){return cantidadTotal;}
+    int obtenerTotal(){return cantidadTotal;}
 
     // PRE: -
     // POS: resta uno a la cantidad total

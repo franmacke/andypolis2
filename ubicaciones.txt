@@ -1,0 +1,4 @@
+escuela (0, 2)
+fabrica (0, 3)
+fabrica (0, 4)
+escuela (1, 1)

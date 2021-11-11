@@ -33,8 +33,6 @@ public:
     void liberarMemoria() {}
 
     ~CasilleroConstruible();
-    //void cambiar_dato(Objeto * dato);
-    //void convertir(string dato);
 
 };
 

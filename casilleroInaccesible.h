@@ -1,7 +1,3 @@
-//
-// Created by ydsas on 3/11/2021.
-//
-
 #ifndef CASILLERO_INACCESIBLE_H
 #define CASILLERO_INACCESIBLE_H
 #include "casillero.h"
@@ -14,8 +10,8 @@ class CasilleroInaccesible : public Casillero {
     public:
     CasilleroInaccesible(){this->vacio = true;
         this->tipoCasillero = INACCESIBLE;};
-    //void cambiar_dato(Objeto * dato);
-    void mostrarEnMapa(){cout << "L";}// estaria bueno en colores en vez de una letra
+
+    void mostrarEnMapa(){cout << "L";}
 
     void agregarEdificio(Edificio* edificio){}
 
@@ -30,6 +26,5 @@ class CasilleroInaccesible : public Casillero {
     void liberarMemoria() {}
 
 };
-
 
 #endif //ANDYPOLIS2_CASILLEROCONSTRUIBLE_H

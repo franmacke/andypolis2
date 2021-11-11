@@ -10,7 +10,6 @@
 class Ciudad {
     private:
     Edificio ** edificios;
-    // static int cantidad;
     int cantidad = 0;
     int cantidadConstruidos = 0;
 
@@ -32,29 +31,4 @@ class Ciudad {
     ~Ciudad();    
 };
 
-/*
-class Ciudad {
-    private:
-    Edificio * edificios;
-    int cantidad;
-    Inventario inventario;
-
-    public:
-    Ciudad();
-    Ciudad(Inventario inventario);
-    int cantidad_edificios();
-    Edificio obtener(int posicion);
-    Edificio buscar(string nombre);
-    void cambiar(int posicion, Edificio edificio_nuevo);
-    void copiar(Edificio * copia);
-    void apuntar(Edificio * copia);
-    void agregar(Edificio edificio_nuevo);
-    void construir(Edificio edificio);
-    bool verificar_maximo(Edificio edificio);
-    bool verificar_materiales(Edificio edificio);
-    void constuir_por_nombre();
-    string ingresar_nombre();
-    void liberar_memoria();
-};
-*/
 #endif

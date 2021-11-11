@@ -1,0 +1,5 @@
+obelisco 50 50 50 5
+fabrica 50 50 50 5
+aserradero 50 50 50 5
+escuela 50 50 50 5
+planta electrica 50 50 50 50

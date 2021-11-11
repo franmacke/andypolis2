@@ -11,7 +11,6 @@ const string ESCUELA = "escuela";
 
 class Escuela : public Edificio {
 private:
-    //string identificador;
     static int cantidadTotal;
 
 public:
@@ -24,7 +23,7 @@ public:
 
     // PRE: -
     // POS: devuelve la cantidad total del los escopetas
-    /*static*/  int obtenerTotal(){return cantidadTotal;}
+    int obtenerTotal(){return cantidadTotal;}
 
     // PRE: -
     // POS: resta uno a la cantidad total

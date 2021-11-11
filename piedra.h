@@ -24,8 +24,6 @@ public:
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
     void aumentarTotal(int cantidad) {this->cantidadTotal += cantidad;}
 
-    //virtual void sumarCantidad(int cantidad){ this->cantidadTotal += cantidad;}
-
     int obtenerTotal(){return this->cantidadTotal;}
 
     void mostrarEnMapa(){cout << "S";}

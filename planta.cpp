@@ -4,7 +4,7 @@
 
 #include "planta.h"
 Planta::Planta(int piedra, int madera, int metal, int cantidadPermitida) {
-    this->nombre = "planta electrica";
+    this->nombre = PLANTA;
     this->cantNecesariPiedra = piedra;
     this->cantNecesariaMadera = madera;
     this->cantNecesariMetal = metal;

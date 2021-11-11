@@ -1,12 +1,5 @@
 #include "juego.h"
 
-/*
-void Juego::cargar_archivos() {
-    Archivo archivo;
-    materiales = archivo.leer_materiales();
-    
-}
-*/
 
 void Juego::jugar() {
     //cargar_archivos();
@@ -218,7 +211,7 @@ void Juego::lluviaDeMadera(Mapa &mapa) {
     int fila = filaAleatorio(mapa);
     int columna = columnaAleatorio(mapa);
     int cantidad = cantAleatoriaMadera();
-    //cout << fila << " " << columna << endl;
+
     while (!mapa.obtenerDato(fila, columna)->esVacio() || util.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != TRANSITABLE){
         fila = filaAleatorio(mapa);
         columna = columnaAleatorio(mapa);
@@ -400,18 +393,6 @@ bool Juego::esCasilleroDemolible(Mapa& mapa, int fila, int columna) {
     return vacio && esConstruible;
 }
 
-// void Juego::demolerEdificio(Mapa &mapa, Ciudad* edificiosConstruidos) {
-//     int fila = pedirFila(mapa);
-//     int columna = pedirColumna(mapa);
-
-//     if (esCasilleroDemolible(mapa, fila, columna)) {
-//         Utilidad util;
-//         string edificioParaDestruir = mapa.obtenerDato(fila, columna)->obtenerNombre();
-//         cout << "Se demolio el edificio " << edificioParaDestruir << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
-//         mapa.baja(fila, columna);
-//         edificiosConstruidos->eliminarPorCoordenadas(fila, columna);
-//     }       
-// }
 
 void Juego::demolerEdificio(Mapa &mapa, Ciudad* datosEdificios, Ciudad* edificiosConstruidos, Inventario * inventario) {
     Utilidad util;
@@ -435,22 +416,7 @@ void Juego::demolerEdificio(Mapa &mapa, Ciudad* datosEdificios, Ciudad* edificio
     }
 }
 
-// void Juego::construirEdificio(Mapa &mapa, Ciudad* datosEdificios, Ciudad* edificiosConstruidos, Edificio * edificio, Inventario * inventario) {
-//     int fila = pedirFila(mapa);
-//     int columna = pedirColumna(mapa);
-
-//     if (esCasilleroConstruible(mapa)) {
-//         Utilidad util;
-//         string nombre = edificio->obtenerNombre();
-//         nombre = util.minuscula(nombre);
-
-//         Edificio * edificioConstruido = crearEdificio(nombre, fila, columna);
-//         mapa.obtenerDato(fila, columna)->agregarEdificio(edificioConstruido);
-//         edificiosConstruidos->agregarEdificio(edificioConstruido);
-//         cout << "Se agrego el edificio " << edificioConstruido->obtenerNombre() << " en las coordenadas (" << fila << ", " << columna << ")." << endl;
-//     }              
-// }
-
+       
 void Juego::constuirEdificio(Mapa &mapa, Edificio* datosEdificio, Ciudad* edificiosConstruidos, Inventario * inventario) {
     Utilidad util;
 
@@ -483,7 +449,6 @@ void Juego::construirEdificioPorNombre(Mapa &mapa, Ciudad * datosEdificios, Ciud
         pedirConfirmacion()) {
             
             constuirEdificio(mapa, edificioBuscado, edificiosConstruidos, inventario);
-            // construirEdificio(mapa, datosEdificios, edifciosConstruidos, edificioBuscado, inventario);
         } 
         else {
             cout << "Se cancelo la construccion del edificio.";
@@ -542,29 +507,6 @@ bool Juego::comprobarMateriales(Edificio * edificio, Inventario * inventario) {
 }
 
 
-/*
-void Juego::mostarEdificiosTodos(Ciudad * edificios) {
-    // Esta hecho feo, solo funcional
-    // PROBANDO 123
-    for (int i = 0; i < edificios->cantidadEdificios(); i++) {
-        cout << edificios->obtenerEdificio(i)->obtenerNombre() << ": " << edificios->obtenerEdificio(i)->obtenerTotal() << endl;
-    } 
-}
-
-void Juego::mostrarEdificiosConstruidos(Ciudad * edificios) {
-    // Esta hecho feo, solo funcional
-    for (int i = 0; i < edificios->cantidadEdificios(); i++) {
-        Edificio * edificio =  edificios->obtenerEdificio(i);
-
-        if (edificio->obtenerTotal() != 0) {
-            cout << edificio->obtenerNombre() << ": " << edificio->obtenerTotal() << endl;
-        }
-    } 
-}*/
-
-
-
-
 void Juego::guardarYSalir(Mapa &mapa, Ciudad* ciudad, Inventario *inventario) {
     guardarArchivoMateriales(inventario);
     guardarArchivoUbicaciones(mapa, ciudad);
@@ -582,11 +524,8 @@ void Juego::guardarArchivoMateriales(Inventario *inventario) {
 
         delete inventario->obtenerMaterial(i);
         inventario->sacarMateriales();
-
     }
-    // inventario->liberarMemoria();
     archivo.close();
-
 }
 
 
@@ -599,20 +538,9 @@ void Juego::guardarArchivoUbicaciones(Mapa &mapa, Ciudad* ciudad) {
             if (!mapa.obtenerDato(i, j)->esVacio()){
                 archivo << mapa.obtenerDato(i, j)->obtenerNombre() << " (" << i << ", " << j << ")" << '\n';
                 cout << "se guardo: " << mapa.obtenerDato(i, j)->obtenerNombre() << " (" << i << ", " << j << ")" << '\n';
-                //mapa.obtenerDato(i, j)->eliminarObjeto();
             }
-            //mapa.baja(i, j);
-            //delete mapa.obtenerDato(i, j);
-
         }
     }
-
-    // for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
-    //     delete ciudad->obtenerEdificio(i);
-    //     ciudad->sacarEdificio();
-    // }
-
-    // ciudad->liberarMemoria();
     archivo.close();
 }
 

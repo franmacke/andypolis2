@@ -1,13 +1,5 @@
-//
-// Created by ydsas on 3/11/2021.
-//
-
 #include "fabrica.h"
 
-/*
-Fabrica::Fabrica() : Edificio(FABRICA) {
-    this->cantidadTotal++;
-}*/
 Fabrica::Fabrica(int piedra, int madera, int metal, int cantidadPermitida) {
     this->nombre = "fabrica";
     this->cantNecesariPiedra = piedra;

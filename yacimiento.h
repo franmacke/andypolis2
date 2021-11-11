@@ -1,7 +1,3 @@
-//
-// Created by ydsas on 7/11/2021.
-//
-
 #ifndef ANDYPOLIS2_YACIMIENTO_H
 #define ANDYPOLIS2_YACIMIENTO_H
 #include "edificio.h"
@@ -10,8 +6,6 @@ const string YACIMIENTO = "yacimiento";
 
 class Yacimiento : public Edificio {
 protected:
-
-    //static  int cantNecesariaMadera, cantNecesariPiedra, cantNecesariMetal, cantPermitido;
     static int cantidadTotal;
 
 public:

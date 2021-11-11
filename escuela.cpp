@@ -1,15 +1,8 @@
-//
-// Created by ydsas on 3/11/2021.
-//
 
 #include "escuela.h"
 
-/*
-Escuela::Escuela() : Edificio(ESCUELA) {
-    this->cantidadTotal++;
-}*/
 Escuela::Escuela(int piedra, int madera, int metal, int cantidadPermitida) {
-    this->nombre = "escuela";
+    this->nombre = ESCUELA;
     this->cantNecesariPiedra = piedra;
     this->cantNecesariaMadera = madera;
     this->cantNecesariMetal = metal;
