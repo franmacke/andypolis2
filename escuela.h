@@ -31,6 +31,7 @@ public:
 
     void mostrarEnMapa(){cout << COLOR_VERDE<< EMOJI_ESCUELA ;}
 
+    ~Escuela() {};
 };
 
 

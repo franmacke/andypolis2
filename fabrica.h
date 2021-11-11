@@ -28,6 +28,7 @@ public:
 
     void mostrarEnMapa(){cout << COLOR_VERDE<< EMOJI_FABRICA ;}
 
+    ~Fabrica() {};
 };
 
 

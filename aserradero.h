@@ -11,6 +11,7 @@ protected:
 
 
 public:
+
     Aserradero(int fila, int columna){ 
         this->nombre = ASERRADERO;
         this->fila = fila;
@@ -26,6 +27,8 @@ public:
     // PRE: -
     // POS: imprime por pantalla la letra "A"
     void mostrarEnMapa(){cout << COLOR_VERDE<< EMOJI_ASERRADERO ;}
+
+    ~Aserradero() {};
 };
 
 

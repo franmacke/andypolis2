@@ -17,6 +17,7 @@ protected:
     int cantidad;
 
 public:
+    Metal() {};
     Metal(int fila, int columna, int cantidad){this->nombre = METAL; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
@@ -32,6 +33,7 @@ public:
 
     void mostrarEnMapa(){cout << COLOR_BLANCO << EMOJI_METAL;}
 
+    ~Metal() {};
 };
 
 

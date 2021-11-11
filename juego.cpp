@@ -55,7 +55,7 @@ int Juego::pedirColumna(Mapa& mapa) {
 bool Juego::pedirConfirmacion() {
     string opcion;
     Utilidad utilidad;
-    bool respuesta = false;
+
     cout << "Esta seguro que queres proceder? [si/no]" << endl;
     cin >> opcion;
 
@@ -208,6 +208,7 @@ int Juego::cantAleatoriaPiedra() {
 }
 
 void Juego::lluviaDeMadera(Mapa &mapa) {
+    Utilidad util;
 
     int fila = filaAleatorio(mapa);
     int columna = columnaAleatorio(mapa);
@@ -262,7 +263,7 @@ void Juego::lluviaDePiedra(Mapa &mapa) {
 
 void Juego::lluviaDeRecursos(Mapa &mapa) {
 
-    srand (time(NULL));
+    srand ((unsigned int) time(NULL));
     lluviaDeMadera(mapa);
     lluviaDeMetal(mapa);
     lluviaDePiedra(mapa);
@@ -336,7 +337,6 @@ void Juego::recolectarMateriales(Mapa &mapa, Inventario *inventario, Ciudad* ciu
 }
 
 Edificio * Juego::pedirNombreEdificio(Ciudad* datosEdificios) {
-    Utilidad utilidad;
     string nombre;
 
     cout << "Ingrese el nombre del edificio que desea construir: ";
@@ -394,7 +394,6 @@ bool Juego::esCasilleroDemolible(Mapa& mapa, int fila, int columna) {
 
 
 void Juego::demolerEdificio(Mapa &mapa, Ciudad* datosEdificios, Ciudad* edificiosConstruidos, Inventario * inventario) {
-    Utilidad util;
 
     int fila = pedirFila(mapa);
     int columna = pedirColumna(mapa);

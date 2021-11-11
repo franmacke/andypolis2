@@ -32,6 +32,8 @@ public:
         virtual string obtenerNombre() = 0;
 
         virtual void liberarMemoria() = 0;
+
+        virtual ~Casillero() = default;
 };
 
 

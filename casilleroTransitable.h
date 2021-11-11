@@ -35,7 +35,6 @@ class CasilleroTransitable : public Casillero {
         }
     }
 
-
     ~CasilleroTransitable();
 };
 

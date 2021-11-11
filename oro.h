@@ -12,6 +12,7 @@ protected:
     int cantidad;
 
 public:
+    Oro() {}
     Oro(int fila, int columna, int cantidad){this->nombre = ORO; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
@@ -25,6 +26,7 @@ public:
 
     void mostrarEnMapa(){cout << "W";}
 
+    ~Oro() {};
 };
 
 

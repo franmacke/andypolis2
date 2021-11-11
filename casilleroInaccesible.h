@@ -13,7 +13,7 @@ class CasilleroInaccesible : public Casillero {
     //void cambiar_dato(Objeto * dato);
     void mostrarEnMapa(){cout << COLOR_AZUL<< EMOJI_LAGO ;}// estaria bueno en colores en vez de una letra
 
-    void mostrarEnMapa(){cout << "L";}
+    // void mostrarEnMapa(){cout << "L";}
 
     void agregarEdificio(Edificio* edificio){}
 
@@ -26,6 +26,8 @@ class CasilleroInaccesible : public Casillero {
     string obtenerNombre(){return "";}
 
     void liberarMemoria() {}
+
+    ~CasilleroInaccesible() {};
 
 };
 

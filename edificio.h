@@ -31,13 +31,15 @@ protected:
 
     //static int cantidadTotal;
 public:
-    //Edificio();
-    //Edificio(string identificador);
-    //Edificio(string nombre, int piedra, int madera, int metal, int cantidad_permitidos);
-    //string nombre();
-    string obtenerNombre(){ return this->nombre;}
+   
+    Edificio() {};
 
-    // void agregarEdificio(Edificio** edificios, Edificio* nuevoEdificio, int tope);
+    Edificio(int fila, int columna) {};
+
+    Edificio(int piedra, int madera, int metal, int cantidadPermitida) {};
+
+
+    string obtenerNombre(){ return this->nombre;}
 
     int obtenerMadera(){return this->cantNecesariaMadera;}
 
@@ -54,8 +56,10 @@ public:
     virtual void mostrarEnMapa() = 0;
 
     virtual int obtenerTotal() = 0;
-    
+
     virtual void restarTotal() = 0;
+
+    virtual ~Edificio() {};
 };
 
 

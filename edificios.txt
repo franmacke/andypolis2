@@ -1,5 +1,6 @@
-obelisco 50 50 50 5
-fabrica 50 50 50 5
-aserradero 50 50 50 5
-escuela 50 50 50 5
-planta electrica 50 50 50 50
+aserradero 30 100 50 2
+fabrica 100 100 250 4
+escuela 250 200 45 1
+yacimiento 125 140 0 2
+obelisco 350 20 0 3
+mina 50 50 50 50

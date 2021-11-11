@@ -27,6 +27,7 @@ public:
 
     void mostrarEnMapa(){cout << "Y";}
 
+    ~Yacimiento() {};
 };
 
 

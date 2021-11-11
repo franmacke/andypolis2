@@ -66,7 +66,6 @@ void Ciudad::eliminarPorCoordenadas(int fila, int columna) {
     int contador = 0;
     bool resultado = false;
     int posicion = -1;
-    Utilidad utilidad;
 
     while (contador < cantidadEdificios() && !resultado) {
 
@@ -85,7 +84,6 @@ Edificio * Ciudad::buscarEdificioPorCoordenadas(int fila, int columna) {
     int contador = 0;
     bool resultado = false;
     int posicion = -1;
-    Utilidad utilidad;
 
     while (contador < cantidadEdificios() && !resultado) {
         if (obtenerEdificio(contador)->obtenerFila() == fila && obtenerEdificio(contador)->obtenerColumna() == columna) {

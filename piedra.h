@@ -28,7 +28,7 @@ public:
 
     void mostrarEnMapa(){cout << COLOR_BLANCO << EMOJI_PIEDRA;}
 
-
+    ~Piedra() {};
 };
 
 
