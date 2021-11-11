@@ -29,6 +29,8 @@ public:
 
     string obtenerNombre(){return this->edificio->obtenerNombre();}
 
+    void liberarMemoria() {delete edificio;}
+
     ~CasilleroConstruible();
     //void cambiar_dato(Objeto * dato);
     //void convertir(string dato);

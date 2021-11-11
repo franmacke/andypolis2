@@ -58,9 +58,7 @@ int main() {
     // ciudad->~Ciudad();
     // edificiosConstruidos->~Ciudad();
 
-    delete inventario;
-    //delete ciudad;
-    delete edificiosConstruidos;
+
 
     return 0;
 }

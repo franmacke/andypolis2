@@ -40,6 +40,8 @@ public:
 
         virtual string obtenerNombre() = 0;
 
+        virtual void liberarMemoria() = 0;
+
         //virtual void cambiar_dato(Objeto * dato) = 0;
 
 };
