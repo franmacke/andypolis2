@@ -6,6 +6,8 @@
 #define ANDYPOLIS2_YACIMIENTO_H
 #include "edificio.h"
 
+const string YACIMIENTO = "yacimiento";
+
 class Yacimiento : public Edificio {
 protected:
 
@@ -14,7 +16,7 @@ protected:
 
 public:
     Yacimiento(int fila, int columna){ 
-        this->nombre = "yacimiento";
+        this->nombre = YACIMIENTO;
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

@@ -2,9 +2,14 @@
 #define INVENTARIO_H
 
 #include <iostream>
+
 #include "material.h"
 #include "utilidad.h"
 #include "edificio.h"
+#include "metal.h"
+#include "madera.h"
+#include "oro.h"
+#include "piedra.h"
 
 using namespace std;
 
@@ -28,9 +33,9 @@ class Inventario {
         this->materiales = nullptr;}
     Material * obtenerPorNombre(string nombre);
 
-    int obtenerMadera() {return obtenerPorNombre("madera")->obtenerTotal();}
-    int obtenerPiedra() {return obtenerPorNombre("piedra")->obtenerTotal();}
-    int obtenerMetal() {return obtenerPorNombre("metal")->obtenerTotal();}
+    int obtenerMadera() {return obtenerPorNombre(MADERA)->obtenerTotal();}
+    int obtenerPiedra() {return obtenerPorNombre(PIEDRA)->obtenerTotal();}
+    int obtenerMetal() {return obtenerPorNombre(METAL)->obtenerTotal();}
 
     void construirEdificio(Edificio * edificio);
     void demolerEdificio(Edificio * edificio);

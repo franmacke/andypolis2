@@ -7,6 +7,7 @@
 
 #include "edificio.h"
 
+const string PLANTA = "planta electrica";
 
 class Planta : public Edificio {
 protected:
@@ -16,7 +17,7 @@ protected:
     static int cantidadTotal;
 
 public:
-    Planta(int fila, int columna){ this->nombre = "planta electrica"; this->fila = fila; this->columna = columna; cantidadTotal++;}
+    Planta(int fila, int columna){ this->nombre = PLANTA; this->fila = fila; this->columna = columna; cantidadTotal++;}
 
     Planta(int piedra, int madera, int metal, int cantidadPermitida);
 

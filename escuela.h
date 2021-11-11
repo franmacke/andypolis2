@@ -4,7 +4,10 @@
 
 #ifndef ANDYPOLIS2_ESCUELA_H
 #define ANDYPOLIS2_ESCUELA_H
+
 #include "edificio.h"
+
+const string ESCUELA = "escuela";
 
 class Escuela : public Edificio {
 private:
@@ -13,7 +16,7 @@ private:
 
 public:
     Escuela(int fila, int columna){ 
-        this->nombre = "escuela";
+        this->nombre = ESCUELA;
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

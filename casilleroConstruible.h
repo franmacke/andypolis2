@@ -5,6 +5,7 @@
 #include "casillero.h"
 #include "edificio.h"
 
+const string CONSTRUIBLE = "construible";
 
 using namespace std;
 
@@ -14,7 +15,7 @@ private:
     Edificio* edificio;
 
 public:
-    CasilleroConstruible(){ this->tipoCasillero = "Construible"; this->edificio = nullptr;
+    CasilleroConstruible(){ this->tipoCasillero = CONSTRUIBLE; this->edificio = nullptr;
         this->vacio = true;}
 
     void agregarEdificio(Edificio* edificio){ this->edificio = edificio; this->vacio = false;}
@@ -29,7 +30,7 @@ public:
 
     string obtenerNombre(){return this->edificio->obtenerNombre();}
 
-    void liberarMemoria() {delete edificio;}
+    void liberarMemoria() {}
 
     ~CasilleroConstruible();
     //void cambiar_dato(Objeto * dato);

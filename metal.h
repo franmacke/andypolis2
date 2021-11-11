@@ -6,6 +6,8 @@
 #define ANDYPOLIS2_METAL_H
 #include "material.h"
 
+const string METAL = "metal";
+
 
 class Metal : public Material {
 
@@ -15,10 +17,10 @@ protected:
     int cantidad;
 
 public:
-    Metal(int fila, int columna, int cantidad){this->nombre = "Metal"; this->fila = fila; this->columna = columna;
+    Metal(int fila, int columna, int cantidad){this->nombre = METAL; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
-    Metal(int cantidad){ this->nombre = "Metal";
+    Metal(int cantidad){ this->nombre = METAL;
         this->cantidadTotal += cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}

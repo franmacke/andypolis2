@@ -7,6 +7,7 @@
 
 #include "edificio.h"
 
+const string ASERRADERO = "aserradero";
 
 class Aserradero : public Edificio {
 protected:
@@ -16,7 +17,7 @@ protected:
 
 public:
     Aserradero(int fila, int columna){ 
-        this->nombre = "aserradero";
+        this->nombre = ASERRADERO;
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}//yo creo q aca es donde hay q inicializar el nombre(uso de polimorfismo)
 

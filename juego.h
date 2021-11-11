@@ -6,6 +6,10 @@
 #include "archivos.h"
 #include "inventario.h"
 
+const string SI = "si";
+const string NO = "no";
+const string FIN = "fin";
+
 class Juego {
     private:
     int opcion = 0;

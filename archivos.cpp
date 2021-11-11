@@ -1,7 +1,6 @@
 #include "archivos.h"
 
 
-
 const char ESPACIO = 32;
 const char RETORNO = 13;
 const char NULO = 00;
@@ -48,12 +47,14 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
         if (nombre == "planta") {
             string aux = "";
             getline(archivo, aux, ESPACIO);
+            nombre = nombre + " " + aux;
         }
         getline(archivo, piedra, ESPACIO);
         getline(archivo, madera, ESPACIO);
         getline(archivo, metal, ESPACIO);
         getline(archivo, cantidad_permitidos);
-    
+
+        cout << "nombre: " << nombre << endl;
 
         // Edificio edificio (nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(cantidad_permitidos));
         int piedras = stoi(piedra);
@@ -283,19 +284,19 @@ Edificio* Archivo::crearEdificio(string &nombre, int fila, int columna) {
 
         Edificio* nuevo;
 
-        if (nombre == "mina") {
+        if (nombre == MINA) {
             nuevo = new Mina(fila, columna);
-        } else if (nombre == "aserradero") {
+        } else if (nombre == ASERRADERO) {
             nuevo = new Aserradero(fila, columna);
-        } else if (nombre == "escuela") {
+        } else if (nombre == ESCUELA) {
             nuevo = new Escuela(fila, columna);
-        } else if (nombre == "fabrica") {
+        } else if (nombre == FABRICA) {
             nuevo = new Fabrica(fila, columna);
-        } else if (nombre == "yacimiento") {
+        } else if (nombre == YACIMIENTO) {
             nuevo = new Yacimiento(fila, columna);
-        } else if (nombre == "obelisco") {
+        } else if (nombre == OBELISCO) {
             nuevo = new Obelisco(fila, columna);
-        } else if (nombre == "planta") {
+        } else if (nombre == PLANTA) {
             nuevo = new Planta(fila, columna);
         }
 
@@ -307,13 +308,15 @@ Edificio* Archivo::crearEdificio(string &nombre, int fila, int columna) {
 Material* Archivo::setearMaterial(string nombre, int cantidad) {
     Material* nuevo;
 
-    if (nombre == "madera" || nombre == "Madera"){
+    // REVISAR
+
+    if (nombre == MADERA || nombre == "Madera"){
         nuevo = new Madera(cantidad);
-    } else if (nombre == "piedra" || nombre == "Piedra"){
+    } else if (nombre == PIEDRA || nombre == "Piedra"){
         nuevo = new Piedra(cantidad);
-    } else if (nombre == "metal" || nombre == "Metal"){
+    } else if (nombre == METAL || nombre == "Metal"){
         nuevo = new Metal(cantidad);
-    } else if (nombre == "oro" || nombre == "Oro"){
+    } else if (nombre == ORO || nombre == "Oro"){
         nuevo = new Oro(cantidad);
     }
     return nuevo;
@@ -323,19 +326,19 @@ Edificio* Archivo::setearEdificio(string nombre, int piedra, int madera, int met
 
     Edificio* nuevo;
 
-    if (nombre == "mina"  || nombre == "Mina") {
+    if (nombre == MINA || nombre == "Mina") {
         nuevo = new Mina(piedra, madera, metal, tope);
-    } else if (nombre == "aserradero"  || nombre == "Aserradero") {
+    } else if (nombre == ASERRADERO || nombre == "Aserradero") {
         nuevo = new Aserradero(piedra, madera, metal, tope);
-    } else if (nombre == "escuela" || nombre == "Escuela") {
+    } else if (nombre == ESCUELA || nombre == "Escuela") {
         nuevo = new Escuela(piedra, madera, metal, tope);
-    } else if (nombre == "yacimiento"  || nombre == "Yacimiento") {
+    } else if (nombre == YACIMIENTO  || nombre == "Yacimiento") {
         nuevo = new Yacimiento(piedra, madera, metal, tope);
-    } else if (nombre == "fabrica" || nombre == "Fabrica") {
+    } else if (nombre == FABRICA || nombre == "Fabrica") {
         nuevo = new Fabrica(piedra, madera, metal, tope);
-    } else if (nombre == "obelisco" || nombre == "Obelisco") {
+    } else if (nombre == OBELISCO || nombre == "Obelisco") {
         nuevo = new Obelisco(piedra, madera, metal, tope);
-    } else if (nombre == "planta" || nombre == "Planta") {
+    } else if (nombre == PLANTA || nombre == "Planta") {
         nuevo = new Planta(piedra, madera, metal, tope);
     }
 

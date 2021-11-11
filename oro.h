@@ -6,6 +6,9 @@
 #define ANDYPOLIS2_ORO_H
 #include "material.h"
 
+const string ORO = "oro";
+
+
 class Oro : public Material{
 protected:
 
@@ -13,10 +16,10 @@ protected:
     int cantidad;
 
 public:
-    Oro(int fila, int columna, int cantidad){this->nombre = "Oro"; this->fila = fila; this->columna = columna;
+    Oro(int fila, int columna, int cantidad){this->nombre = ORO; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
-    Oro(int cantidad){ this->nombre = "Oro";
+    Oro(int cantidad){ this->nombre = ORO;
         this->cantidadTotal += cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}
