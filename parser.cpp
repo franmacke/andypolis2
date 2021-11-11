@@ -1,5 +1,6 @@
 #include "parser.h"
 
+
 Parser::Parser(string entrada, int cantidad) {
     // Para materiales
     this->entrada = entrada;

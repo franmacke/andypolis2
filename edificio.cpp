@@ -11,24 +11,24 @@ Edificio::Edificio() {
 }*/
 
 
-void Edificio::agregarEdificio(Edificio** edificios, Edificio *nuevoEdificio, int tope) {
-    int topeViejo = tope;
-    Edificio ** nuevoVectorEdificios = new Edificio* [topeViejo + 1];
-    for (int i = 0; i < tope; ++i) {
-        nuevoVectorEdificios[i] = edificios[i];
-    }
-    if (tope != 0) {
-        delete[] edificios;
-    }
+// void Edificio::agregarEdificio(Edificio** edificios, Edificio *nuevoEdificio, int tope) {
+//     int topeViejo = tope;
+//     Edificio ** nuevoVectorEdificios = new Edificio* [topeViejo + 1];
+//     for (int i = 0; i < tope; ++i) {
+//         nuevoVectorEdificios[i] = edificios[i];
+//     }
+//     if (tope != 0) {
+//         delete[] edificios;
+//     }
 
-    nuevoVectorEdificios[topeViejo] = nuevoEdificio;
+//     nuevoVectorEdificios[topeViejo] = nuevoEdificio;
 
-    edificios = nuevoVectorEdificios;
-
-
+//     edificios = nuevoVectorEdificios;
 
 
-}
+
+
+// }
 
 
 /*

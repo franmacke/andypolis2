@@ -7,13 +7,15 @@
 
 #include "edificio.h"
 
+const string MINA = "mina";
+
 class Mina : public Edificio {
 protected:
     static int cantidadTotal;
 
 public:
     Mina(int fila, int columna){ 
-        this->nombre = "mina";
+        this->nombre = MINA;
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

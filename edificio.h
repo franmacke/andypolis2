@@ -7,12 +7,12 @@
 //#include "casilleroConstruible.h"
 #include "utilidad.h"
 
-const string OBELISCO = "O";
-const string FABRICA = "F";
-const string ASERRADERO = "A";
-const string MINA = "M";
-const string PLANTA = "P";
-const string ESCUELA = "E";
+// const string OBELISCO = "O";
+// const string FABRICA = "F";
+// const string ASERRADERO = "A";
+// const string MINA = "M";
+// const string PLANTA = "P";
+// const string ESCUELA = "E";
 
 using namespace std;
 
@@ -37,7 +37,7 @@ public:
     //string nombre();
     string obtenerNombre(){ return this->nombre;}
 
-    void agregarEdificio(Edificio** edificios, Edificio* nuevoEdificio, int tope);
+    // void agregarEdificio(Edificio** edificios, Edificio* nuevoEdificio, int tope);
 
     int obtenerMadera(){return this->cantNecesariaMadera;}
 

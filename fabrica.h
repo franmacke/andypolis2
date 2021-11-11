@@ -4,6 +4,7 @@
 
 #include "edificio.h"
 
+const string FABRICA = "fabrica";
 
 class Fabrica : public Edificio {
 protected:

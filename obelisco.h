@@ -6,6 +6,7 @@
 #define ANDYPOLIS2_OBELISCO_H
 #include "edificio.h"
 
+const string OBELISCO = "obelisco";
 
 class Obelisco : public Edificio {
 protected:
@@ -13,7 +14,7 @@ protected:
 
 public:
     Obelisco(int fila, int columna){
-        this->nombre = "obelisco";
+        this->nombre = OBELISCO;
         this->fila = fila;
         this->columna = columna; cantidadTotal++;}
 

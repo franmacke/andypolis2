@@ -6,6 +6,7 @@
 #define ANDYPOLIS2_PIEDRA_H
 #include "material.h"
 
+const string PIEDRA = "piedra";
 
 class Piedra : public Material{
 protected:
@@ -14,10 +15,10 @@ protected:
     int cantidad;
 
 public:
-    Piedra(int fila, int columna, int cantidad){this->nombre = "Piedra"; this->fila = fila; this->columna = columna;
+    Piedra(int fila, int columna, int cantidad){this->nombre = PIEDRA; this->fila = fila; this->columna = columna;
         this->cantidad = cantidad;}
 
-    Piedra(int cantidad){ this->nombre = "Piedra";
+    Piedra(int cantidad){ this->nombre = PIEDRA;
         this->cantidadTotal += cantidad;}
 
     void restarTotal(int cantidad){ this->cantidadTotal -= cantidad;}

@@ -281,7 +281,7 @@ int Juego::cantProducidoPorAserradero(Ciudad *ciudad) {
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
         cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
-        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "aserradero"){
+        if (ciudad->obtenerEdificio(i)->obtenerNombre() == ASERRADERO){
             cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
             return (ciudad->obtenerEdificio(i)->obtenerTotal() * 25);
         }
@@ -291,8 +291,8 @@ int Juego::cantProducidoPorAserradero(Ciudad *ciudad) {
 int Juego::cantProducidoPorFabrica(Ciudad *ciudad) {
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
-        //cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
-        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "fabrica"){
+        cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
+        if (ciudad->obtenerEdificio(i)->obtenerNombre() == FABRICA) {
             cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
             return (ciudad->obtenerEdificio(i)->obtenerTotal() * 40);
         }
@@ -304,7 +304,7 @@ int Juego::cantProducidoPorMina(Ciudad *ciudad) {
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
         //cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
-        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "mina"){
+        if (ciudad->obtenerEdificio(i)->obtenerNombre() == MINA){
             cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
             return (ciudad->obtenerEdificio(i)->obtenerTotal() * 15);
         }
@@ -319,19 +319,19 @@ void Juego::recolectarMateriales(Mapa &mapa, Inventario *inventario, Ciudad* ciu
     for (int i = 0; i < inventario->cantidad_materiales(); ++i) {
 
         cantParaSumar = 0;
-        if (inventario->obtenerMaterial(i)->obtenerNombre() == "Madera"){
+        if (inventario->obtenerMaterial(i)->obtenerNombre() == MADERA){
             cantParaSumar = cantProducidoPorAserradero(ciudad);
             cout << cantParaSumar << endl;
             inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
             cout<< inventario->obtenerMaterial(i)->obtenerNombre() << endl;
             cantParaSumar = 0;
-        } else if(inventario->obtenerMaterial(i)->obtenerNombre() == "Metal"){
+        } else if(inventario->obtenerMaterial(i)->obtenerNombre() == METAL){
             cantParaSumar = cantProducidoPorFabrica(ciudad);
             cout << cantParaSumar << endl;
             inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
             cout<< inventario->obtenerMaterial(i)->obtenerNombre() << endl;
             cantParaSumar = 0;
-        } else if(inventario->obtenerMaterial(i)->obtenerNombre() == "Piedra") {
+        } else if(inventario->obtenerMaterial(i)->obtenerNombre() == PIEDRA) {
             cantParaSumar = cantProducidoPorMina(ciudad);
             cout << cantParaSumar << endl;
             inventario->obtenerMaterial(i)->aumentarTotal(cantParaSumar);
@@ -352,7 +352,7 @@ Edificio * Juego::pedirNombreEdificio(Ciudad* datosEdificios) {
     Edificio * edificioBuscado = nullptr;
     edificioBuscado = datosEdificios->buscarEdificioPorNombre(nombre);
 
-    while (edificioBuscado == nullptr && nombre != "fin") {
+    while (edificioBuscado == nullptr && nombre != FIN) {
         cout << "No se encontro el edificio ingresado. Intente de nuevo: ";
         cin >> nombre;
         edificioBuscado = datosEdificios->buscarEdificioPorNombre(nombre);
@@ -368,7 +368,7 @@ bool Juego::esCasilleroConstruible(Mapa& mapa, int fila, int columna) {
     bool vacio = true;
     bool esConstruible = true;
 
-    if (utilidad.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != "construible") {
+    if (utilidad.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != CONSTRUIBLE) {
         cout << "El casillero (" << fila << ", " << columna << ") no es de tipo construible" << endl;
         esConstruible = false;
     }
@@ -386,7 +386,7 @@ bool Juego::esCasilleroDemolible(Mapa& mapa, int fila, int columna) {
     bool vacio = true;
     bool esConstruible = true;
 
-    if (utilidad.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != "construible") {
+    if (utilidad.minuscula(mapa.obtenerDato(fila, columna)->obtenerTC()) != CONSTRUIBLE) {
         cout << "El casillero (" << fila << ", " << columna << ") no es de tipo construible" << endl;
         esConstruible = false;
     }

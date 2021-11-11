@@ -7,6 +7,8 @@
 #include "casillero.h"
 #include "material.h"
 
+const string TRANSITABLE = "transitable";
+
 using namespace std;
 class CasilleroTransitable : public Casillero {
     protected:
@@ -14,7 +16,7 @@ class CasilleroTransitable : public Casillero {
 
     public:
     CasilleroTransitable(){this->vacio = true;
-        this->tipoCasillero = "Transitable"; this->material = nullptr;}
+        this->tipoCasillero = TRANSITABLE; this->material = nullptr;}
     //void cambiar_dato(Objeto * dato);
 
     void agregarMateriales(Material* material){ this->material = material;
@@ -31,7 +33,11 @@ class CasilleroTransitable : public Casillero {
 
     string obtenerNombre(){return this->material->obtenerNombre();}
 
-    void liberarMemoria() {delete material;}
+    void liberarMemoria() {
+        if (material != nullptr) {
+            delete material;
+        }
+    }
 
 
     ~CasilleroTransitable();

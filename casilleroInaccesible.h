@@ -6,12 +6,14 @@
 #define CASILLERO_INACCESIBLE_H
 #include "casillero.h"
 
+const string INACCESIBLE = "inaccesible";
+
 class CasilleroInaccesible : public Casillero {
     private:
     
     public:
     CasilleroInaccesible(){this->vacio = true;
-        this->tipoCasillero = "Inaccesible";};
+        this->tipoCasillero = INACCESIBLE;};
     //void cambiar_dato(Objeto * dato);
     void mostrarEnMapa(){cout << COLOR_AZUL<< EMOJI_LAGO ;}// estaria bueno en colores en vez de una letra
 
