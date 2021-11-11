@@ -10,7 +10,7 @@ CasilleroTransitable::~CasilleroTransitable() {
 
 void CasilleroTransitable::mostrarEnMapa() {
     if (this->material == nullptr){
-        cout << "C";
+        cout << COLOR_BLANCO << EMOJI_CALLE;
     } else{
         this->material->mostrarEnMapa();
     }

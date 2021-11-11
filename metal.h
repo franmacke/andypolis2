@@ -28,7 +28,7 @@ public:
 
     int obtenerTotal(){return cantidadTotal;}
 
-    void mostrarEnMapa(){cout << "I";}
+    void mostrarEnMapa(){cout << COLOR_BLANCO << EMOJI_METAL;}
 
 };
 

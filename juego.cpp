@@ -16,16 +16,18 @@ void Juego::jugar() {
 
 void Juego::mostrarOpciones() {
     cout << endl;
-    cout << "[1] CONSTRUIR EDIFICIO POR NOMBRE" << endl;
-    cout << "[2] LISTAR LOS EDIFICIOS CONSTRUIDOS" << endl;
-    cout << "[3] LISTAR TODOS LOS EDIFICIOS" << endl;
-    cout << "[4] DEMOLER EDIFICIO POR COORDENADAS" << endl;
-    cout << "[5] MOSTRAR MAPA" << endl;
-    cout << "[6] CONSULTAR COORDENADAS" << endl;
-    cout << "[7] MOSTRAR INVENTARIO" << endl;
-    cout << "[8] RECOLECTAR RECURSOS PRODUCIDOS" << endl;
-    cout << "[9] LLUVIA DE RECURSOS" << endl;
-    cout << "[10] GUARDAR Y SALIR" << endl;
+    cout << COLOR_DORADO << " ╔═══════════════════════════════════════════════════════╗" << endl;
+    cout << " ║ " << "[1] CONSTRUIR EDIFICIO POR NOMBRE " << EMOJI_OBRA << COLOR_DORADO << "                  ║" << endl;
+    cout << " ║ " << "[2] LISTAR LOS EDIFICIOS CONSTRUIDOS " << EMOJI_PERSONA << COLOR_DORADO << "               ║" <<endl;
+    cout << " ║ " << "[3] LISTAR TODOS LOS EDIFICIOS " << EMOJI_EDIFICIO << COLOR_DORADO << "                     ║" <<endl;
+    cout << " ║ " << "[4] DEMOLER EDIFICIO POR COORDENADAS " << EMOJI_TRACTOR << COLOR_DORADO << "               ║" << endl;
+    cout << " ║ " << "[5] MOSTRAR MAPA " << EMOJI_MAPA << COLOR_DORADO << "                                   ║" <<endl;
+    cout << " ║ " << "[6] CONSULTAR COORDENADAS " << EMOJI_BRUJULA << COLOR_DORADO << "                          ║" << endl;
+    cout << " ║ " << "[7] MOSTRAR INVENTARIO " << EMOJI_LISTA << COLOR_DORADO << "                             ║" <<endl;
+    cout << " ║ " << "[8] RECOLECTAR RECURSOS PRODUCIDOS " << EMOJI_CAMION << COLOR_DORADO << "                 ║" <<endl;
+    cout << " ║ " << "[9] LLUVIA DE RECURSOS " << EMOJI_LLUVIA << COLOR_DORADO << "                             ║" <<endl;
+    cout << " ║ " << "[10] GUARDAR Y SALIR " << EMOJI_TARJETA << COLOR_DORADO << "                               ║" <<endl;
+    cout << " ╚═══════════════════════════════════════════════════════╝" << COLOR_POR_DEFECTO <<endl;
 }
 
 void Juego::pedirOpcion() {
@@ -281,8 +283,8 @@ void Juego::lluviaDeRecursos(Mapa &mapa) {
 int Juego::cantProducidoPorAserradero(Ciudad *ciudad) {
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
-        //cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
-        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "Aserradero"){
+        cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
+        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "aserradero"){
             cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
             return (ciudad->obtenerEdificio(i)->obtenerTotal() * 25);
         }
@@ -293,7 +295,7 @@ int Juego::cantProducidoPorFabrica(Ciudad *ciudad) {
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
         //cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
-        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "Fabrica"){
+        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "fabrica"){
             cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
             return (ciudad->obtenerEdificio(i)->obtenerTotal() * 40);
         }
@@ -305,7 +307,7 @@ int Juego::cantProducidoPorMina(Ciudad *ciudad) {
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
         //cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
-        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "Mina"){
+        if (ciudad->obtenerEdificio(i)->obtenerNombre() == "mina"){
             cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
             return (ciudad->obtenerEdificio(i)->obtenerTotal() * 15);
         }

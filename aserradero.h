@@ -30,7 +30,7 @@ public:
 
     // PRE: -
     // POS: imprime por pantalla la letra "A"
-    void mostrarEnMapa(){cout << "A";}
+    void mostrarEnMapa(){cout << COLOR_VERDE<< EMOJI_ASERRADERO ;}
 };
 
 

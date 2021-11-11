@@ -13,7 +13,7 @@ class CasilleroInaccesible : public Casillero {
     CasilleroInaccesible(){this->vacio = true;
         this->tipoCasillero = "Inaccesible";};
     //void cambiar_dato(Objeto * dato);
-    void mostrarEnMapa(){cout << "L";}// estaria bueno en colores en vez de una letra
+    void mostrarEnMapa(){cout << COLOR_AZUL<< EMOJI_LAGO ;}// estaria bueno en colores en vez de una letra
 
     void agregarEdificio(Edificio* edificio){}
 

@@ -21,7 +21,7 @@ CasilleroConstruible::~CasilleroConstruible() {
 
 void CasilleroConstruible::mostrarEnMapa() {
     if (this->edificio == nullptr){
-        cout << "T";
+        cout << COLOR_VERDE<< EMOJI_TERRENO ;
     } else{
         this->edificio->mostrarEnMapa();
     }
