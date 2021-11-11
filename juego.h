@@ -10,6 +10,8 @@ const string SI = "si";
 const string NO = "no";
 const string FIN = "fin";
 
+using namespace std;
+
 class Juego {
     private:
     int opcion = 0;

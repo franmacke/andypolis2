@@ -1,4 +1,4 @@
-piedra 95
-madera 485
-metal 1000
+piedra 45
+madera 435
+metal 875
 oro 1000

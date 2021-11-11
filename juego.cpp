@@ -68,8 +68,9 @@ bool Juego::pedirConfirmacion() {
 }
 
 void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConstruidos , Inventario* inventario) {
+    bool partida = true;
 
-    while (opcion < GUARDAR_Y_SALIR){//aca quizas hay q corregir
+    while (partida){//aca quizas hay q corregir
         
        mostrarOpciones();
        pedirOpcion();
@@ -124,6 +125,7 @@ void Juego::interfazPrincipal(Mapa &mapa, Ciudad* ciudad, Ciudad* edificiosConst
                 cout << "\n\n\t\t GUARDAR Y SALIR \n\n\n";
                 guardarYSalir(mapa, ciudad, inventario);
                 liberarMemoria(edificiosConstruidos, ciudad, inventario);
+                partida = false;
                 break;
 
             default: cout << " Ingreso una opcion invalida" << endl;
@@ -159,11 +161,11 @@ void Juego::consultarCoordenada(Mapa &mapa) {
     int fila = pedirFila(mapa);
     int columna = pedirColumna(mapa);
 
-    cout << "el casillero es de tipo: " << mapa.obtenerDato(fila, columna)->obtenerTC() << endl;
+    cout << "\n El casillero es de tipo: " << mapa.obtenerDato(fila, columna)->obtenerTC() << endl;
     if (mapa.obtenerDato(fila, columna)->esVacio()){
-        cout << "este casillero esta vacio." << endl;
+        cout << "Wste casillero esta vacio." << endl;
     } else{
-        cout << "este casillero esta ocupado por: " << mapa.obtenerDato(fila, columna)->obtenerNombre() << endl;
+        cout << "Este casillero esta ocupado por: " << mapa.obtenerDato(fila, columna)->obtenerNombre() << endl;
     }
 }
 
@@ -221,7 +223,7 @@ void Juego::lluviaDeMadera(Mapa &mapa) {
     if (cantidad > 0){
 
         mapa.obtenerDato(fila, columna)->agregarMateriales(new Madera(fila, columna, cantidad));
-        cout << "aparecieron " << cantidad << " maderas en: " << fila << " ," << columna << endl;
+        cout << "Aparecieron " << cantidad << " maderas en: " << fila << " ," << columna << "." << endl;
     }
 }
 
@@ -239,7 +241,7 @@ void Juego::lluviaDeMetal(Mapa &mapa) {
     if (cantidad > 0){
 
         mapa.obtenerDato(fila, columna)->agregarMateriales(new Metal(fila, columna, cantidad));
-        cout << "aparecieron " << cantidad << " metales en: " << fila << " ," << columna << endl;
+        cout << "Aparecieron " << cantidad << " metales en: " << fila << " ," << columna << "." <<  endl;
     }
 }
 
@@ -257,13 +259,13 @@ void Juego::lluviaDePiedra(Mapa &mapa) {
     if (cantidad > 0){
 
         mapa.obtenerDato(fila, columna)->agregarMateriales(new Piedra(fila, columna, cantidad));
-        cout << "aparecieron " << cantidad << " piedras en: " << fila << " ," << columna << endl;
+        cout << "Aparecieron " << cantidad << " piedras en: " << fila << " ," << columna << "." <<  endl;
     }
 }
 
 void Juego::lluviaDeRecursos(Mapa &mapa) {
 
-    srand ((unsigned int) time(NULL));
+    srand ( (unsigned int) time(NULL));
     lluviaDeMadera(mapa);
     lluviaDeMetal(mapa);
     lluviaDePiedra(mapa);
@@ -272,37 +274,45 @@ void Juego::lluviaDeRecursos(Mapa &mapa) {
 
 
 int Juego::cantProducidoPorAserradero(Ciudad *ciudad) {
+    int valor = 0;
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
         cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
         if (ciudad->obtenerEdificio(i)->obtenerNombre() == ASERRADERO){
-            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
-            return (ciudad->obtenerEdificio(i)->obtenerTotal() * 25);
+            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
+            valor = (ciudad->obtenerEdificio(i)->obtenerTotal() * 25);
         }
     }
+    return valor;
 }
 
 int Juego::cantProducidoPorFabrica(Ciudad *ciudad) {
+    int valor = 0;
+
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
         cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
         if (ciudad->obtenerEdificio(i)->obtenerNombre() == FABRICA) {
-            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
-            return (ciudad->obtenerEdificio(i)->obtenerTotal() * 40);
+            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
+            valor = (ciudad->obtenerEdificio(i)->obtenerTotal() * 40);
         }
     }
+    return valor;
+
 }
 
 
 int Juego::cantProducidoPorMina(Ciudad *ciudad) {
+    int valor = 0;
     for (int i = 0; i < ciudad->cantidadEdificios(); ++i) {
 
         //cout << ciudad->obtenerEdificio(i)->obtenerNombre() << endl;
         if (ciudad->obtenerEdificio(i)->obtenerNombre() == MINA){
-            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << endl;
-            return (ciudad->obtenerEdificio(i)->obtenerTotal() * 15);
+            cout << ciudad->obtenerEdificio(i)->obtenerTotal() << ": ";
+            valor = (ciudad->obtenerEdificio(i)->obtenerTotal() * 15);
         }
     }
+    return valor;
 }
 
 
@@ -340,6 +350,7 @@ Edificio * Juego::pedirNombreEdificio(Ciudad* datosEdificios) {
     string nombre;
 
     cout << "Ingrese el nombre del edificio que desea construir: ";
+
     cin >> nombre;
 
     Edificio * edificioBuscado = nullptr;

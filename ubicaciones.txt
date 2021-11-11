@@ -1,4 +1,4 @@
-fabrica (0, 4)
+fabrica (1, 1)
 obelisco (1, 2)
 mina (3, 4)
 aserradero (3, 7)

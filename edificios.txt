@@ -4,3 +4,4 @@ escuela 250 200 45 1
 yacimiento 125 140 0 2
 obelisco 350 20 0 3
 mina 50 50 50 50
+planta electrica 50 50 50 50

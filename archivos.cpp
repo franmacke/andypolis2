@@ -41,14 +41,14 @@ void Archivo::leerArchivoEdificios(Ciudad * edificios) {
     fstream archivo;
     abrir(archivo, PATH_EDIFICIOS);
 
-    string nombre, piedra, madera, metal, cantidad_permitidos;
+    string nombre, nombre_2 ,piedra, madera, metal, cantidad_permitidos;
 
     while (getline(archivo, nombre, ESPACIO)) {
         if (nombre == "planta") {
-            string aux = "";
-            getline(archivo, aux, ESPACIO);
-            nombre = nombre + " " + aux;
+            getline(archivo, nombre_2, ESPACIO);
+            nombre = nombre + " " + nombre_2;
         }
+        cout << "nombre: " << nombre << endl;
         getline(archivo, piedra, ESPACIO);
         getline(archivo, madera, ESPACIO);
         getline(archivo, metal, ESPACIO);
