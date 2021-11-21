@@ -27,7 +27,7 @@ int main() {
     //datos.procesarArchivoDatosEdificios(edificios);
     datos.procesarArchivoMapa(mapa);
     datos.procesarArchivoEdificios(mapa, edificiosConstruidos);
-    // datos.leerArchivoEdificios(ciudad);
+    datos.leerArchivoEdificios(ciudad);
     datos.leerArchivosMateriales(inventario);
     // Ciudad * edificios = datos.leer_edificios();
 

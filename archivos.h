@@ -55,6 +55,12 @@ class Archivo {
     // PRE: abre materiales.txt vienen los datos bien cargados
     // POS: crea y carga los datos de materiales a inventario
     void leerArchivosMateriales(Inventario* materiales);
+
+    // PRE: abre edificios.txt vienen los datos bien cargados
+    // POS: crea y carga los datos de edicifios a ciudad
+    void leerArchivoEdificios(Ciudad * edificios);
+
+
     //void procesarArchivoDatosEdificios(Edificio** edificios);
     void procesarArchivoDatosEdificios(Edificio** edificios);
 
